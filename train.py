@@ -45,7 +45,7 @@ if __name__ == "__main__":
         epoch += 1
         for words, tags, preds, rels in \
                 data_loader.get_batches(batch_size=10, shuffle=False):
-            accuracy, loss = parser(words, tags, preds, rels, isTrain=True, given_gold_preds=False)
+            accuracy, loss = parser(words, tags, preds, rels, isTrain=True)
             loss.backward()
             trainer.step()
 
