@@ -186,8 +186,6 @@ class simpleParser(nn.Module):
         g_arg_selected = g_arg.index_select(0, torch.tensor(sample_indices_selected))
         g_pred_selected = g_pred.view(batch_size*seq_len, -1).index_select(0, torch.tensor(preds_indices_selected))
         print(g_pred_selected.size())
-        print(g_pred_selected.size())
-        print(len(rel_targets_selected))
 
         W_rel = self.rel_W
 
