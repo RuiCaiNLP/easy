@@ -107,7 +107,7 @@ class simpleParser(nn.Module):
                 torch.zeros(self.lstm_layers * 2, batch_size, self.lstm_hiddens, requires_grad=False).to(device))
 
 
-    def forward(self, word_inputs, tag_inputs, pred_golds, rel_targets=None, isTrain=True, given_gold_preds=False):
+    def forward(self, word_inputs, tag_inputs, pred_golds, rel_targets=None, isTrain=True):
         # inputs, targets: seq_len x batch_size
 
         batch_size = word_inputs.shape[0]
@@ -134,10 +134,6 @@ class simpleParser(nn.Module):
                 torch.Tensor(1, batch_size, 2*self.lstm_hiddens).fill_(1 - self.dropout_mlp)), requires_grad=False).to(device)
             top_recur = top_recur * dropout_dim.expand(seq_len, batch_size, 2*self.lstm_hiddens)
 
-        #top_recur = top_recur.transpose(0, 1)
-        #W_arg, b_arg = self.mlp_arg_W, self.mlp_arg_b
-        #W_pred, b_pred = self.mlp_pred_W, self.mlp_pred_b
-        # arg_hidden = leaky_relu(dy.affine_transform([b_arg, W_arg, top_recur]))
         g_arg = F.relu(self.mlp_arg(top_recur))
         g_pred = F.relu(self.mlp_pred(top_recur))
 
@@ -151,7 +147,6 @@ class simpleParser(nn.Module):
         preds_num = [len(p) for p in pred_golds]
         candidate_preds_batch = []
         sample_indices_selected = []
-        mask_selected = []
         preds_indices_selected = []
         rel_targets_selected = []
         mask_selected = []
@@ -224,17 +219,26 @@ class simpleParser(nn.Module):
             rel_loss = loss_function(flat_rel_logits, torch.from_numpy(targets_1D).to(device))
             print(rel_accuracy, rel_loss)
             return rel_accuracy, rel_loss
-        rel_probs = F.softmax(partial_rel_logits, 1).view(batch_size, seq_len, self._vocab.rel_size).cpu().data.numpy()
-        outputs = []
 
-        for msk, pred_gold, rel_prob in zip(np.transpose(mask), pred_golds.T, rel_probs):
-            msk[0] = 1.
-            sent_len = int(np.sum(msk))
-            #rel_prob = rel_prob[np.arange(len(pred_gold)), 0]
-            rel_pred = rel_argmax(rel_prob)
-            outputs.append(rel_pred[:sent_len])
 
-        return outputs
+        ##test
+        rel_probs = F.softmax(flat_rel_logits, 1).view(total_preds_num, seq_len, self._vocab.rel_size).cpu().data.numpy()
+        rel_predicts = np.argmax(rel_probs, 2)
+        correct_noNull_predict = 0
+        noNull_predict = 0
+        noNull_labels = 0
+
+        for msk, label_gold, label_predict in zip(mask_selected, rel_targets.cpu().data.numpy(), rel_predicts):
+            for i in range(len(label_predict)):
+                if msk[i] > 0:
+                    if label_gold[i] != 42:
+                        noNull_labels += 1
+                    if label_predict != 42:
+                        noNull_predict+= 1
+                        if label_predict == label_gold:
+                            correct_noNull_predict += 1
+
+        return correct_noNull_predict, noNull_predict, noNull_labels
 
     def save(self, model, save_path):
         #self._pc.save(save_path)
