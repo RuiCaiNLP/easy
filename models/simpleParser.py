@@ -56,32 +56,10 @@ class simpleParser(nn.Module):
 
         self.mlp_pred = nn.Linear(2*lstm_hiddens, mlp_size)
         self.mlp_arg = nn.Linear(2 * lstm_hiddens, mlp_size)
-
-        '''
-        self.LSTM_builders = []
-
-        self.f_0 = orthonormal_VanillaLSTMBuilder(1, input_dims, lstm_hiddens)
-        self.b_0 = orthonormal_VanillaLSTMBuilder(1, input_dims, lstm_hiddens)
-        #self.LSTM_builders.append((self.f_0, self.b_0))
-        
-        self.f_1 = orthonormal_VanillaLSTMBuilder(1, 2 * lstm_hiddens, lstm_hiddens)
-        self.b_1 = orthonormal_VanillaLSTMBuilder(1, 2 * lstm_hiddens, lstm_hiddens)
-        self.LSTM_builders.append((self.f_1, self.b_1))
-       
-        self.f_2 = orthonormal_VanillaLSTMBuilder(1, 2 * lstm_hiddens, lstm_hiddens)
-        self.b_2 = orthonormal_VanillaLSTMBuilder(1, 2 * lstm_hiddens, lstm_hiddens)
-        self.LSTM_builders.append((self.f_2, self.b_2))
-'''
-
         self.dropout_lstm_input = dropout_lstm_input
         self.dropout_lstm_hidden = dropout_lstm_hidden
         self.mlp_size = mlp_size
 
-
-        #orthonormal_initializer(2 * lstm_hiddens, mlp_size)
-        #orthonormal_initializer(2 * lstm_hiddens, mlp_size)
-        #orthonormal_initializer(2 * lstm_hiddens, mlp_size)
-        #W = orthonormal_initializer(2 * lstm_hiddens, mlp_size)
         W = np.random.randn(2*lstm_hiddens, mlp_size).astype(np.float32)
         self.mlp_arg_W = nn.Parameter(torch.from_numpy(W).to(device))
         self.mlp_pred_W = nn.Parameter(torch.from_numpy(W).to(device))
@@ -115,8 +93,6 @@ class simpleParser(nn.Module):
         marker = self._vocab.PAD
         mask = np.greater(word_inputs, marker).astype(np.int64)
         num_tokens = np.sum(mask, axis=1)
-        print(num_tokens)
-        print(num_tokens.sum())
         word_embs = self.word_embs(torch.from_numpy(word_inputs.astype('int64')).to(device))
         pre_embs = self.pret_word_embs(torch.from_numpy(word_inputs.astype('int64')).to(device))
         tag_embs = self.tag_embs(torch.from_numpy(tag_inputs.astype('int64')).to(device))
@@ -182,10 +158,9 @@ class simpleParser(nn.Module):
                 preds_indices_selected.append(candidate_preds_batch[i][j]+offset_words)
             offset_words += int(seq_len)
 
-
         g_arg_selected = g_arg.index_select(0, torch.tensor(sample_indices_selected))
         g_pred_selected = g_pred.view(batch_size*seq_len, -1).index_select(0, torch.tensor(preds_indices_selected))
-        print(g_pred_selected.size())
+
 
         W_rel = self.rel_W
 
@@ -196,7 +171,6 @@ class simpleParser(nn.Module):
                               total_preds_num,
                               num_outputs=self._vocab.rel_size, bias_x=True, bias_y=True)
 
-        print(total_preds_num, seq_len)
         flat_rel_logits = rel_logits.view(total_preds_num*seq_len, self._vocab.rel_size)
 
         if isTrain:
@@ -226,14 +200,14 @@ class simpleParser(nn.Module):
         noNull_predict = 0
         noNull_labels = 0
 
-        for msk, label_gold, label_predict in zip(mask_selected, rel_targets.cpu().data.numpy(), rel_predicts):
+        for msk, label_gold, label_predict in zip(mask_selected, rel_targets, rel_predicts):
             for i in range(len(label_predict)):
                 if msk[i] > 0:
                     if label_gold[i] != 42:
                         noNull_labels += 1
-                    if label_predict != 42:
+                    if label_predict[i] != 42:
                         noNull_predict+= 1
-                        if label_predict == label_gold:
+                        if label_predict[i] == label_gold[i]:
                             correct_noNull_predict += 1
 
         return correct_noNull_predict, noNull_predict, noNull_labels

@@ -84,19 +84,19 @@ if __name__ == '__main__':
 
     if not os.path.exists(args.out_dir):
         os.mkdir(args.out_dir)
-    if args.train:
-        train_conll = read_conll(args.train)
-        train_srl = srl2ptb(train_conll)
-        save(train_srl, '%s/train_pro' % args.out_dir)
-    if args.dev:
-        dev_conll = read_conll(args.dev)
-        dev_srl = srl2ptb(dev_conll)
-        save(dev_srl, '%s/dev_pro' % args.out_dir)
-        os.system('cp %s %s/dev_raw' % (args.dev, args.out_dir))
-    if args.test:
-        test_conll = read_conll(args.test)
-        test_srl = srl2ptb(test_conll)
-        save(test_srl, '%s/test_pro' % args.out_dir)
-        os.system('cp %s %s/test_raw' % (args.test, args.out_dir))
+
+    train_conll = read_conll(args.train)
+    train_srl = srl2ptb(train_conll)
+    save(train_srl, '%s/train_pro' % args.out_dir)
+
+    dev_conll = read_conll(args.dev)
+    dev_srl = srl2ptb(dev_conll)
+    save(dev_srl, '%s/dev_pro' % args.out_dir)
+    os.system('cp %s %s/dev_raw' % (args.dev, args.out_dir))
+
+    test_conll = read_conll(args.test)
+    test_srl = srl2ptb(test_conll)
+    save(test_srl, '%s/test_pro' % args.out_dir)
+    os.system('cp %s %s/test_raw' % (args.test, args.out_dir))
 
 

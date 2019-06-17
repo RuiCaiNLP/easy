@@ -40,13 +40,39 @@ if __name__ == "__main__":
     epoch = 0
     best_F1 = 0.
 
-    while global_step < 50:
+    while global_step < 5000:
         print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '\nStart training epoch #%d' % (epoch,)
         epoch += 1
         for words, tags, preds, rels in \
-                data_loader.get_batches(batch_size=10, shuffle=False):
+                data_loader.get_batches(batch_size=1, shuffle=False):
+            parser.zero_grad()
+            trainer.zero_grad()
+            parser.train()
             accuracy, loss = parser(words, tags, preds, rels, isTrain=True)
             loss.backward()
             trainer.step()
+
+            global_step += 1
+
+            if global_step % 1 == 0:
+                print("testing...")
+                correct_noNull_predicts = 0.
+                noNull_predicts = 0.
+                noNull_labels = 0.
+                test_data_loader = DataLoader("processed/dev_pro", vocab)
+                for words, tags, preds, rels in \
+                        test_data_loader.get_batches(batch_size=1, shuffle=False):
+                    a, b, c = parser(words, tags, preds, rels, isTrain=False)
+                    correct_noNull_predicts += a
+                    noNull_predicts += b
+                    noNull_labels += c
+
+                P = correct_noNull_predicts/noNull_predicts
+                R = correct_noNull_predicts/noNull_labels
+                F = 2*P*R / (P + R)
+                print("tested", P, R, F)
+
+
+
 
 

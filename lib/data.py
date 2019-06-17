@@ -177,6 +177,10 @@ class DataLoader(object):
                         sent.append(rels)
                     content_idx += 1
                 else:
+                    if len(sent) < 5:
+                        print("error!")
+
+                        print(vocab.id2word(sent[0]))
                     sents.append(sent)
                     sent = []
                     content_idx = 0
@@ -222,99 +226,3 @@ class DataLoader(object):
                     rel_target[:len(sample[4 + j])] = sample[4 + j]
                     rel_targets.append(rel_target)
             yield words_inputs, tag_inputs, pred_indices, rel_targets
-
-class AlignmentsLoader(object):
-    def __init__(self, input_file):
-        self.sents = []
-        sent = [0]*150
-        with open(input_file) as f:
-            print("reading alignment")
-            for line in f.readlines():
-                info = line.strip().split()
-
-                for word in info:
-                    en_index, fr_index = word.split('-')
-                    en_index = int(en_index)
-                    fr_index = int(fr_index)
-                    sent[en_index] = fr_index
-
-                self.sents.append(sent)
-                sent = [0] * 150
-            print("sens", len(self.sents))
-
-
-    def get_batches(self, batch_size, shuffle=False):
-        batches = []
-        sentences_num = len(self.sents)
-        batch_num = int(sentences_num*1.0/batch_size)
-        batch = []
-        print("batch num", batch_num)
-        for id, sent in enumerate(self.sents):
-            idx = id+1
-            if idx > batch_size*batch_num:
-                break
-            if idx%batch_size==0:
-                batch.append(sent)
-                batches.append(batch)
-                batch = []
-            else:
-                batch.append(sent)
-
-        for id, batch in enumerate(batches):
-            print("alignments shape:", )
-            yield batch
-
-
-class PlainDataLoader(object):
-    def __init__(self, input_file, vocab):
-        self.sents = []
-        sent = []
-        with open(input_file) as f:
-            print("reading plain text")
-            for line in f.readlines():
-                info = line.strip().split()
-                info.insert(0, "<DUMMY>")
-                if info:
-                    assert (len(info) > 0), 'Illegal line: %s' % line
-                    for word in info:
-                        word = vocab.word2id(word.lower())
-                        sent.append(word)
-                    self.sents.append(sent)
-                    sent = []
-                else:
-                    print(info)
-                    print(line)
-
-            print("sens", len(self.sents))
-
-
-    def get_batches(self, batch_size, shuffle=False):
-        batches = []
-        sentences_num = len(self.sents)
-        batch_num = int(sentences_num*1.0/batch_size)
-        batch = []
-        lengths = []
-        print("batch num", batch_num)
-        for id, sent in enumerate(self.sents):
-            idx = id+1
-            if idx > batch_size*batch_num:
-                break
-            if idx%batch_size==0:
-                batch.append(sent)
-                batches.append(batch)
-                batch = []
-            else:
-                batch.append(sent)
-
-        for id, batch in enumerate(batches):
-            max_len = 0
-            lengths = []
-            for sentence in batch:
-                lengths.append(len(sentence))
-                if len(sentence)>max_len:
-                    max_len = len(sentence)
-            batch_mask = np.zeros((batch_size, max_len), dtype=np.int32)
-            for idx, sent in enumerate(batch):
-                batch_mask[idx][:len(sent)] = np.array(sent, dtype=np.int32)
-
-            yield batch_mask.T, lengths
