@@ -1,12 +1,3 @@
-No	,	it	was	n't	Black	Monday	.
-DT	,	PRP	VBD	RB	NNP	NNP	.
-DT	,	PRP	VBD	RB	NNP	NNP	.
-4	4	4	0	4	7	4	4
-4	4	4	0	4	7	4	4
-DEP	P	SBJ	ROOT	ADV	NAME	PRD	P
-SBJ	P	SBJ	ROOT	ADV	NAME	PRD	P
-
-
 But	while	the	New	York	Stock	Exchange	did	n't	fall	apart	Friday	as	the	Dow	Jones	Industrial	Average	plunged	190.58	points	--	most	of	it	in	the	final	hour	--	it	barely	managed	to	stay	this	side	of	chaos	.
 CC	IN	DT	NNP	NNP	NNP	NNP	VBD	RB	VB	RB	NNP	IN	DT	NNP	NNP	NNP	NNP	VBD	CD	NNS	:	DT	IN	PRP	IN	DT	JJ	NN	:	PRP	RB	VBD	TO	VB	DT	NN	IN	NN	.
 CC	IN	DT	NNP	NNP	NNP	NNP	VBD	RB	VB	RB	NNP	IN	DT	NNP	NNP	NNP	NNP	VBD	CD	NNS	:	RBS	IN	PRP	IN	DT	JJ	NN	:	PRP	RB	VBD	TO	VB	DT	NN	IN	NN	.
@@ -1168,15 +1159,6 @@ AM-DIS	_	_	A1	_	_	_	_
 _	_	A0	AM-MOD	_	A1	_	_
 _	_	A0	_	_	_	_	_
 
-George	Morton
-NNP	NNP
-NNP	NNP
-2	0
-2	0
-NAME	ROOT
-NAME	ROOT
-
-
 Ports	of	Call	Inc.	reached	agreements	to	sell	its	remaining	seven	aircraft	to	buyers	that	were	n't	disclosed	.
 NNP	IN	NNP	NNP	VBD	NNS	TO	VB	PRP$	VBG	CD	NN	TO	NNS	WDT	VBD	RB	VBN	.
 WRB	IN	NNP	NNP	VBD	NNS	TO	VB	PRP$	VBG	CD	NN	TO	NNS	WDT	VBD	RB	VBN	.
@@ -2218,15 +2200,6 @@ NAME	NAME	SBJ	DEP	DEP	DEP	DEP	HYPH	NMOD	NMOD	PMOD	LOC	NMOD	PMOD	ROOT
 A0	AM-TMP	_	_	_	_	_	_	_	_	A1	_	_	_	_
 _	_	_	_	A2	_	_	_	_	A3	A1	AM-LOC	_	_	_
 
-The	centers	normally	are	closed	through	the	weekend	.
-DT	NNS	RB	VBP	JJ	IN	DT	NN	.
-DT	NNS	RB	VBP	VBN	IN	DT	NN	.
-2	4	4	0	4	5	8	6	4
-2	4	4	0	4	5	8	6	4
-NMOD	SBJ	ADV	ROOT	PRD	TMP	NMOD	PMOD	P
-NMOD	SBJ	ADV	ROOT	VC	ADV	NMOD	PMOD	P
-
-
 In	addition	,	East	Coast	centers	will	open	at	7:30	EDT	this	morning	,	instead	of	the	normal	8:30	.
 IN	NN	,	NNP	NNP	NNS	MD	VB	IN	CD	NNP	DT	NN	,	RB	IN	DT	JJ	CD	.
 IN	NN	,	NNP	NNP	NNS	MD	VB	IN	CD	NNP	DT	NN	,	RB	IN	DT	JJ	NN	.
@@ -3194,15 +3167,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	A1	_	_
-
-``	The	projects	are	big	.
-``	DT	NNS	VBP	JJ	.
-``	DT	NNS	VBP	JJ	.
-4	3	4	0	4	4
-4	3	4	0	4	4
-P	NMOD	SBJ	ROOT	PRD	P
-P	NMOD	SBJ	ROOT	PRD	P
-
 
 They	can	be	C$	1	billion	plus	,	''	Mr.	Richardson	said	.
 PRP	MD	VB	$	CD	CD	RB	,	''	NNP	NNP	VBD	.
@@ -5528,15 +5492,6 @@ _	_	_	A0	AM-MOD	_	A1	_	_	_	AM-TMP	_	_	_	_
 _	_	_	_	_	_	A2	AM-LOC	_	_	_	_	_	_	_
 _	_	_	A1	_	_	_	_	_	_	_	_	A4	_	_
 
-Superconcentrates	are	n't	entirely	new	for	P&G	.
-NNS	VBP	RB	RB	JJ	IN	NNP	.
-NNS	VBP	RB	RB	JJ	IN	NNP	.
-2	0	2	5	2	2	6	2
-2	0	2	5	2	5	6	2
-SBJ	ROOT	ADV	AMOD	PRD	ADV	PMOD	P
-SBJ	ROOT	ADV	AMOD	PRD	AMOD	PMOD	P
-
-
 The	company	introduced	a	superconcentrated	Lemon	Cheer	in	Japan	after	watching	the	success	of	Attack	.
 DT	NN	VBD	DT	JJ	NNP	NNP	IN	NNP	IN	VBG	DT	NN	IN	NNP	.
 DT	NN	VBD	DT	JJ	NNP	NNP	IN	NNP	IN	VBG	DT	NN	IN	NNP	.
@@ -7770,15 +7725,6 @@ SBJ	ROOT	VC	NMOD	NMOD	PRD	TMP	NMOD	NMOD	PMOD	P
 5
 _	_	_	_	A2	_	_	_	_	_	_
 
-Stocks	were	698	million	bushels	on	May	31	of	this	year	.
-NNS	VBD	CD	CD	NNS	IN	NNP	CD	IN	DT	NN	.
-NNS	VBD	CD	CD	NNS	IN	NNP	CD	IN	DT	NN	.
-2	0	4	5	2	2	8	6	8	11	9	2
-2	0	4	5	2	2	8	6	8	11	9	2
-SBJ	ROOT	DEP	NMOD	PRD	TMP	NMOD	PMOD	NMOD	NMOD	PMOD	P
-SBJ	ROOT	DEP	NMOD	PRD	TMP	NMOD	PMOD	NMOD	NMOD	PMOD	P
-
-
 In	response	to	dwindling	domestic	supplies	,	Agriculture	Secretary	Clayton	Yeutter	last	month	said	the	U.S.	government	would	slightly	increase	the	number	of	acres	farmers	can	plant	in	wheat	for	next	year	and	still	qualify	for	federal	support	payments	.
 IN	NN	TO	VBG	JJ	NNS	,	NNP	NN	NNP	NNP	JJ	NN	VBD	DT	NNP	NN	MD	RB	VB	DT	NN	IN	NNS	NNS	MD	VB	IN	NN	IN	JJ	NN	CC	RB	VB	IN	JJ	NN	NNS	.
 IN	NN	TO	VBG	JJ	NNS	,	NNP	NN	NNP	NNP	JJ	NN	VBD	DT	NNP	NN	MD	RB	VB	DT	NN	IN	NNS	NNS	MD	VB	IN	NN	IN	JJ	NN	CC	RB	VB	IN	JJ	NN	NNS	.
@@ -8191,15 +8137,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	AM-LOC	_	_	_	_	_	_	
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_	A1	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	A2	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_
-
-Energy
-NN
-NN
-0
-0
-ROOT
-ROOT
-
 
 Although	some	analysts	look	for	profit	-	taking	in	the	wake	of	Friday	's	leap	in	crude	oil	prices	,	last	week	's	rally	is	generally	expected	to	continue	this	week	.
 IN	DT	NNS	VBP	IN	NN	HYPH	NN	IN	DT	NN	IN	NNP	POS	NN	IN	JJ	NN	NNS	,	JJ	NN	POS	NN	VBZ	RB	VBN	TO	VB	DT	NN	.
@@ -8687,24 +8624,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	A0	_	_
 
-Ad	Notes	...	.
-NN	NNS	:	.
-NN	NNS	:	.
-2	0	2	2
-2	0	2	2
-NMOD	ROOT	P	P
-NMOD	ROOT	P	P
-
-
-NEW	ACCOUNT	:
-JJ	NN	:
-JJ	NN	:
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NMOD	ROOT	P
-
-
 California	's	Glendale	Federal	Bank	awarded	its	$	12	million	to	$	15	million	account	to	the	Los	Angeles	office	of	Omnicom	Group	's	BBDO	agency	.
 NNP	POS	NNP	NNP	NNP	VBD	PRP$	$	CD	CD	TO	$	CD	CD	NN	TO	DT	NNP	NNP	NN	IN	NNP	NNP	POS	NNP	NN	.
 NNP	POS	NNP	NNP	NNP	VBD	PRP$	$	CD	CD	TO	$	CD	CD	NN	TO	DT	NNP	NNP	NN	IN	NNP	NNP	POS	NNP	NN	.
@@ -8727,15 +8646,6 @@ NMOD	SBJ	ROOT	TMP	VC	LGS	NMOD	P	NAME	NAME	NAME	DEP	POSTHON	P	NMOD	NAME	NMOD	APPO
 1	4
 _	_	_	_	_	A2	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	A1	_	AM-TMP	_	A0	_	_	_	_	_	_	_	_	_	_	_	_	_
-
-ACCOUNT	REVIEW	:
-NNP	NNP	:
-NN	VBP	:
-2	0	2
-2	0	2
-NAME	ROOT	P
-SBJ	ROOT	P
-
 
 Royal	Crown	Cola	Co.	has	ended	its	relationship	with	the	Boston	office	of	Hill	,	Holliday	,	Connors	,	Cosmopulos	.
 NNP	NNP	NNP	NNP	VBZ	VBN	PRP$	NN	IN	DT	NNP	NN	IN	NNP	NNP	NNP	NNP	NNP	NNP	NNP	.
@@ -8815,15 +8725,6 @@ _	_	_	_	_	_	_	_	_	_	A1	_	_	AM-ADV	_	_	AM-PNC	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	AM-LOC	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A3	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	A2	A1	A0	_	_	_	_	_	_	_	_
-
-KOREAN	AGENCY	:
-JJ	NN	:
-NNP	NNP	:
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NAME	ROOT	P
-
 
 The	Samsung	Group	and	Bozell	Inc.	agreed	to	establish	a	joint	venture	advertising	agency	in	South	Korea	.
 DT	NNP	NNP	CC	NNP	NNP	VBD	TO	VB	DT	JJ	NN	NN	NN	IN	NNP	NNP	.
@@ -8972,15 +8873,6 @@ ADV	P	SBJ	ROOT	ADV	NMOD	PMOD	NMOD	PMOD	SBJ	NMOD	OBJ	NMOD	HMOD	HYPH	NMOD	NMOD	PMO
 AM-ADV	_	A1	_	A0	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	A0	_	_	AM-MNR	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	A0	R-A0	_	A1	A2	_	_	_	_	_	_	_	_	_
-
-In	the	fiscal	first	half	,	net	was	$	7	million	,	or	34	cents	a	share	,	up	from	the	year	-	earlier	$	3.1	million	,	or	15	cents	a	share	.
-IN	DT	JJ	JJ	NN	,	NN	VBD	$	CD	CD	,	CC	CD	NNS	DT	NN	,	RB	IN	DT	NN	HYPH	JJR	$	CD	CD	,	CC	CD	NNS	DT	NN	.
-IN	DT	JJ	JJ	NN	,	NN	VBD	$	CD	CD	,	CC	CD	NNS	DT	NN	,	RB	IN	DT	NN	HYPH	JJR	$	CD	CD	,	CC	CD	NNS	DT	NN	.
-8	5	5	5	1	8	8	0	8	9	9	9	9	15	13	17	15	8	8	19	25	24	22	25	20	25	25	25	25	31	29	33	31	8
-8	5	5	5	1	8	8	0	8	9	9	9	9	15	13	17	15	9	8	19	25	24	22	25	20	25	25	25	25	31	29	33	31	8
-TMP	NMOD	NMOD	NMOD	PMOD	P	SBJ	ROOT	PRD	DEP	DEP	P	COORD	NMOD	CONJ	NMOD	ADV	P	ADV	AMOD	NMOD	HMOD	HYPH	NMOD	PMOD	DEP	DEP	P	COORD	NMOD	CONJ	NMOD	ADV	P
-TMP	NMOD	NMOD	NMOD	PMOD	P	SBJ	ROOT	PRD	DEP	DEP	P	COORD	NMOD	CONJ	NMOD	ADV	P	ADV	AMOD	NMOD	HMOD	HYPH	NMOD	PMOD	DEP	DEP	P	COORD	NMOD	CONJ	NMOD	ADV	P
-
 
 Revenue	rose	to	$	225.5	million	from	$	161.8	million	.
 NN	VBD	TO	$	CD	CD	IN	$	CD	CD	.
@@ -11200,15 +11092,6 @@ _	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	A0	_	_	_	AM-TMP	_
 
-Upjohn	's	biggest	-	selling	drugs	are	Xanax	,	a	tranquilizer	,	and	Halcion	,	a	sedative	.
-NNP	POS	RBS	HYPH	VBG	NNS	VBP	NNP	,	DT	NN	,	CC	NNP	,	DT	NN	.
-NNP	POS	RBS	HYPH	VBG	NNS	VBP	NNP	,	DT	NN	,	CC	NNP	,	DT	NN	.
-6	1	5	3	6	7	0	7	8	11	8	8	8	13	14	17	14	7
-6	1	5	3	6	7	0	7	8	11	8	11	11	13	14	17	14	7
-NMOD	SUFFIX	HMOD	HYPH	NMOD	SBJ	ROOT	PRD	P	NMOD	APPO	P	COORD	CONJ	P	NMOD	APPO	P
-NMOD	SUFFIX	HMOD	HYPH	NMOD	SBJ	ROOT	PRD	P	NMOD	COORD	P	COORD	CONJ	P	NMOD	APPO	P
-
-
 Sales	of	both	drugs	have	been	hurt	by	new	state	laws	restricting	the	prescriptions	of	certain	tranquilizing	medicines	and	adverse	publicity	about	the	excessive	use	of	the	drugs	.
 NNS	IN	DT	NNS	VBP	VBN	VBN	IN	JJ	NN	NNS	VBG	DT	NNS	IN	JJ	VBG	NNS	CC	JJ	NN	IN	DT	JJ	NN	IN	DT	NNS	.
 NNS	IN	DT	NNS	VBP	VBN	VBN	IN	JJ	NN	NNS	VBG	DT	NNS	IN	JJ	VBG	NNS	CC	JJ	NN	IN	DT	JJ	NN	IN	DT	NNS	.
@@ -11521,15 +11404,6 @@ _	_	_	_	_	_	_	_	_	A0	_	_	AM-LOC	_	_	_	AM-MNR	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	A2	_	_	_	_
 _	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_
-
-Sharp	-	witted	and	funny	but	never	mean	,	she	's	a	memorialist	a	bit	like	Truman	Capote	,	if	he	'd	been	Jewish	and	female	and	less	bitchy	.
-RB	HYPH	VBN	CC	JJ	CC	RB	JJ	,	PRP	VBZ	DT	NN	DT	NN	IN	NNP	NNP	,	IN	PRP	MD	VBN	JJ	CC	NN	CC	RBR	JJ	.
-JJ	HYPH	VBN	CC	JJ	CC	RB	JJ	,	PRP	VBZ	DT	NN	DT	NN	IN	NNP	NNP	,	IN	PRP	MD	VBN	JJ	CC	JJ	CC	RBR	JJ	.
-3	1	11	3	4	5	6	7	11	11	0	13	11	15	16	13	18	16	18	18	22	20	22	23	24	25	26	29	27	11
-3	1	11	3	4	5	8	6	11	11	30	13	11	15	30	15	18	16	15	15	22	20	22	23	24	25	26	29	27	0
-HMOD	HYPH	ADV	COORD	CONJ	COORD	CONJ	COORD	P	SBJ	ROOT	NMOD	PRD	NMOD	PMOD	NMOD	NAME	PMOD	P	NMOD	SBJ	SUB	VC	PRD	COORD	CONJ	COORD	AMOD	CONJ	P
-HMOD	HYPH	ADV	COORD	CONJ	COORD	AMOD	CONJ	P	SBJ	NMOD	NMOD	PRD	NMOD	DEP	NMOD	NAME	PMOD	P	NMOD	SBJ	SUB	VC	PRD	COORD	CONJ	COORD	AMOD	CONJ	ROOT
-
 
 Little	Lily	,	as	Ms.	Cunningham	calls	herself	in	the	book	,	really	was	n't	ordinary	.
 NNP	NNP	,	IN	NNP	NNP	VBZ	PRP	IN	DT	NN	,	RB	VBD	RB	JJ	.
@@ -11890,15 +11764,6 @@ DEP	SBJ	ROOT	ADV	VC	AMOD	NMOD	OBJ	OPRD	IM	OBJ	PRT	P
 AM-DIS	_	_	AM-NEG	_	_	_	A1	A0	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	A1	_	_
 
-He	's	a	bore	.
-PRP	VBZ	DT	NN	.
-PRP	VBZ	DT	VBD	.
-2	0	4	2	2
-2	0	4	2	2
-SBJ	ROOT	NMOD	PRD	P
-SBJ	ROOT	SBJ	PRD	P
-
-
 Gulf	Resources	&	Chemical	Corp.	said	it	agreed	to	pay	$	1.5	million	as	part	of	an	accord	with	the	Environmental	Protection	Agency	regarding	an	environmental	cleanup	of	a	defunct	smelter	the	company	formerly	operated	in	Idaho	.
 NNP	NNP	NNP	NNP	NNP	VBD	PRP	VBD	TO	VB	$	CD	CD	IN	NN	IN	DT	NN	IN	DT	NNP	NNP	NNP	VBG	DT	JJ	NN	IN	DT	JJ	NN	DT	NN	RB	VBD	IN	NNP	.
 NNP	NNS	CC	NNP	NNP	VBD	PRP	VBD	TO	VB	$	CD	CD	IN	NN	IN	DT	NN	IN	DT	NNP	NNP	NNP	VBG	DT	JJ	NN	IN	DT	JJ	NN	DT	NN	RB	VBN	IN	NNP	.
@@ -12190,15 +12055,6 @@ _	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_	_	_	
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	A2	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	R-A1	_	A2	_	_
-
-``	Where	's	the	leadership	?
-``	WRB	VBZ	DT	NN	.
-``	WRB	VBZ	DT	NN	.
-3	3	0	5	3	3
-3	3	0	5	3	3
-P	LOC-PRD	ROOT	NMOD	SBJ	P
-P	SBJ	ROOT	NMOD	SBJ	P
-
 
 Where	's	the	guy	who	can	say	:	`	Enough	is	enough	'	''	?
 WRB	VBZ	DT	NN	WP	MD	VB	:	``	DT	VBZ	DT	''	''	.
@@ -14347,15 +14203,6 @@ _	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A3	A3	A0	A2	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	A0	_	_
 
-But	that	wo	n't	be	easy	.
-CC	DT	MD	RB	VB	JJ	.
-CC	DT	MD	RB	VB	JJ	.
-3	3	0	3	3	5	3
-3	3	0	3	3	5	3
-DEP	SBJ	ROOT	ADV	VC	PRD	P
-DEP	SBJ	ROOT	ADV	VC	PRD	P
-
-
 Networks	,	like	other	consumer	products	,	develop	images	in	peoples	'	minds	that	are	n't	easy	to	change	.
 NNS	,	IN	JJ	NN	NNS	,	VBP	NNS	IN	NNS	POS	NNS	WDT	VBP	RB	JJ	TO	VB	.
 NNS	,	IN	JJ	NN	NNS	,	VBP	NNS	IN	NNS	POS	NNS	WDT	VBP	RB	JJ	TO	VB	.
@@ -14646,15 +14493,6 @@ _	_	_	_	_	_	_	A0	AM-MOD	AM-ADV	_	_	_	A1	_	_	_	AM-MNR	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	A0	_	_	_	_	AM-MNR	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	AM-TMP	_	_	_	C-A1	_	_	_	_	_	_
 
-Some	in	the	industry	are	skeptical	.
-DT	IN	DT	NN	VBP	JJ	.
-DT	IN	DT	NN	VBP	JJ	.
-5	1	4	2	0	5	5
-5	1	4	2	0	5	5
-SBJ	LOC	NMOD	PMOD	ROOT	PRD	P
-SBJ	LOC	NMOD	PMOD	ROOT	PRD	P
-
-
 ``	I	find	it	hard	to	conceive	of	people	switching	over	to	CNN	for	what	,	at	least	in	the	public	's	mind	,	is	the	same	news	,	''	says	Reuven	Frank	,	the	former	two	-	time	president	of	NBC	News	and	creator	of	the	Huntley-Brinkley	Report	.
 ``	PRP	VBP	PRP	JJ	TO	VB	IN	NN	VBG	RB	TO	NNP	IN	WP	,	IN	JJS	IN	DT	NN	POS	NN	,	VBZ	DT	JJ	NN	,	''	VBZ	NNP	NNP	,	DT	JJ	CD	HYPH	NN	NN	IN	NNP	NNP	CC	NN	IN	DT	NNP	NNP	.
 ``	PRP	VBP	PRP	JJ	TO	VB	IN	NNS	VBG	RP	TO	NNP	IN	WP	,	IN	JJS	IN	DT	NN	POS	NN	,	VBZ	DT	JJ	NN	,	''	VBZ	NNP	NNP	,	DT	JJ	CD	HYPH	NN	NN	IN	NNP	NNP	CC	NN	IN	DT	NNP	NNP	.
@@ -14906,15 +14744,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-LOC	_	_	A0	_	_	A1	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-NEG	_	A1	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 
-Admittedly	,	the	principle	in	the	cases	is	the	same	.
-RB	,	DT	NN	IN	DT	NNS	VBZ	DT	JJ	.
-RB	,	DT	NN	IN	DT	NNS	VBZ	DT	JJ	.
-8	8	4	8	4	7	5	0	10	8	8
-8	8	4	8	4	7	5	0	10	8	8
-ADV	P	NMOD	SBJ	LOC	NMOD	PMOD	ROOT	NMOD	PRD	P
-ADV	P	NMOD	SBJ	LOC	NMOD	PMOD	ROOT	NMOD	PRD	P
-
-
 But	the	outcome	of	a	legal	dispute	almost	always	turns	on	the	facts	.
 CC	DT	NN	IN	DT	JJ	NN	RB	RB	VBZ	IN	DT	NNS	.
 CC	DT	NN	IN	DT	JJ	NN	RB	RB	VBZ	IN	DT	NNS	.
@@ -14950,15 +14779,6 @@ _	_	AM-TMP	_	_	A0	_	_	A1	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	_	AM-TMP	_	_	A0	_	_	_	_	_	_	_	_	A1	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_
-
-Charles	F.	Vihon
-NNP	NNP	NNP
-NNP	NNP	NNP
-3	3	0
-3	3	0
-NAME	NAME	ROOT
-NAME	NAME	ROOT
-
 
 Valley	Federal	Savings	&	Loan	Association	said	Imperial	Corp.	of	America	withdrew	from	regulators	its	application	to	buy	five	Valley	Federal	branches	,	leaving	the	transaction	in	limbo	.
 NNP	NNP	NNP	NNP	NNP	NNP	VBD	NNP	NNP	IN	NNP	VBD	IN	NNS	PRP$	NN	TO	VB	CD	NNP	NNP	NNS	,	VBG	DT	NN	IN	NN	.
@@ -17632,15 +17452,6 @@ _	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	AM-ADV	_	_	_	A0	AM-MOD	_	_	_	_	_	A1	_	_
 _	_	_	_	_	A2	_	_	_	_	_	A0	A1	_	_
 
-But	frequently	there	is	n't	much	choice	.
-CC	RB	EX	VBZ	RB	JJ	JJ	.
-CC	RB	EX	VBZ	RB	JJ	NN	.
-4	4	4	0	4	7	4	4
-4	4	4	0	4	7	4	4
-DEP	TMP	SBJ	ROOT	ADV	NMOD	PRD	P
-DEP	TMP	SBJ	ROOT	ADV	NMOD	PRD	P
-
-
 Thus	,	Europe	has	begun	the	recent	crusade	to	produce	more	worthy	shows	of	its	own	,	programs	with	broader	appeal	.
 RB	,	NNP	VBZ	VBN	DT	JJ	NN	TO	VB	DT	JJ	NNS	IN	PRP$	JJ	,	NNS	IN	JJR	NN	.
 RB	,	NNP	VBZ	VBN	DT	JJ	NN	TO	VB	RBR	JJ	NNS	IN	PRP$	JJ	,	NNS	IN	JJR	NN	.
@@ -18716,15 +18527,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	R-A1	_	A2	_	_	AM-TMP	AM-ADV	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	R-A1	_	_	_	_	_	_	_	AM-EXT	_	_	AM-LOC	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-LOC	_	_
 
-But	that	was	all	of	three	months	ago	.
-CC	DT	VBD	DT	IN	CD	NNS	RB	.
-CC	DT	VBD	DT	IN	CD	NNS	RB	.
-3	3	0	7	4	4	8	3	3
-3	3	9	9	4	7	5	7	0
-DEP	SBJ	ROOT	NMOD	DEP	DEP	AMOD	PRD-TMP	P
-DEP	SBJ	DEP	DEP	NMOD	NMOD	PMOD	TMP	ROOT
-
-
 Last	week	,	Microsoft	said	it	expects	revenue	for	its	first	quarter	ended	Sept.	30	to	increase	34	%	.
 JJ	NN	,	NNP	VBD	PRP	VBZ	NN	IN	PRP$	JJ	NN	VBN	NNP	CD	TO	VB	CD	NN	.
 JJ	NN	,	NNP	VBD	PRP	VBZ	NN	IN	PRP$	JJ	NN	VBN	NNP	CD	TO	VB	CD	NN	.
@@ -19371,15 +19173,6 @@ SBJ	ROOT	OPRD	NMOD	OBJ	P
 A0	_	_	_	A1	_
 A1	_	_	_	_	_
 
-So	are	Indiana	,	Ohio	and	Michigan	.
-RB	VBP	NNP	,	NNP	CC	NNP	.
-RB	VBP	NNP	,	NNP	CC	NNP	.
-2	0	2	3	3	5	6	2
-2	0	5	5	2	5	6	2
-PRD	ROOT	SBJ	P	COORD	COORD	CONJ	P
-ADV	ROOT	NMOD	P	SBJ	COORD	CONJ	P
-
-
 The	population	of	all	four	states	is	on	the	upswing	,	according	to	new	Census	Bureau	estimates	,	following	declines	throughout	the	early	1980s	.
 DT	NN	IN	DT	CD	NNS	VBZ	IN	DT	NN	,	VBG	TO	JJ	NNP	NNP	NNS	,	VBG	NNS	IN	DT	JJ	NNS	.
 DT	NN	IN	DT	CD	NNS	VBZ	IN	DT	NN	,	VBG	TO	JJ	NNP	NNP	NNS	,	VBG	NNS	IN	DT	JJ	NNS	.
@@ -19392,15 +19185,6 @@ _	A2	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	A1	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	_	A0	A2	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_	_	_	_
 _	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	_	_	_	_
-
-The	gains	,	to	be	sure	,	are	rather	small	.
-DT	NNS	,	TO	VB	JJ	,	VBP	RB	JJ	.
-DT	NNS	,	TO	VB	JJ	,	VBP	RB	JJ	.
-2	8	8	8	4	5	8	0	10	8	8
-2	8	2	2	4	5	2	0	10	8	8
-NMOD	SBJ	P	ADV	IM	PRD	P	ROOT	AMOD	PRD	P
-NMOD	SBJ	P	NMOD	IM	PRD	P	ROOT	AMOD	PRD	P
-
 
 Iowa	,	for	instance	,	saw	its	population	grow	by	11,000	people	,	or	0.4	%	,	between	1987	and	1988	,	the	Census	Bureau	says	.
 NNP	,	IN	NN	,	VBD	PRP$	NN	VB	IN	CD	NN	,	CC	CD	NN	,	IN	CD	CC	CD	,	DT	NNP	NNP	VBZ	.
@@ -19847,15 +19631,6 @@ NMOD	SBJ	ROOT	ADV	ADV	VC	SBJ	OBJ	ADV	DEP	AMOD	P
 5
 _	A0	_	AM-NEG	AM-ADV	_	_	A1	_	_	_	_
 
-Many	of	the	affluent	are	n't	comfortable	with	themselves	,	either	.
-DT	IN	DT	NN	VBP	RB	JJ	IN	PRP	,	RB	.
-DT	IN	DT	JJ	VBP	RB	JJ	IN	PRP	,	RB	.
-5	1	4	2	0	5	5	7	8	5	5	5
-5	1	4	2	0	5	5	7	8	5	5	5
-SBJ	NMOD	NMOD	PMOD	ROOT	ADV	PRD	AMOD	PMOD	P	ADV	P
-SBJ	NMOD	NMOD	PMOD	ROOT	ADV	PRD	AMOD	PMOD	P	ADV	P
-
-
 About	40	%	do	n't	feel	they	're	more	able	than	others	.
 RB	CD	NN	VBP	RB	VB	PRP	VBP	RBR	JJ	IN	NNS	.
 RB	CD	NN	VBP	RB	VB	PRP	VBP	RBR	JJ	IN	NNS	.
@@ -19892,15 +19667,6 @@ _	_	_	_	_	_	_	_	_	AM-TMP	_	_	_	_	_	A0	_	A1	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-LOC	_	A0	_	AM-MOD	_	_	_	_	A1	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_
-
-Odds	and	Ends
-NNS	CC	NNS
-NNS	CC	NNS
-0	1	2
-0	1	2
-ROOT	COORD	CONJ
-ROOT	COORD	CONJ
-
 
 THE	NUMBER	of	women	and	minorities	who	hold	jobs	in	top	management	in	the	nation	's	largest	banks	has	more	than	doubled	since	1978	.
 DT	NN	IN	NNS	CC	NNS	WP	VBP	NNS	IN	JJ	NN	IN	DT	NN	POS	JJS	NNS	VBZ	RBR	IN	VBN	IN	CD	.
@@ -20335,15 +20101,6 @@ ROOT	P	NMOD	SBJ	NMOD	ADV	ADV	VC	NMOD	NMOD	NMOD	OBJ	NMOD	NMOD	NMOD	PMOD	P
 _	_	_	A0	_	AM-NEG	AM-ADV	_	_	_	_	A1	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A2	A1	_	_	_	_
 
-Anita	Davis
-NNP	NNP
-NNP	NNP
-2	0
-2	0
-NAME	ROOT
-NAME	ROOT
-
-
 Of	all	the	ethnic	tensions	in	America	,	which	is	the	most	troublesome	right	now	?
 IN	DT	DT	JJ	NNS	IN	NNP	,	WDT	VBZ	DT	RBS	JJ	RB	RB	.
 IN	PDT	DT	JJ	NNS	IN	NNP	,	WDT	VBZ	DT	RBS	JJ	RB	RB	.
@@ -20602,15 +20359,6 @@ DEP	ADV	LGS	NMOD	PMOD	NMOD	NAME	PMOD	P	SBJ	ROOT	NMOD	NMOD	PRD	NMOD	PMOD	P
 _	_	A0	_	_	_	_	_	_	A1	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A2	A1	_	_
 
-Why	constructive	?
-WRB	JJ	.
-WRB	JJ	.
-2	0	2
-0	1	1
-DEP	ROOT	P
-ROOT	AMOD	P
-
-
 Because	despite	all	the	media	prattle	about	comedy	and	politics	not	mixing	,	they	are	similar	in	one	respect	:	Both	can	serve	as	mechanisms	for	easing	tensions	and	facilitating	the	co	-	existence	of	groups	in	conflict	.
 IN	IN	PDT	DT	NNS	NN	IN	NN	CC	NNS	RB	VBG	,	PRP	VBP	JJ	IN	CD	NN	:	DT	MD	VB	IN	NNS	IN	VBG	NNS	CC	VBG	DT	NN	HYPH	NN	IN	NNS	IN	NN	.
 IN	IN	PDT	DT	NNS	NN	IN	NN	CC	NNS	RB	VBG	,	PRP	VBP	JJ	IN	CD	NN	:	DT	MD	VB	IN	NNS	IN	VBG	NNS	CC	VBG	DT	NN	HYPH	NN	IN	NNS	IN	NN	.
@@ -20822,15 +20570,6 @@ _	_	_	A1	A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A1	AM-MOD	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	AM-MOD	_	AM-ADV	_	_
 
-So	far	,	the	bubbles	have	been	few	and	far	between	.
-IN	RB	,	DT	NNS	VBP	VBN	DT	CC	RB	RB	.
-RB	RB	,	DT	NNS	VBP	VBN	DT	CC	RB	IN	.
-2	6	6	5	6	0	6	7	8	9	10	6
-6	1	6	5	6	12	6	12	8	9	10	0
-AMOD	TMP	P	NMOD	SBJ	ROOT	VC	PRD	COORD	CONJ	AMOD	P
-TMP	AMOD	P	NMOD	SBJ	DEP	VC	DEP	COORD	CONJ	AMOD	ROOT
-
-
 Part	of	the	problem	is	the	tendency	of	all	sitcoms	,	ever	since	the	didactic	days	of	Norman	Lear	,	to	preach	about	social	issues	.
 NN	IN	DT	NN	VBZ	DT	NN	IN	DT	NNS	,	RB	IN	DT	JJ	NNS	IN	NNP	NNP	,	TO	VB	IN	JJ	NNS	.
 NN	IN	DT	NN	VBZ	DT	NN	IN	DT	NNS	,	RB	IN	DT	JJ	NNS	IN	NNP	NNP	,	TO	VBP	IN	JJ	NNS	.
@@ -21034,15 +20773,6 @@ _	_	R-A1	_	A0	_	AM-TMP	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	AM-TMP	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	AM-ADV	_	_	A2	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	A3	_
-
-There	is	nothing	wrong	with	the	economy	...	all	the	indices	are	up	.	''
-EX	VBZ	NN	JJ	IN	DT	NN	:	PDT	DT	NNS	VBP	RB	.	''
-EX	VBZ	NN	JJ	IN	DT	NN	:	PDT	DT	NNS	VBP	IN	.	''
-2	0	2	3	4	7	5	2	11	11	12	2	12	2	2
-2	0	2	3	4	7	5	2	11	11	12	2	12	2	2
-SBJ	ROOT	PRD	APPO	AMOD	NMOD	PMOD	P	NMOD	NMOD	SBJ	COORD	PRD	P	P
-SBJ	ROOT	PRD	APPO	AMOD	NMOD	PMOD	P	NMOD	NMOD	SBJ	COORD	PRD	P	P
-
 
 Heard	that	before	?
 VBN	DT	RB	.
@@ -22259,24 +21989,6 @@ NMOD	SBJ	ROOT	NMOD	NMOD	NMOD	OBJ	P
 2
 _	A0	_	_	_	_	A1	_
 
-Reva	Levin
-NNP	NNP
-NNP	NNP
-2	0
-2	0
-NAME	ROOT
-NAME	ROOT
-
-
-Cambridge	,	Mass	.
-NNP	,	NNP	.
-NNP	,	NNP	.
-3	3	0	3
-3	3	0	3
-NMOD	P	ROOT	P
-NMOD	P	ROOT	P
-
-
 BULL	HN	INFORMATION	SYSTEMS	Inc.	is	a	U.S.	majority	-	owned	unit	of	Cie.	des	Machines	Bull	.
 NNP	NNP	NNP	NNS	NNP	VBZ	DT	NNP	NN	HYPH	VBN	NN	IN	NNP	NNP	NNP	NNP	.
 NNP	NNP	NNP	NNS	NNP	VBZ	DT	NNP	NN	HYPH	VBN	NN	IN	NNP	NNP	NNS	NNP	.
@@ -22366,15 +22078,6 @@ NMOD	NMOD	SBJ	ROOT	ADV	PRD	AMOD	PMOD	NMOD	NMOD	PMOD	P
 2	7
 _	A2	A0	_	_	_	_	_	_	_	_	_
 _	_	A0	_	_	_	_	_	A1	_	_	_
-
-FRANKLIN	SAVINGS	ASSOCIATION	(	Ottawa	,	Kan.	)	--
-NNP	NNS	NNP	(	NNP	,	NNP	)	:
-NNP	NNS	NNP	(	NNP	,	NNP	)	:
-3	3	0	7	7	7	3	7	3
-2	9	9	5	7	5	9	7	0
-NAME	NAME	ROOT	P	NMOD	P	APPO	P	P
-NAME	NMOD	NMOD	P	PRN	P	PRN	P	ROOT
-
 
 Moody	's	Investors	Service	Inc.	said	it	downgraded	its	rating	to	B	-	2	from	Ba-3	on	less	than	$	20	million	of	this	thrift	's	senior	subordinated	notes	.
 NNP	POS	NNP	NNP	NNP	VBD	PRP	VBD	PRP$	NN	TO	NN	HYPH	CD	IN	JJ	IN	JJR	IN	$	CD	CD	IN	DT	NN	POS	JJ	JJ	NNS	.
@@ -22482,15 +22185,6 @@ _	_	R-A1	_	_	_	A0	_	_	_	_	A3	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	R-A1	_	AM-TMP	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	R-A1	A0	AM-MOD	_	_
-
-Joseph	Granville	.
-NNP	NNP	.
-NNP	NNP	.
-2	0	2
-2	0	2
-NAME	ROOT	P
-NAME	ROOT	P
-
 
 ``	I	'm	the	only	one	who	said	there	would	be	an	October	massacre	,	all	through	late	August	and	September	,	''	says	Mr.	Granville	,	once	a	widely	followed	market	guru	and	still	a	well	-	known	newsletter	writer	.
 ``	PRP	VBP	DT	JJ	CD	WP	VBD	EX	MD	VB	DT	NNP	NN	,	RB	IN	JJ	NNP	CC	NNP	,	''	VBZ	NNP	NNP	,	RB	DT	RB	VBN	NN	NN	CC	RB	DT	RB	HYPH	VBN	NN	NN	.
@@ -22602,15 +22296,6 @@ _	_	A0	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	_	A0	_	_	_	_	_	_	_	AM-NEG	_	A1	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	A2	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	R-A1	_	_	A0	_	_	_	_
-
-Elaine	Garzarelli	.
-NNP	NNP	.
-NNP	NNP	.
-2	0	2
-2	0	2
-NAME	ROOT	P
-NAME	ROOT	P
-
 
 A	quantitative	analyst	with	Shearson	Lehman	Hutton	Inc.	,	Ms.	Garzarelli	had	warned	clients	to	take	their	money	out	of	the	market	before	the	1987	crash	.
 DT	JJ	NN	IN	NNP	NNP	NNP	NNP	,	NNP	NNP	VBD	VBN	NNS	TO	VB	PRP$	NN	IN	IN	DT	NN	IN	DT	CD	NN	.
@@ -22739,15 +22424,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	AM-TMP	A1	A2	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_	_	_	_
 
-Ned	Davis	.
-NNP	NNP	.
-NNP	NNP	.
-2	0	2
-2	0	2
-NAME	ROOT	P
-NAME	ROOT	P
-
-
 Friday	's	fall	marks	the	start	of	a	bear	market	,	says	Mr.	Davis	,	president	of	Ned	Davis	Research	Inc	.
 NNP	POS	NN	VBZ	DT	NN	IN	DT	NN	NN	,	VBZ	NNP	NNP	,	NN	IN	NNP	NNP	NNP	NNP	.
 NNP	POS	NN	VBZ	DT	NN	IN	DT	NN	NN	,	VBZ	NNP	NNP	,	NN	IN	NNP	NNP	NNP	NNP	.
@@ -22820,15 +22496,6 @@ _	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A2	_	A1	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A3	_	_	_	_	A1	A2	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_
-
-A	hundred	billion	dollars	in	stock	was	subject	''	to	it	.
-DT	CD	CD	NNS	IN	NN	VBD	JJ	''	TO	PRP	.
-DT	CD	CD	NNS	IN	NN	VBD	JJ	''	TO	PRP	.
-4	1	1	7	4	5	0	7	8	8	10	7
-4	3	4	7	4	5	0	7	7	7	10	7
-NMOD	DEP	DEP	SBJ	NMOD	PMOD	ROOT	PRD	P	AMOD	PMOD	P
-NMOD	NMOD	NMOD	SBJ	NMOD	PMOD	ROOT	PRD	P	ADV	PMOD	P
-
 
 In	1987	,	such	selling	contributed	to	a	snowball	effect	.
 IN	CD	,	DT	NN	VBD	TO	DT	NN	NN	.
@@ -22931,15 +22598,6 @@ ROOT	SBJ	ROOT	SBJ	OBJ	NMOD	PRD	P	P
 _	A0	_	_	A1	_	_	_	_
 _	_	_	_	_	A0	A1	_	_
 
-Leon	G.	Cooperman	.
-NNP	NNP	NNP	.
-NNP	NNP	NNP	.
-3	3	0	3
-3	3	0	3
-NAME	NAME	ROOT	P
-NAME	NAME	ROOT	P
-
-
 ``	I	do	n't	think	the	market	is	going	through	another	October	'87	.
 ``	PRP	VBP	RB	VB	DT	NN	VBZ	VBG	IN	DT	NNP	CD	.
 ``	PRP	VBP	RB	VB	DT	NN	VBZ	VBG	IN	DT	NNP	CD	.
@@ -23016,15 +22674,6 @@ ADV	PMOD	P	NMOD	SBJ	ROOT	VC	VC	NMOD	TMP	P
 _	_	_	A1	A2	_	_	_	_	_	_
 AM-ADV	_	_	_	A1	_	_	_	_	AM-TMP	_
 
-Unlike	1987	,	the	dollar	has	been	strong	.
-IN	CD	,	DT	NN	VBZ	VBN	JJ	.
-IN	CD	,	DT	NN	VBZ	VBN	JJ	.
-6	1	6	5	6	0	6	7	6
-6	1	6	5	6	0	6	7	6
-ADV	PMOD	P	NMOD	SBJ	ROOT	VC	PRD	P
-ADV	PMOD	P	NMOD	SBJ	ROOT	VC	PRD	P
-
-
 And	unlike	1987	,	the	economy	does	n't	appear	to	be	in	any	danger	of	overheating	.
 CC	IN	CD	,	DT	NN	VBZ	RB	VB	TO	VB	IN	DT	NN	IN	VBG	.
 CC	IN	CD	,	DT	NN	VBZ	RB	VB	TO	VB	IN	DT	NN	IN	VBG	.
@@ -23050,15 +22699,6 @@ _	_	_	_	_	_	_	A0	AM-DIS	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A0	A1	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	A0	_	_
-
-``	So	it	's	a	very	mixed	bag	.	''
-``	IN	PRP	VBZ	DT	RB	JJ	NN	.	''
-``	IN	PRP	VBZ	DT	RB	JJ	NN	.	''
-4	4	4	0	8	7	8	4	4	4
-4	4	4	0	8	7	8	4	4	4
-P	DEP	SBJ	ROOT	NMOD	AMOD	NMOD	PRD	P	P
-P	DEP	SBJ	ROOT	NMOD	AMOD	NMOD	PRD	P	P
-
 
 Thus	,	he	concludes	,	``	This	is	not	a	good	environment	to	be	fully	invested	''	in	stocks	.
 RB	,	PRP	VBZ	,	``	DT	VBZ	RB	DT	JJ	NN	TO	VB	RB	VBN	''	IN	NNS	.
@@ -23109,15 +22749,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 A0	_	AM-MOD	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	A1	R-A1	_	A2	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	A1	R-A1	_	_	_	AM-TMP	_
-
-John	Kenneth	Galbraith	.
-NNP	NNP	NNP	.
-NNP	NNP	NNP	.
-3	3	0	3
-3	3	0	3
-NAME	NAME	ROOT	P
-NAME	NAME	ROOT	P
-
 
 ``	This	is	the	latest	manifestation	of	the	capacity	of	the	financial	community	for	recurrent	insanity	,	''	says	Mr.	Galbraith	,	an	economist	.
 ``	DT	VBZ	DT	JJS	NN	IN	DT	NN	IN	DT	JJ	NN	IN	JJ	NN	,	''	VBZ	NNP	NNP	,	DT	NN	.
@@ -23210,15 +22841,6 @@ _	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	AM-MOD	_	_	_
 
-Mario	Gabelli	.
-NNP	NNP	.
-NNP	NNP	.
-2	0	2
-2	0	2
-NAME	ROOT	P
-NAME	ROOT	P
-
-
 New	York	money	manager	Mario	Gabelli	,	an	expert	at	spotting	takeover	candidates	,	says	that	takeovers	are	n't	totally	gone	.
 NNP	NNP	NN	NN	NNP	NNP	,	DT	NN	IN	VBG	NN	NNS	,	VBZ	IN	NNS	VBP	RB	RB	VBN	.
 NNP	NNP	NN	NN	NNP	NNP	,	DT	NN	IN	VBG	NN	NNS	,	VBZ	IN	NNS	VBP	RB	RB	VBN	.
@@ -23310,15 +22932,6 @@ P	SBJ	SBJ	NMOD	VC	PRT	PMOD	ADV	NMOD	NMOD	PMOD	OBJ	NMOD	NMOD	PRD	P	NMOD	NMOD	APPO
 _	A1	R-A1	_	_	A2	_	AM-CAU	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	A1	_	_	_	_	_	A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_
-
-Jim	Rogers	.
-NNP	NNP	.
-NNP	NNP	.
-2	0	2
-2	0	2
-NAME	ROOT	P
-NAME	ROOT	P
-
 
 ``	It	seems	to	me	that	this	is	the	pin	that	has	finally	pricked	the	balloon	,	''	says	Mr.	Rogers	,	a	professor	of	finance	at	Columbia	University	and	former	co	-	manager	of	one	of	the	most	successful	hedge	funds	in	history	,	Quantum	Fund	.
 ``	PRP	VBZ	TO	PRP	IN	DT	VBZ	DT	NN	WDT	VBZ	RB	VBN	DT	NN	,	''	VBZ	NNP	NNP	,	DT	NN	IN	NN	IN	NNP	NNP	CC	JJ	NN	HYPH	NN	IN	CD	IN	DT	RBS	JJ	NN	NNS	IN	NN	,	NNP	NNP	.
@@ -23417,15 +23030,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	R-A0	AM-TMP	_	AM-MNR	AM-TMP	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	A2	_
 
-Frank	Curzio	.
-NNP	NNP	.
-NNP	NNP	.
-2	0	2
-2	0	2
-NAME	ROOT	P
-NAME	ROOT	P
-
-
 Many	people	now	claim	to	have	predicted	the	1987	crash	.
 DT	NN	RB	VBP	TO	VB	VBN	DT	CD	NN	.
 DT	NNS	RB	VBP	TO	VB	VBN	DT	CD	NN	.
@@ -23487,15 +23091,6 @@ ADV	ADV	P	P	SBJ	ROOT	VC	DIR	PMOD	TMP	AMOD	P	P
 ADV	ADV	P	P	SBJ	ROOT	VC	DIR	PMOD	TMP	AMOD	P	P
 6
 AM-ADV	_	_	_	A1	AM-MOD	_	A4	_	AM-TMP	_	_	_
-
-Frank	W.	Terrizzi	.
-NNP	NNP	NNP	.
-NNP	NNP	NNP	.
-3	3	0	3
-3	3	0	3
-NAME	NAME	ROOT	P
-NAME	NAME	ROOT	P
-
 
 Stock	prices	``	would	still	have	to	go	down	some	additional	amount	before	we	become	positive	on	stocks	,	''	says	Mr.	Terrizzi	,	president	and	managing	director	of	Renaissance	Investment	Management	Inc.	in	Cincinnati	.
 NN	NNS	``	MD	RB	VB	TO	VB	RB	DT	JJ	NN	IN	PRP	VBP	JJ	IN	NNS	,	''	VBZ	NNP	NNP	,	NN	CC	NN	NN	IN	NNP	NNP	NNP	NNP	IN	NNP	.
@@ -23596,15 +23191,6 @@ ROOT	P	NMOD	TITLE	SBJ	COORD	NMOD	OBJ	NMOD	NMOD	PMOD	PRP	IM	NMOD	NMOD	OBJ	P
 _	_	_	_	A0	_	_	A1	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	A0	_	_	A1	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	A1	_
-
-Yes	,	he	did	.
-UH	,	PRP	VBD	.
-NN	,	PRP	VBD	.
-4	4	4	0	4
-4	4	4	0	4
-DEP	P	SBJ	ROOT	P
-SBJ	P	SBJ	ROOT	P
-
 
 As	I	watched	him	on	C	-	Span	,	I	heard	him	speak	those	lovely	words	about	the	Bill	of	Rights	,	which	he	quotes	from	the	transcript	of	the	hearings	.
 IN	PRP	VBD	PRP	IN	NNP	HYPH	NNP	,	PRP	VBD	PRP	VB	DT	JJ	NNS	IN	DT	NNP	IN	NNPS	,	WDT	PRP	VBZ	IN	DT	NN	IN	DT	NNS	.
@@ -23707,15 +23293,6 @@ NMOD	ROOT	COORD	SBJ	ADV	CONJ	SBJ	OBJ	ADV	NMOD	PRD	P	COORD	P	P
 1	5
 A1	A0	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	A0	_	_	AM-MNR	_	_	A1	_	_	_	_	_	_	_
-
-Absolute	rubbish	.
-JJ	NN	.
-WP	NN	.
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NMOD	ROOT	P
-
 
 By	any	``	reasonable	man	''	criterion	,	Mr.	Lantos	and	his	colleagues	have	a	whole	bunch	of	people	tried	and	convicted	.
 IN	DT	``	JJ	NN	''	NN	,	NNP	NNP	CC	PRP$	NNS	VBP	DT	JJ	NN	IN	NN	VBN	CC	VBN	.
@@ -23954,15 +23531,6 @@ _	AM-DIS	_	_	A0	_	AM-DIS	_	_	A1	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A0	R-A0	_	_	_	A1	_	_
 _	_	_	_	_	_	_	_	_	A0	_	_	_	_	A1	_	_
 
-The	system	is	the	problem	,	not	an	individual	member	.
-DT	NN	VBZ	DT	NN	,	RB	DT	JJ	NN	.
-DT	NN	VBZ	DT	NN	,	RB	DT	JJ	NN	.
-2	3	0	5	3	3	10	10	10	3	3
-2	3	0	5	3	5	5	10	10	5	3
-NMOD	SBJ	ROOT	NMOD	PRD	P	DEP	NMOD	NMOD	DEP	P
-NMOD	SBJ	ROOT	NMOD	PRD	P	NMOD	NMOD	NMOD	APPO	P
-
-
 Individuals	can	always	have	their	hands	slapped	.
 NNS	MD	RB	VB	PRP$	NNS	VBD	.
 NNS	MD	RB	VB	PRP$	NNS	VBD	.
@@ -24028,24 +23596,6 @@ _	_	AM-TMP	A0	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	R-AM-TMP	_	_	_	_	_	A0	_	_	A1	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_
-
-Raymond	Weber
-NNP	NNP
-NNP	NNP
-2	0
-2	0
-NAME	ROOT
-NAME	ROOT
-
-
-Parsippany	,	N.J	.
-NNP	,	NNP	.
-NNP	,	NNP	.
-3	3	0	3
-3	3	0	3
-NMOD	P	ROOT	P
-NMOD	P	ROOT	P
-
 
 I	disagree	with	the	statement	by	Mr.	Lantos	that	one	should	not	draw	an	adverse	inference	against	former	HUD	officials	who	assert	their	Fifth	Amendment	privilege	against	self	-	incrimination	in	congressional	hearings	.
 PRP	VBP	IN	DT	NN	IN	NNP	NNP	IN	PRP	MD	RB	VB	DT	JJ	NN	IN	JJ	NNP	NNS	WP	VBP	PRP$	NN	NN	NN	IN	NN	HYPH	NN	IN	JJ	NNS	.
@@ -24138,15 +23688,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	R-AM-LOC	_	A1	_	_	A0	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	A1	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_
-
-Baxter	v.	Palmingiano	,	425	U.S.	308	(	1976	)	.
-NNP	IN	NNP	,	CD	NN	CD	(	CD	)	.
-NNP	NNP	NNP	,	CD	NNP	CD	(	CD	)	.
-7	1	2	7	7	7	0	9	7	9	7
-3	3	0	3	9	9	6	9	3	9	3
-NMOD	NMOD	PMOD	P	NMOD	NMOD	ROOT	P	PRN	P	P
-NAME	NAME	ROOT	P	NMOD	NMOD	NMOD	P	APPO	P	P
-
 
 Thus	,	in	a	civil	case	,	a	defendant	may	be	called	as	a	witness	,	he	may	be	forced	to	testify	or	take	the	Fifth	,	and	his	taking	of	the	Fifth	may	permit	the	drawing	of	an	adverse	inference	against	him	in	the	civil	matter	.
 RB	,	IN	DT	JJ	NN	,	DT	NN	MD	VB	VBN	IN	DT	NN	,	PRP	MD	VB	VBN	TO	VB	CC	VB	DT	NN	,	CC	PRP$	NN	IN	DT	NN	MD	VB	DT	NN	IN	DT	JJ	NN	IN	PRP	IN	DT	JJ	NN	.
@@ -24275,24 +23816,6 @@ A0	_	_	_	_	_	_	_	_	_	AM-NEG	_	_	_	_	A1	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	A2	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_
 
-Clark	S.	Spalsbury	Jr	.
-NNP	NNP	NNP	NNP	.
-NNP	NNP	NNP	NNP	.
-3	3	0	3	3
-3	3	0	3	3
-NAME	NAME	ROOT	POSTHON	P
-NAME	NAME	ROOT	POSTHON	P
-
-
-Estes	Park	,	Colo	.
-NNP	NNP	,	NNP	.
-NNS	NNP	,	NNP	.
-2	4	4	0	4
-4	4	4	0	4
-NAME	NMOD	P	ROOT	P
-NMOD	NMOD	P	ROOT	P
-
-
 It	was	Friday	the	13th	,	and	the	stock	market	plummeted	nearly	200	points	.
 PRP	VBD	NNP	DT	NNP	,	CC	DT	NN	NN	VBD	CD	CD	NNS	.
 PRP	VBD	NNP	DT	NNP	,	CC	DT	NN	NN	VBD	CD	CD	NNS	.
@@ -24302,15 +23825,6 @@ SBJ	ROOT	NMOD	NMOD	PRD	P	COORD	NMOD	NMOD	SBJ	CONJ	DEP	NMOD	EXT	P
 SBJ	ROOT	NAME	NMOD	PRD	P	COORD	NMOD	NMOD	SBJ	CONJ	DEP	NMOD	EXT	P
 10
 _	_	_	_	_	_	_	_	_	A1	_	_	_	A2	_
-
-Just	a	coincidence	?
-RB	DT	NN	.
-RB	DT	NN	.
-3	3	0	3
-3	3	0	3
-NMOD	NMOD	ROOT	P
-NMOD	NMOD	ROOT	P
-
 
 Or	is	triskaidekaphobia	--	fear	of	the	number	13	--	justified	?
 CC	VBZ	NN	:	NN	IN	DT	NN	CD	:	VBN	.
@@ -24467,15 +23981,6 @@ _	_	_	_	_	A0	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	A1	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A3	A3	A0	A1	_	_	A2	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-LOC	_	_	_	_	_	_	_
-
-``	It	was	{	like	}	the	Friday	before	Black	Monday	''	two	years	ago	.
-``	PRP	VBD	(	IN	)	DT	NNP	IN	NNP	NNP	''	CD	NNS	RB	.
-``	PRP	VBD	(	IN	)	DT	NNP	IN	NNP	NNP	''	CD	NNS	RB	.
-3	3	0	5	3	5	8	5	8	11	9	8	14	15	8	3
-16	3	16	3	3	3	8	3	3	11	16	11	14	15	11	0
-P	SBJ	ROOT	P	PRD	P	NMOD	PMOD	TMP	NAME	PMOD	P	NMOD	AMOD	TMP	P
-DEP	SBJ	DEP	P	ADV	P	NMOD	PRD	TMP	NAME	DEP	P	NMOD	AMOD	TMP	ROOT
-
 
 Whether	unanswered	phone	calls	had	any	effect	or	not	,	Nasdaq	stocks	sank	far	less	than	those	on	the	New	York	and	American	exchanges	.
 IN	JJ	NN	NNS	VBD	DT	NN	CC	RB	,	NNP	NNS	VBD	RB	JJR	IN	DT	IN	DT	NNP	NNP	CC	JJ	NNS	.
@@ -24651,15 +24156,6 @@ _	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	C-A1	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A1	A0	_	_	_	_	_	_	_
-
-It	was	n't	intentional	,	we	were	all	busy	.	''
-PRP	VBD	RB	JJ	,	PRP	VBD	RB	JJ	.	''
-PRP	VBD	RB	JJ	,	PRP	VBD	DT	JJ	.	''
-2	0	2	2	2	7	2	7	7	2	2
-2	7	2	2	7	7	0	7	7	7	7
-SBJ	ROOT	ADV	PRD	P	SBJ	COORD	ADV	PRD	P	P
-SBJ	OBJ	ADV	PRD	P	SBJ	ROOT	DEP	PRD	P	P
-
 
 James	Tarantino	,	head	of	OTC	trading	at	Hambrecht	&	Quist	in	San	Francisco	,	said	,	``	It	was	just	like	two	years	ago	.
 NNP	NNP	,	NN	IN	NNP	NN	IN	NNP	NNP	NNP	IN	NNP	NNP	,	VBD	,	``	PRP	VBD	RB	IN	CD	NNS	RB	.
@@ -24966,15 +24462,6 @@ _	_	_	_	A1	_	_	_	_	_	_	AM-TMP	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	A0	_	_	_	_	_	_	_	_
 AM-CAU	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	A1	_	_	_	_
 
-But	they	are	worried	.
-CC	PRP	VBP	JJ	.
-CC	PRP	VBP	VBN	.
-3	3	0	3	3
-3	3	0	3	3
-DEP	SBJ	ROOT	PRD	P
-DEP	SBJ	ROOT	VC	P
-
-
 ``	We	were	just	starting	to	get	the	public	's	confidence	back	,	''	lamented	Mr.	Mullins	of	Dean	Witter	.
 ``	PRP	VBD	RB	VBG	TO	VB	DT	NN	POS	NN	RP	,	''	VBD	NNP	NNP	IN	NNP	NNP	.
 ``	PRP	VBD	RB	VBG	TO	VB	DT	NN	POS	NN	RB	,	''	VBD	NNP	NNP	IN	NNP	NNP	.
@@ -25230,15 +24717,6 @@ NAME	SBJ	P	ROOT	DEP	EXT	P	COORD	NMOD	CONJ	P	DIR	DEP	PMOD	P
 _	A1	_	_	_	A2	_	_	_	_	_	A4	_	_	_
 _	A1	_	_	_	_	_	_	_	_	_	_	_	_	_
 
-The	turnover	in	both	issues	was	roughly	normal	.
-DT	NN	IN	DT	NNS	VBD	RB	JJ	.
-DT	NN	IN	DT	NNS	VBD	RB	JJ	.
-2	6	2	5	3	0	8	6	6
-2	6	2	5	3	0	8	6	6
-NMOD	SBJ	LOC	NMOD	PMOD	ROOT	AMOD	PRD	P
-NMOD	SBJ	LOC	NMOD	PMOD	ROOT	AMOD	PRD	P
-
-
 On	a	day	when	negative	takeover	-	related	news	did	n't	sit	well	with	investors	,	Commercial	Intertech	,	a	maker	of	engineered	metal	parts	,	said	Haas	&	Partners	advised	it	that	it	does	n't	plan	to	pursue	its	previously	reported	$	27.50	-	a	-	share	bid	to	buy	the	company	.
 IN	DT	NN	WRB	JJ	NN	HYPH	VBN	NN	VBD	RB	VB	RB	IN	NNS	,	NNP	NNP	,	DT	NN	IN	VBN	NN	NNS	,	VBD	NNP	NNP	NNP	VBD	PRP	IN	PRP	VBZ	RB	VB	TO	VB	PRP$	RB	VBN	$	CD	HYPH	DT	HYPH	NN	NN	TO	VB	DT	NN	.
 IN	DT	NN	WRB	JJ	NN	HYPH	VBN	NN	VBD	RB	VB	RB	IN	NNS	,	NNP	NNP	,	DT	NN	IN	VBN	NN	NNS	,	VBD	NNP	CC	NNS	VBD	PRP	IN	PRP	VBZ	RB	VB	TO	VB	PRP$	RB	VBN	$	NN	HYPH	DT	HYPH	NN	NN	TO	VB	DT	NN	.
@@ -25306,15 +24784,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	A2	A4	_	_	_	_	_	_	_	_	_	_	_
 AM-LOC	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	A2	A4	_	_	_
 
-Friday	,	October	13	,	1989
-NNP	,	NNP	CD	,	CD
-NNP	,	NNP	CD	,	CD
-0	1	1	3	1	1
-0	1	1	3	3	3
-ROOT	P	NMOD	NMOD	P	NMOD
-ROOT	P	APPO	NMOD	P	NMOD
-
-
 The	key	U.S.	and	foreign	annual	interest	rates	below	are	a	guide	to	general	levels	but	do	n't	always	represent	actual	transactions	.
 DT	NN	NNP	CC	JJ	JJ	NN	NNS	RB	VBP	DT	NN	TO	JJ	NNS	CC	VBP	RB	RB	VB	JJ	NNS	.
 DT	NN	NNP	CC	JJ	JJ	NN	NNS	RB	VBP	DT	NN	TO	JJ	NNS	CC	VBP	RB	RB	VB	JJ	NNS	.
@@ -25327,24 +24796,6 @@ _	_	AM-LOC	_	_	AM-TMP	A1	A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A0	A2	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_	_	AM-NEG	AM-TMP	_	_	A1	_
 
-PRIME	RATE	:
-JJ	NN	:
-NNP	NN	:
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NMOD	ROOT	P
-
-
-10	1\/2	%	.
-CD	CD	NN	.
-CD	CD	NN	.
-2	3	0	3
-2	3	0	3
-DEP	NMOD	ROOT	P
-DEP	NMOD	ROOT	P
-
-
 The	base	rate	on	corporate	loans	at	large	U.S.	money	center	commercial	banks	.
 DT	JJ	NN	IN	JJ	NNS	IN	JJ	NNP	NN	NN	JJ	NNS	.
 DT	NN	NN	IN	JJ	NNS	IN	JJ	NNP	NN	NN	JJ	NNS	.
@@ -25356,15 +24807,6 @@ NMOD	NMOD	ROOT	NMOD	NMOD	PMOD	LOC	NMOD	NMOD	NMOD	NMOD	NMOD	PMOD	P
 _	_	A2	A1	_	_	_	_	_	_	_	_	_	_
 _	_	A4	_	A2	_	A0	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A3	A1	_	_	_
-
-FEDERAL	FUNDS	:
-JJ	NNS	:
-JJ	NNS	:
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NMOD	ROOT	P
-
 
 8	13\/16	%	high	,	8	1\/2	%	low	,	8	5\/8	%	near	closing	bid	,	8	3\/4	%	offered	.
 CD	CD	NN	JJ	,	CD	CD	NN	JJ	,	CD	CD	NN	IN	NN	NN	,	CD	CD	NN	VBN	.
@@ -25389,33 +24831,6 @@ A1	_	A2	_	_	AM-PNC	_	_	AM-MNR	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	AM-TMP	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_
 
-Source	:	Fulton	Prebon	(	U.S.A	.	)	Inc	.
-NN	:	NNP	NNP	(	NNP	.	)	NNP	.
-NN	:	NNP	NNP	(	NNP	.	)	NNP	.
-0	1	4	1	6	4	6	6	4	1
-0	1	4	1	6	4	6	6	4	1
-ROOT	P	NAME	APPO	P	PRN	P	P	POSTHON	P
-ROOT	P	NAME	APPO	P	PRN	P	P	POSTHON	P
-
-
-DISCOUNT	RATE	:
-NN	NN	:
-NN	NN	:
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NMOD	ROOT	P
-
-
-7	%	.
-CD	NN	.
-CD	NN	.
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NMOD	ROOT	P
-
-
 The	charge	on	loans	to	depository	institutions	by	the	New	York	Federal	Reserve	Bank	.
 DT	NN	IN	NNS	TO	NN	NNS	IN	DT	NNP	NNP	NNP	NNP	NNP	.
 DT	NN	IN	NNS	TO	NN	NNS	IN	DT	NNP	NNP	NNP	NNP	NNP	.
@@ -25427,24 +24842,6 @@ NMOD	ROOT	NMOD	PMOD	NMOD	NMOD	PMOD	NMOD	NMOD	NAME	NAME	NAME	NAME	PMOD	P
 _	A1	A3	_	_	_	_	A0	_	_	_	_	_	_	_
 _	_	_	_	A2	_	_	A0	_	_	_	_	_	_	_
 _	_	_	_	_	A1	_	_	_	_	_	_	_	_	_
-
-CALL	MONEY	:
-NN	NN	:
-NN	NN	:
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NMOD	ROOT	P
-
-
-9	3\/4	%	to	10	%	.
-CD	CD	NN	TO	CD	NN	.
-CD	CD	NN	TO	CD	NN	.
-6	6	6	6	6	0	6
-6	6	6	6	6	0	6
-DEP	DEP	DEP	DEP	DEP	ROOT	P
-DEP	DEP	NMOD	NMOD	NMOD	ROOT	P
-
 
 The	charge	on	loans	to	brokers	on	stock	exchange	collateral	.
 DT	NN	IN	NNS	TO	NNS	IN	NN	NN	NN	.
@@ -25470,15 +24867,6 @@ NMOD	ROOT	APPO	MNR	LGS	NMOD	PMOD	NAME	APPO	P
 A1	_	_	_	A0	_	_	_	_	_
 _	A1	_	AM-MNR	A0	_	_	_	_	_
 
-8.60	%	30	to	44	days	;	8.55	%	45	to	59	days	;	8.375	%	60	to	79	days	;	8.50	%	80	to	89	days	;	8.25	%	90	to	119	days	;	8.125	%	120	to	149	days	;	8	%	150	to	179	days	;	7.625	%	180	to	270	days	.
-CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	.
-CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	:	CD	NN	CD	TO	CD	NNS	.
-2	6	5	5	6	55	55	9	13	12	12	13	55	55	16	20	19	19	20	55	55	23	27	26	26	27	55	55	30	34	33	33	34	55	55	37	41	40	40	41	55	55	44	48	47	47	48	55	55	51	55	54	54	55	0	55
-2	6	5	5	6	0	6	9	13	12	12	13	6	6	16	20	19	19	20	6	6	23	27	26	26	27	6	6	30	34	33	33	34	6	6	37	41	40	40	41	6	6	44	48	47	47	48	6	6	51	55	54	54	55	6	6
-NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	ROOT	P
-NMOD	NMOD	DEP	DEP	NMOD	ROOT	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P	NMOD	NMOD	DEP	DEP	NMOD	NMOD	P
-
-
 COMMERCIAL	PAPER	:
 JJ	NN	:
 JJ	NN	:
@@ -25501,15 +24889,6 @@ _	_	_	_	A1	_	AM-MNR	_	A0	_	_	AM-MNR	_	_	_	_	_
 _	_	_	_	A1	_	_	A0	_	_	_	_	_	_	_	_	_
 _	_	_	_	A1	_	_	_	_	_	_	_	_	A2	_	_	_
 
-8.65	%	30	days	;	8.55	%	60	days	;	8.55	%	90	days	.
-CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	.
-CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	.
-2	4	4	14	14	7	9	9	14	14	12	14	14	0	14
-2	4	4	0	4	7	9	9	4	4	12	14	14	4	4
-NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	ROOT	P
-NMOD	NMOD	NMOD	ROOT	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P
-
-
 CERTIFICATES	OF	DEPOSIT	:
 NNS	IN	NN	:
 NNS	IN	NN	:
@@ -25519,15 +24898,6 @@ ROOT	NMOD	PMOD	P
 ROOT	NMOD	PMOD	P
 0
 _	A1	_	_
-
-8.15	%	one	month	;	8.15	%	two	months	;	8.13	%	three	months	;	8.11	%	six	months	;	8.08	%	one	year	.
-CD	NN	CD	NN	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NN	.
-CD	NN	CD	NN	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NN	.
-2	4	4	24	24	7	9	9	24	24	12	14	14	24	24	17	19	19	24	24	22	24	24	0	24
-2	4	4	0	4	7	9	9	4	4	12	14	14	4	4	17	19	19	4	4	22	24	24	4	4
-NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	ROOT	P
-NMOD	NMOD	NMOD	ROOT	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P
-
 
 Average	of	top	rates	paid	by	major	New	York	banks	on	primary	new	issues	of	negotiable	C.D.s	,	usually	on	amounts	of	$	1	million	and	more	.
 NN	IN	JJ	NNS	VBN	IN	JJ	NNP	NNP	NNS	IN	JJ	JJ	NNS	IN	JJ	NNS	,	RB	IN	NNS	IN	$	CD	CD	CC	DT	.
@@ -25543,33 +24913,6 @@ A1	_	_	_	_	A0	_	_	_	_	AM-MNR	_	_	_	_	_	_	_	AM-TMP	A2	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_	_	_	_	_
 
-The	minimum	unit	is	$	100,000	.
-DT	JJ	NN	VBZ	$	CD	.
-DT	JJ	NN	VBZ	$	CD	.
-3	3	4	0	4	5	4
-3	3	4	0	4	5	4
-NMOD	NMOD	SBJ	ROOT	PRD	NMOD	P
-NMOD	NMOD	SBJ	ROOT	PRD	NMOD	P
-
-
-Typical	rates	in	the	secondary	market	:
-JJ	NNS	IN	DT	JJ	NN	:
-JJ	NNS	IN	DT	JJ	NN	:
-2	0	2	6	6	3	2
-2	0	2	6	6	3	2
-NMOD	ROOT	LOC	NMOD	NMOD	PMOD	P
-NMOD	ROOT	LOC	NMOD	NMOD	PMOD	P
-
-
-8.65	%	one	month	;	8.65	%	three	months	;	8.55	%	six	months	.
-CD	NN	CD	NN	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	.
-CD	NN	CD	NN	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	.
-2	4	4	14	14	7	9	9	14	14	12	14	14	0	14
-2	4	4	14	4	7	9	9	4	4	12	4	14	0	14
-NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	ROOT	P
-NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	APPO	NMOD	ROOT	P
-
-
 BANKERS	ACCEPTANCES	:
 NNS	NNS	:
 NNS	NNS	:
@@ -25579,15 +24922,6 @@ NMOD	ROOT	P
 NMOD	ROOT	P
 1
 A0	_	_
-
-8.52	%	30	days	;	8.37	%	60	days	;	8.15	%	90	days	;	7.98	%	120	days	;	7.92	%	150	days	;	7.80	%	180	days	.
-CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	.
-CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	:	CD	NN	CD	NNS	.
-2	4	4	29	29	7	9	9	29	29	12	14	14	29	29	17	19	19	29	29	22	24	24	29	29	27	29	29	0	29
-2	4	4	0	4	7	9	9	4	4	12	14	14	4	4	17	19	19	4	4	22	24	24	4	4	27	29	29	4	4
-NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	ROOT	P
-NMOD	NMOD	NMOD	ROOT	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	NMOD	P
-
 
 Negotiable	,	bank	-	backed	business	credit	instruments	typically	financing	an	import	order	.
 JJ	,	NN	HYPH	VBN	NN	NN	NNS	RB	VBG	DT	NN	NN	.
@@ -25600,24 +24934,6 @@ NMOD	P	HMOD	HYPH	NMOD	NMOD	NMOD	ROOT	ADV	APPO	NMOD	NMOD	OBJ	P
 _	_	_	_	_	_	A1	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	A2	AM-TMP	_	_	_	A1	_
 
-LONDON	LATE	EURODOLLARS	:
-NNP	JJ	NNS	:
-NNP	JJ	NNS	:
-3	3	0	3
-3	3	0	3
-NMOD	NMOD	ROOT	P
-NMOD	NMOD	ROOT	P
-
-
-8	13\/16	%	to	8	11\/16	%	one	month	;	8	13\/16	%	to	8	11\/16	%	two	months	;	8	13\/16	%	to	8	11\/16	%	three	months	;	8	3\/4	%	to	8	5\/8	%	four	months	;	8	11\/16	%	to	8	9\/16	%	five	months	;	8	5\/8	%	to	8	1\/2	%	six	months	.
-CD	CD	NN	TO	CD	CD	NN	CD	NN	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	.
-CD	CD	NN	TO	CD	CD	NN	CD	NN	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	:	CD	CD	NN	TO	CD	CD	NN	CD	NNS	.
-7	7	7	7	7	7	9	9	39	39	17	17	17	17	17	17	19	19	39	39	27	27	27	27	27	27	29	29	39	39	37	37	37	37	37	37	39	39	0	39	47	47	47	47	47	47	49	49	39	39	57	57	57	57	57	57	59	59	39	39
-7	7	7	7	7	7	9	9	0	9	17	17	17	17	17	17	19	19	9	9	27	27	27	27	27	27	29	29	9	9	37	37	37	37	37	37	39	39	9	9	47	47	47	47	47	47	49	49	9	9	57	57	57	57	57	57	59	59	9	9
-DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	ROOT	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P
-DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	ROOT	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P	DEP	DEP	DEP	DEP	DEP	DEP	NMOD	NMOD	NMOD	P
-
-
 LONDON	INTERBANK	OFFERED	RATES	(	LIBOR	)	:
 NNP	RB	VBN	NNS	(	NNP	)	:
 NNP	NNP	VBN	NNS	(	NNP	)	:
@@ -25627,15 +24943,6 @@ AMOD	NMOD	NMOD	ROOT	P	PRN	P	P
 NAME	AMOD	NMOD	NMOD	P	ROOT	P	P
 2
 _	_	_	A1	_	_	_	_
-
-8	3\/4	%	one	month	;	8	3\/4	%	three	months	;	8	9\/16	%	six	months	;	8	9\/16	%	one	year	.
-CD	CD	NN	CD	NN	:	CD	CD	NN	CD	NNS	:	CD	CD	NN	CD	NNS	:	CD	CD	NN	CD	NN	.
-CD	CD	NN	CD	NN	:	CD	CD	NN	CD	NNS	:	CD	CD	NN	CD	NNS	:	CD	CD	NN	CD	NN	.
-2	3	5	5	17	17	8	9	11	11	17	17	14	15	17	17	0	17	20	21	23	23	17	17
-3	3	5	5	0	5	8	9	11	11	5	5	14	15	17	17	5	5	20	21	23	23	5	5
-DEP	NMOD	NMOD	NMOD	NMOD	P	DEP	NMOD	NMOD	NMOD	NMOD	P	DEP	NMOD	NMOD	NMOD	ROOT	P	DEP	NMOD	NMOD	NMOD	NMOD	P
-DEP	DEP	NMOD	NMOD	ROOT	P	DEP	NMOD	NMOD	NMOD	NMOD	P	DEP	NMOD	NMOD	NMOD	NMOD	P	DEP	NMOD	NMOD	NMOD	NMOD	P
-
 
 The	average	of	interbank	offered	rates	for	dollar	deposits	in	the	London	market	based	on	quotations	at	five	major	banks	.
 DT	NN	IN	RB	VBN	NNS	IN	NN	NNS	IN	DT	NNP	NN	VBN	IN	NNS	IN	CD	JJ	NNS	.
@@ -25651,24 +24958,6 @@ _	_	_	_	_	A2	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_	_	_
-
-FOREIGN	PRIME	RATES	:
-JJ	JJ	NNS	:
-JJ	JJ	NNS	:
-3	3	0	3
-3	3	0	3
-NMOD	NMOD	ROOT	P
-NMOD	NMOD	ROOT	P
-
-
-Canada	13.50	%	;	Germany	8.50	%	;	Japan	4.875	%	;	Switzerland	8.50	%	;	Britain	15	%	.
-NNP	CD	NN	:	NNP	CD	NN	:	NNP	CD	NN	:	NNP	CD	NN	:	NNP	CD	NN	.
-NNP	CD	NN	:	NNP	CD	NN	:	NNP	CD	NN	:	NNP	CD	NN	:	NNP	CD	NN	.
-17	3	1	17	17	7	5	17	17	11	9	17	17	15	13	17	0	19	17	17
-17	3	1	17	17	7	5	17	17	11	9	17	17	15	13	17	0	19	17	17
-NMOD	NMOD	APPO	P	NMOD	NMOD	APPO	P	NMOD	NMOD	APPO	P	NMOD	NMOD	APPO	P	ROOT	NMOD	APPO	P
-NMOD	NMOD	APPO	P	NMOD	NMOD	APPO	P	NMOD	NMOD	APPO	P	NMOD	NMOD	APPO	P	ROOT	NMOD	APPO	P
-
 
 These	rate	indications	are	n't	directly	comparable	;	lending	practices	vary	widely	by	location	.
 DT	NN	NNS	VBP	RB	RB	JJ	:	NN	NNS	VBP	RB	IN	NN	.
@@ -25709,24 +24998,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	A3	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_	_	_	_	_	_
 
-7.63	%	13	weeks	;	7.60	%	26	weeks	.
-CD	NN	CD	NNS	:	CD	NN	CD	NNS	.
-CD	NN	CD	NNS	:	CD	NN	CD	NNS	.
-2	4	4	9	9	7	9	9	0	9
-2	4	4	0	4	7	9	9	4	4
-NMOD	NMOD	NMOD	NMOD	P	NMOD	NMOD	NMOD	ROOT	P
-NMOD	NMOD	NMOD	ROOT	P	NMOD	NMOD	NMOD	NMOD	P
-
-
-FEDERAL	HOME	LOAN	MORTGAGE	CORP	.	(	Freddie	Mac	)	:
-NNP	NNP	NNP	NNP	NNP	.	(	NNP	NNP	)	:
-NNP	NNP	NNP	NNP	NNP	.	(	NNP	NNP	)	:
-4	3	4	0	4	4	9	9	4	9	4
-4	4	4	11	11	11	9	9	11	9	0
-NAME	NAME	NAME	ROOT	POSTHON	P	P	NAME	PRN	P	P
-NAME	NAME	NAME	NMOD	P	P	P	NAME	PRN	P	ROOT
-
-
 Posted	yields	on	30	-	year	mortgage	commitments	for	delivery	within	30	days	.
 VBN	NNS	IN	CD	HYPH	NN	NN	NNS	IN	NN	IN	CD	NNS	.
 VBN	NNS	IN	CD	HYPH	NN	NN	NNS	IN	NN	IN	CD	NNS	.
@@ -25752,24 +25023,6 @@ NMOD	NMOD	P	NMOD	NMOD	NMOD	APPO	P	NMOD	ROOT	P	NMOD	NMOD	NMOD	AMOD	HMOD	HYPH	NMOD
 _	_	_	_	AM-MNR	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	_	_	_	_
-
-Source	:	Telerate	Systems	Inc	.
-NN	:	NNP	NNP	NNP	.
-NN	:	NNP	NNPS	NNP	.
-0	1	4	1	4	1
-0	1	4	1	4	1
-ROOT	P	NAME	APPO	POSTHON	P
-ROOT	P	NAME	APPO	POSTHON	P
-
-
-FEDERAL	NATIONAL	MORTGAGE	ASSOCIATION	(	Fannie	Mae	)	:
-NNP	NNP	NNP	NNP	(	NNP	NNP	)	:
-NNP	NNP	NNP	NNP	(	NNP	NNP	)	:
-4	4	4	0	7	7	4	7	4
-4	4	4	9	7	7	9	7	0
-NAME	NAME	NAME	ROOT	P	NAME	PRN	P	P
-NAME	NAME	NAME	NMOD	P	NAME	PRN	P	ROOT
-
 
 Posted	yields	on	30	year	mortgage	commitments	for	delivery	within	30	days	(	priced	at	par	)
 VBN	NNS	IN	CD	NN	NN	NNS	IN	NN	IN	CD	NNS	(	VBN	IN	NN	)
@@ -25797,33 +25050,6 @@ NMOD	NMOD	P	NMOD	NMOD	HMOD	HYPH	NMOD	APPO	P	NMOD	ROOT	P	NMOD	NMOD	AMOD	HMOD	HYPH
 _	_	_	_	AM-MNR	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	_	_	_	_
-
-Source	:	Telerate	Systems	Inc	.
-NN	:	NNP	NNP	NNP	.
-NN	:	NNP	NNS	NNP	.
-0	1	4	1	4	1
-0	1	4	5	1	1
-ROOT	P	NAME	APPO	POSTHON	P
-ROOT	P	NMOD	NMOD	APPO	P
-
-
-MERRILL	LYNCH	READY	ASSETS	TRUST	:
-NNP	NNP	NNP	NNP	NNP	:
-NNP	NNP	NNP	NNP	NNP	:
-2	5	4	5	0	5
-5	5	5	5	0	5
-NAME	NMOD	NAME	NAME	ROOT	P
-NAME	NAME	NAME	NAME	ROOT	P
-
-
-8.33	%	.
-CD	NN	.
-CD	NN	.
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NMOD	ROOT	P
-
 
 Annualized	average	rate	of	return	after	expenses	for	the	past	30	days	;	not	a	forecast	of	future	returns	.
 VBN	JJ	NN	IN	NN	IN	NNS	IN	DT	JJ	CD	NNS	:	RB	DT	NN	IN	JJ	NNS	.
@@ -26763,15 +25989,6 @@ DEP	SBJ	DEP	VC	OPRD	IM	NMOD	OBJ	P	COORD	SBJ	CONJ	ADV	ROOT
 _	A0	AM-MOD	_	A1	_	_	_	_	_	_	_	_	_
 _	A0	_	_	_	_	_	A1	_	_	_	_	_	_
 
-There	is	n't	a	big	shot	,	an	agenda	.	''
-EX	VBZ	RB	DT	JJ	NN	,	DT	NN	.	''
-EX	VBZ	RB	DT	JJ	NN	,	DT	NN	.	''
-2	0	2	6	6	2	6	9	6	2	2
-2	0	2	6	6	2	6	9	6	2	2
-SBJ	ROOT	ADV	NMOD	NMOD	PRD	P	NMOD	APPO	P	P
-SBJ	ROOT	ADV	NMOD	NMOD	PRD	P	NMOD	APPO	P	P
-
-
 A	few	hours	later	,	the	stock	market	dropped	190	points	.
 DT	DT	NNS	RB	,	DT	NN	NN	VBD	CD	NNS	.
 DT	DT	NNS	RB	,	DT	NN	NN	VBD	CD	NNS	.
@@ -27477,15 +26694,6 @@ ROOT	DEP	DEP	NMOD	HMOD	HYPH	NMOD	PMOD	P
 7
 A3	_	_	_	_	_	AM-TMP	_	_
 
-Connecticut	Light	&	Power	Co.	--
-NNP	NNP	NNP	NNP	NNP	:
-NNP	NNP	CC	NNP	NNP	:
-4	4	4	0	4	4
-4	4	4	0	4	4
-NAME	NAME	NAME	ROOT	POSTHON	P
-NAME	NAME	NAME	ROOT	POSTHON	P
-
-
 Three	million	shares	of	$	25	preferred	,	via	competitive	bidding	.
 CD	CD	NNS	IN	$	CD	VBN	,	IN	JJ	NN	.
 CD	CD	NNS	IN	$	CD	VBN	,	IN	JJ	NN	.
@@ -27495,15 +26703,6 @@ DEP	NMOD	ROOT	NMOD	PMOD	NMOD	NMOD	P	NMOD	NMOD	PMOD	P
 DEP	NMOD	ROOT	NMOD	PMOD	NMOD	APPO	P	NMOD	NMOD	PMOD	P
 2
 _	_	_	A1	_	_	_	_	_	_	_	_
-
-B&H	Crude	Carriers	Ltd.	--
-NNP	NNP	NNP	NNP	:
-NNP	NNP	NNS	NNP	:
-3	3	0	3	3
-2	3	0	3	3
-NAME	NAME	ROOT	POSTHON	P
-NAME	NMOD	ROOT	POSTHON	P
-
 
 Four	million	common	shares	,	via	Salomon	Brothers	Inc	.
 CD	CD	JJ	NNS	,	IN	NNP	NNP	NNP	.
@@ -27515,15 +26714,6 @@ DEP	NMOD	NMOD	ROOT	P	NMOD	NMOD	PMOD	POSTHON	P
 3
 _	_	A1	_	_	_	_	_	_	_
 
-Baldwin	Technology	Co.	--
-NNP	NNP	NNP	:
-NNP	NNP	NNP	:
-2	0	2	2
-2	0	2	2
-NAME	ROOT	POSTHON	P
-NAME	ROOT	POSTHON	P
-
-
 2.6	million	Class	A	shares	,	via	Smith	Barney	Harris	Upham	&	Co	.
 CD	CD	NNP	NNP	NNS	,	IN	NNP	NNP	NNP	NNP	NNP	NNP	.
 CD	CD	NNP	DT	NNS	,	IN	NNP	NNP	NNP	NNP	CC	NNP	.
@@ -27533,15 +26723,6 @@ DEP	NMOD	NAME	NMOD	ROOT	P	NMOD	NAME	NAME	NAME	NAME	PMOD	POSTHON	P
 DEP	NMOD	NMOD	NMOD	ROOT	P	NMOD	NAME	NAME	NAME	NAME	NAME	PMOD	P
 4
 _	_	_	A1	_	_	_	_	_	_	_	_	_	_
-
-Blockbuster	Entertainment	Corp.	--
-NNP	NNP	NNP	:
-NNP	NNP	NNP	:
-2	0	2	2
-2	0	2	2
-NAME	ROOT	POSTHON	P
-NAME	ROOT	POSTHON	P
-
 
 $	250	million	(	face	amount	)	Liquid	Yield	Option	Notes	,	via	Merrill	Lynch	Capital	Markets	.
 $	CD	CD	(	NN	NN	)	NNP	NNP	NNP	NNP	,	IN	NNP	NNP	NNP	NNP	.
@@ -27554,15 +26735,6 @@ NMOD	DEP	DEP	P	NMOD	DEP	P	APPO	NMOD	NMOD	ROOT	P	NMOD	NAME	NAME	NMOD	PMOD	P
 _	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_
 A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 
-Chase	Manhattan	Corp.	--
-NNP	NNP	NNP	:
-NNP	NNP	NNP	:
-2	0	2	2
-2	0	2	2
-NAME	ROOT	POSTHON	P
-NAME	ROOT	POSTHON	P
-
-
 14	million	common	shares	,	via	Goldman	,	Sachs	&	Co	.
 CD	CD	JJ	NNS	,	IN	NNP	,	NNP	NNP	NNP	.
 CD	CD	JJ	NNS	,	IN	NNP	,	NNP	CC	NNP	.
@@ -27572,15 +26744,6 @@ DEP	NMOD	NMOD	ROOT	P	NMOD	NAME	P	NMOD	PMOD	POSTHON	P
 DEP	NMOD	NMOD	ROOT	P	NMOD	NAME	P	NMOD	NAME	PMOD	P
 3
 _	_	A1	_	_	_	_	_	_	_	_	_
-
-Comcast	Corp.	--
-NNP	NNP	:
-NNP	NNP	:
-0	1	1
-0	1	1
-ROOT	POSTHON	P
-ROOT	POSTHON	P
-
 
 $	150	million	convertible	debentures	,	via	Merrill	Lynch	.
 $	CD	CD	JJ	NNS	,	IN	NNP	NNP	.
@@ -27592,15 +26755,6 @@ NMOD	DEP	DEP	NMOD	ROOT	P	NMOD	NAME	PMOD	P
 4
 A1	_	_	_	_	_	_	_	_	_
 
-CSS	Industries	--
-NNP	NNP	:
-NNP	NNS	:
-2	0	2
-2	0	2
-NAME	ROOT	P
-NMOD	ROOT	P
-
-
 1.3	million	common	shares	,	via	Merrill	Lynch	.
 CD	CD	JJ	NNS	,	IN	NNP	NNP	.
 NN	CD	JJ	NNS	,	IN	NNP	NNP	.
@@ -27610,15 +26764,6 @@ DEP	NMOD	NMOD	ROOT	P	NMOD	NAME	PMOD	P
 NMOD	NMOD	NMOD	ROOT	P	NMOD	NAME	PMOD	P
 3
 _	_	A1	_	_	_	_	_	_
-
-Eastern	Utilities	Associates	--
-NNP	NNP	NNP	:
-NNP	NNS	NNS	:
-3	3	0	3
-2	3	0	3
-NAME	NAME	ROOT	P
-NMOD	NMOD	ROOT	P
-
 
 1.5	million	common	shares	,	via	PaineWebber	Inc	.
 CD	CD	JJ	NNS	,	IN	NNP	NNP	.
@@ -27630,15 +26775,6 @@ NMOD	NMOD	NMOD	ROOT	P	NMOD	PMOD	POSTHON	P
 3
 _	_	A1	_	_	_	_	_	_
 
-Employee	Benefit	Plans	Inc.	--
-NNP	NNP	NNP	NNP	:
-NNP	NNP	NNS	NNP	:
-3	3	0	3	3
-2	3	0	3	3
-NAME	NAME	ROOT	POSTHON	P
-NAME	NAME	ROOT	POSTHON	P
-
-
 Two	million	common	shares	,	via	Dean	Witter	Capital	Markets	.
 CD	CD	JJ	NNS	,	IN	NNP	NNP	NNP	NNP	.
 CD	CD	JJ	NNS	,	IN	NNP	NNP	NNP	NNS	.
@@ -27648,15 +26784,6 @@ DEP	NMOD	NMOD	ROOT	P	NMOD	NAME	NAME	NAME	PMOD	P
 DEP	NMOD	NMOD	ROOT	P	NMOD	NAME	NAME	NMOD	PMOD	P
 3
 _	_	A1	_	_	_	_	_	_	_	_
-
-Exabyte	Corp.	--
-NNP	NNP	:
-NNP	NNP	:
-0	1	1
-0	1	1
-ROOT	POSTHON	P
-ROOT	POSTHON	P
-
 
 2,850,000	common	shares	,	via	Goldman	Sachs	.
 CD	JJ	NNS	,	IN	NNP	NNP	.
@@ -27668,15 +26795,6 @@ NMOD	NMOD	ROOT	P	NMOD	NAME	PMOD	P
 2
 _	A1	_	_	_	_	_	_
 
-Knowledgeware	Inc.	--
-NNP	NNP	:
-NNP	NNP	:
-0	1	1
-0	1	1
-ROOT	POSTHON	P
-ROOT	POSTHON	P
-
-
 2.4	million	common	shares	,	via	Montgomery	Securities	.
 CD	CD	JJ	NNS	,	IN	NNP	NNP	.
 NN	CD	JJ	NNS	,	IN	NNP	NNS	.
@@ -27687,33 +26805,6 @@ NMOD	NMOD	NMOD	ROOT	P	NMOD	NMOD	PMOD	P
 3
 _	_	A1	_	_	_	_	_	_
 
-Oregon	--
-NNP	:
-NNP	:
-0	1
-0	1
-ROOT	P
-ROOT	P
-
-
-$	100	million	of	general	obligation	veterans	'	tax	notes	,	Series	1989	,	via	competitive	bid	.
-$	CD	CD	IN	JJ	NN	NNS	POS	NN	NNS	,	NNP	CD	,	IN	JJ	NN	.
-$	CD	CD	IN	JJ	NN	NNS	POS	NN	NNS	,	NNP	CD	,	IN	JJ	NN	.
-0	1	1	1	6	7	10	7	10	4	10	13	10	1	1	17	15	1
-0	1	1	1	6	7	10	7	10	4	10	13	10	1	1	17	15	1
-ROOT	DEP	DEP	NMOD	NMOD	NMOD	NMOD	SUFFIX	NMOD	PMOD	P	NMOD	NMOD	P	NMOD	NMOD	PMOD	P
-ROOT	DEP	DEP	NMOD	NMOD	NMOD	NMOD	SUFFIX	NMOD	PMOD	P	NMOD	NMOD	P	NMOD	NMOD	PMOD	P
-
-
-Washington	,	D.C.	--
-NNP	,	NNP	:
-NNP	,	NNP	:
-3	3	0	3
-3	3	0	3
-NMOD	P	ROOT	P
-NMOD	P	ROOT	P
-
-
 $	200	million	of	1990	general	obligation	tax	revenue	notes	(	Series	1990A	)	,	via	competitive	bid	.
 $	CD	CD	IN	CD	JJ	NN	NN	NN	NNS	(	NNP	NNP	)	,	IN	JJ	NN	.
 $	CD	CD	IN	CD	JJ	NN	NN	NN	NNS	(	NNP	NNP	)	,	IN	JJ	NN	.
@@ -27723,15 +26814,6 @@ ROOT	DEP	DEP	NMOD	NMOD	NMOD	NMOD	NMOD	NMOD	NMOD	P	NAME	PMOD	P	P	NMOD	NMOD	PMOD	P
 ROOT	DEP	DEP	NMOD	NMOD	NMOD	NMOD	NMOD	NMOD	PMOD	P	NAME	APPO	P	P	NMOD	NMOD	PMOD	P
 8
 _	_	_	_	_	_	_	A2	A1	_	_	_	_	_	_	_	_	_	_
-
-Virginia	Public	School	Authority	--
-NNP	NNP	NNP	NNP	:
-NNP	NNP	NNP	NNP	:
-4	3	4	0	4
-4	4	4	0	4
-NAME	NAME	NMOD	ROOT	P
-NAME	NAME	NAME	ROOT	P
-
 
 $	55,730,000	of	school	financing	bonds	,	1989	Series	B	(	1987	resolution	)	,	via	competitive	bid	.
 $	CD	IN	NN	NN	NNS	,	CD	NNP	NNP	(	CD	NN	)	,	IN	JJ	NN	.
@@ -27744,15 +26826,6 @@ ROOT	NMOD	NMOD	NMOD	NMOD	PMOD	P	NMOD	NAME	APPO	P	NMOD	PRN	P	P	NMOD	NMOD	PMOD	P
 A2	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	AM-TMP	_	_	_	_	_	_	_
-
-Austin	,	Texas	--
-NNP	,	NNP	:
-NNP	,	NNP	:
-3	3	0	3
-3	3	0	3
-NMOD	P	ROOT	P
-NMOD	P	ROOT	P
-
 
 $	68,230,000	of	various	bonds	,	including	$	32	million	hotel	occupancy	tax	revenue	bonds	,	Series	1989A	,	and	$	36.23	million	convention	center	revenue	bonds	,	Series	1989B	,	via	a	Morgan	Stanley	&	Co.	group	.
 $	CD	IN	JJ	NNS	,	VBG	$	CD	CD	NN	NN	NN	NN	NNS	,	NNP	NNP	,	CC	$	CD	CD	NN	NN	NN	NNS	,	NNP	NNP	,	IN	DT	NNP	NNP	NNP	NNP	NN	.
@@ -27770,15 +26843,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	A1	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A3	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_	_
 
-California	Health	Facilities	Financing	Authority	--
-NNP	NNP	NNP	NNP	NNP	:
-NNP	NNP	NNS	NNP	NNP	:
-5	3	4	5	0	5
-3	3	5	5	0	5
-NMOD	NAME	NMOD	NAME	ROOT	P
-NAME	NAME	NMOD	NAME	ROOT	P
-
-
 $	144.5	million	of	Kaiser	Permanente	revenue	bonds	,	via	a	PaineWebber	group	.
 $	CD	CD	IN	NNP	NNP	NN	NNS	,	IN	DT	NNP	NN	.
 $	CD	CD	IN	NNP	NNP	NN	NNS	,	IN	DT	NNP	NN	.
@@ -27791,15 +26855,6 @@ _	_	_	_	_	A2	A1	_	_	_	_	_	_	_
 _	_	_	_	_	A2	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A2	_	_
 
-Connecticut	--
-NNP	:
-NNP	:
-0	1
-0	1
-ROOT	P
-ROOT	P
-
-
 $	100	million	of	general	obligation	capital	appreciation	bonds	,	College	Savings	Plan	,	1989	Series	B	,	via	a	Prudential	-	Bache	Capital	Funding	group	.
 $	CD	CD	IN	JJ	NN	NN	NN	NNS	,	NNP	NNP	NNP	,	CD	NNP	NNP	,	IN	DT	NNP	HYPH	NNP	NNP	NNP	NN	.
 $	CD	CD	IN	JJ	NN	NN	NN	NNS	,	NNP	NNS	NNP	,	CD	NNP	NNP	,	IN	DT	NNP	HYPH	NNP	NNP	NNP	NN	.
@@ -27810,15 +26865,6 @@ ROOT	DEP	DEP	NMOD	NMOD	NMOD	NMOD	NMOD	PMOD	P	NMOD	NAME	APPO	P	NMOD	NAME	NMOD	P	N
 7	25
 _	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_
-
-Pennsylvania	Higher	Education	Facilities	Authority	--
-NNP	NNP	NNP	NNP	NNP	:
-NNP	NNP	NNP	NNS	NNP	:
-5	3	4	5	0	5
-4	3	4	5	0	5
-NAME	NAME	NMOD	NMOD	ROOT	P
-NMOD	NAME	NMOD	NMOD	ROOT	P
-
 
 $	117	million	of	revenue	bonds	for	Hahnemann	University	,	Series	1989	,	via	a	Merrill	Lynch	group	.
 $	CD	CD	IN	NN	NNS	IN	NNP	NNP	,	NNP	CD	,	IN	DT	NNP	NNP	NN	.
@@ -27831,15 +26877,6 @@ ROOT	DEP	DEP	NMOD	NMOD	PMOD	NMOD	NAME	PMOD	P	NMOD	NMOD	P	NMOD	NMOD	NAME	NMOD	PMO
 _	_	_	_	_	_	A2	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_
 
-Tennessee	Valley	Authority	--
-NNP	NNP	NNP	:
-NNP	NNP	NNP	:
-3	3	0	3
-3	3	0	3
-NAME	NAME	ROOT	P
-NAME	NAME	ROOT	P
-
-
 Three	billion	of	power	bonds	,	via	First	Boston	Corp	.
 CD	CD	IN	NN	NNS	,	IN	NNP	NNP	NNP	.
 CD	CD	IN	NN	NNS	,	IN	NNP	NNP	NNP	.
@@ -27850,15 +26887,6 @@ DEP	ROOT	NMOD	NMOD	PMOD	P	NMOD	NAME	PMOD	POSTHON	P
 4
 _	_	_	A2	_	_	_	_	_	_	_
 
-University	of	Medicine	And	Dentistry	of	New	Jersey	--
-NNP	IN	NNP	CC	NNP	IN	NNP	NNP	:
-NNP	IN	NNP	CC	NNP	IN	NNP	NNP	:
-9	9	5	5	2	9	8	6	0
-8	8	8	8	8	8	8	0	8
-NAME	COORD	NAME	NAME	PMOD	COORD	NAME	PMOD	ROOT
-NAME	NAME	NAME	NAME	NAME	NAME	NAME	ROOT	P
-
-
 $	55	million	of	Series	C	bonds	,	via	a	Prudential	-	Bache	group	.
 $	CD	CD	IN	NNP	NNP	NNS	,	IN	DT	NNP	HYPH	NNP	NN	.
 $	CD	CD	IN	NNP	NNP	NNS	,	IN	DT	NNP	HYPH	NNP	NN	.
@@ -27868,15 +26896,6 @@ ROOT	DEP	DEP	NMOD	NAME	NMOD	PMOD	P	NMOD	NMOD	NAME	NAME	NMOD	PMOD	P
 ROOT	DEP	DEP	NMOD	NAME	NMOD	PMOD	P	NMOD	NMOD	NAME	NAME	NMOD	PMOD	P
 13
 _	_	_	_	_	_	_	_	_	_	_	_	A2	_	_
-
-West	Virginia	Parkways	,	Economic	Development	And	Tourism	Authority	--
-NNP	NNP	NNP	NNP	NNP	NNP	CC	NNP	NNP	:
-NNP	NNP	NNP	,	NNP	NNP	CC	NNP	NNP	:
-2	3	4	0	6	9	6	7	4	4
-3	3	0	3	6	3	6	9	7	3
-NAME	NMOD	NMOD	ROOT	NAME	NMOD	COORD	CONJ	NMOD	P
-NAME	NAME	ROOT	P	NAME	COORD	COORD	NAME	CONJ	P
-
 
 $	143	million	of	parkway	revenue	bonds	,	Series	1989	,	via	a	PaineWebber	group	.
 $	CD	CD	IN	NN	NN	NNS	,	NN	CD	,	IN	DT	NNP	NN	.
@@ -27891,15 +26910,6 @@ _	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	A1	_	_	AM-TMP	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_
 
-San	Antonio	,	Texas	--
-NNP	NNP	,	NNP	:
-NNP	NNP	,	NNP	:
-2	4	4	0	4
-2	4	4	0	4
-NAME	NMOD	P	ROOT	P
-NAME	NMOD	P	ROOT	P
-
-
 $	640	million	of	gas	and	electric	revenue	refunding	bonds	,	via	a	First	Boston	group	.
 $	CD	CD	IN	NN	CC	JJ	NN	NN	NNS	,	IN	DT	NNP	NNP	NN	.
 $	CD	CD	IN	NN	CC	JJ	NN	VBG	NNS	,	IN	DT	NNP	NNP	NN	.
@@ -27912,15 +26922,6 @@ _	_	_	_	A2	_	_	A1	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_
-
-South	Dakota	Health	&	Education	Facility	Authority	--
-NNP	NNP	NNP	NNP	NNP	NNP	NNP	:
-NNP	NNP	NNP	CC	NNP	NNP	NNP	:
-2	7	5	5	6	7	0	7
-7	7	7	7	7	7	0	7
-NAME	NMOD	NAME	NAME	NMOD	NAME	ROOT	P
-NAME	NAME	NAME	NAME	NAME	NAME	ROOT	P
-
 
 $	51.1	million	of	Rapid	City	Regional	Hospital	bonds	,	via	a	Dougherty	,	Dawkins	,	Strand	&	Yost	Inc.	group	.
 $	CD	CD	IN	NNP	NNP	NNP	NNP	NNS	,	IN	DT	NNP	NNP	NNP	NNP	NNP	NNP	NNP	NNP	NN	.
@@ -27965,15 +26966,6 @@ _	_	A1	_	_	_	_	_	_	_	_	_	_	A0	_	_	AM-TMP	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	AM-LOC	A0	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	A1	C-A1	AM-LOC	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_	A1	_	_	_	_
-
-But	he	's	not	so	sure	about	everyone	else	.
-CC	PRP	VBZ	RB	RB	JJ	IN	NN	RB	.
-CC	PRP	VBZ	RB	RB	JJ	IN	NN	RB	.
-3	3	0	3	6	3	6	7	8	3
-3	3	0	3	6	3	6	7	8	3
-DEP	SBJ	ROOT	ADV	AMOD	PRD	AMOD	PMOD	NMOD	P
-DEP	SBJ	ROOT	ADV	AMOD	PRD	AMOD	PMOD	NMOD	P
-
 
 ``	I	think	on	Monday	the	small	(	investors	)	are	going	to	panic	and	sell	,	''	predicted	Mr.	Sullivan	,	whose	investments	include	AMR	Corp.	's	American	Airlines	unit	and	several	mutual	funds	.
 ``	PRP	VBP	IN	NNP	DT	JJ	(	NNS	)	VBP	VBG	TO	VB	CC	VB	,	''	VBD	NNP	NNP	,	WP$	NNS	VBP	NNP	NNP	POS	NNP	NNP	NN	CC	DT	JJ	NNS	.
@@ -28479,15 +27471,6 @@ _	_	_	_	_	_	_	_	_	_	_	AM-NEG	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A1	_	_	AM-MOD	_	_	AM-DIR	AM-TMP	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A0	_	_	AM-MOD	_	_	_	_	_	_	_	_	A1	_	_	_	_
 
-And	,	finally	,	there	were	the	gloaters	.
-CC	,	RB	,	EX	VBD	DT	NNS	.
-CC	,	RB	,	EX	VBD	DT	NNS	.
-6	6	6	6	6	0	8	6	6
-9	3	9	3	6	3	8	6	0
-DEP	P	TMP	P	SBJ	ROOT	NMOD	PRD	P
-DEP	P	DEP	P	SBJ	COORD	NMOD	PRD	ROOT
-
-
 ``	I	got	out	in	1987	.
 ``	PRP	VBD	RP	IN	CD	.
 ``	PRP	VBD	RP	IN	CD	.
@@ -28739,15 +27722,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	A2	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	R-A0	_	A1	A2	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_
 
-Palmtops	are	n't	far	behind	.
-NNS	VBP	RB	RB	RB	.
-NNS	VBP	RB	RB	RB	.
-2	0	2	2	4	2
-2	0	2	2	4	2
-SBJ	ROOT	ADV	LOC-PRD	AMOD	P
-SBJ	ROOT	ADV	ADV	AMOD	P
-
-
 Atari	Corp.	's	Portfolio	,	introduced	in	Europe	two	months	ago	and	in	the	U.S.	in	early	September	,	weighs	less	than	a	pound	,	costs	a	mere	$	400	and	runs	on	three	AA	batteries	,	yet	has	the	power	to	run	some	spreadsheets	and	word	processing	programs	.
 NNP	NNP	POS	NNP	,	VBN	IN	NNP	CD	NNS	RB	CC	IN	DT	NNP	IN	JJ	NNP	,	VBZ	JJR	IN	DT	NN	,	VBZ	DT	JJ	$	CD	CC	VBZ	IN	CD	NN	NNS	,	CC	VBZ	DT	NN	TO	VB	DT	NNS	CC	NN	NN	NNS	.
 NNP	NNP	POS	NNP	,	VBN	IN	NNP	CD	NNS	RB	CC	IN	DT	NNP	IN	JJ	NNP	,	VBZ	JJR	IN	DT	NN	,	VBZ	DT	JJ	$	CD	CC	VBZ	IN	CD	NNP	NNS	,	RB	VBZ	DT	NN	TO	VB	DT	NNS	CC	NN	NN	NNS	.
@@ -28838,24 +27812,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	A1	_	A2	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_
-
-``	Whether	it	's	$	5	billion	or	$	3.5	billion	,	it	does	n't	matter	.
-``	IN	PRP	VBZ	$	CD	CD	CC	$	CD	CD	,	PRP	VBZ	RB	NN	.
-``	IN	PRP	VBZ	$	CD	CD	CC	$	CD	CD	,	PRP	VBZ	RB	VB	.
-14	14	4	2	4	5	5	5	8	9	9	14	14	0	14	14	14
-14	14	4	2	4	5	5	5	8	9	9	14	14	0	14	14	14
-P	ADV	SBJ	SUB	PRD	DEP	DEP	COORD	CONJ	DEP	DEP	P	SBJ	ROOT	ADV	OBJ	P
-P	ADV	SBJ	SUB	OBJ	DEP	DEP	COORD	CONJ	DEP	DEP	P	SBJ	ROOT	ADV	VC	P
-
-
-It	's	huge	.	''
-PRP	VBZ	JJ	.	''
-PRP	VBZ	JJ	.	''
-2	0	2	2	2
-2	0	2	2	2
-SBJ	ROOT	PRD	P	P
-SBJ	ROOT	PRD	P	P
-
 
 Consider	the	growth	of	portables	,	which	now	comprise	12	%	of	all	personal	computer	sales	.
 VB	DT	NN	IN	NNS	,	WDT	RB	VBP	CD	NN	IN	DT	JJ	NN	NNS	.
@@ -29233,15 +28189,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-DIS	_	_	_	A0	_	_	_	A1	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	_	_	_	_	_	A0	AM-MOD	_	_	A1	A2	_	_	_	_	_	_
 
-What	about	Big	Blue	?
-WP	IN	NNP	NNP	.
-WP	IN	NNP	NNP	.
-2	0	4	2	2
-2	0	4	2	2
-DEP	ROOT	NAME	PMOD	P
-DEP	ROOT	NAME	PMOD	P
-
-
 International	Business	Machines	Corp.	,	analysts	say	,	has	been	burned	twice	in	trying	to	enter	the	laptop	market	and	shows	no	signs	of	trying	to	get	into	notebooks	anytime	soon	.
 NNP	NNP	NNP	NNP	,	NNS	VBP	,	VBZ	VBN	VBN	RB	IN	VBG	TO	VB	DT	NN	NN	CC	VBZ	DT	NNS	IN	VBG	TO	VB	IN	NNS	RB	RB	.
 NNP	NNP	NNS	NNP	,	NNS	VBP	,	VBZ	VBN	VBN	RB	IN	VBG	TO	VB	DT	JJ	NN	CC	VBZ	DT	NNS	IN	VBG	TO	VB	IN	NNS	RB	RB	.
@@ -29422,24 +28369,6 @@ NMOD	NMOD	NMOD	SBJ	ROOT	ADV	PMOD	P	ADV	PMOD	NMOD	NMOD	PMOD	NMOD	PMOD	P
 _	_	A1	_	_	A2	_	_	_	_	_	_	_	_	_	_
 _	_	_	A1	_	A2	_	_	AM-ADV	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_
-
-Plunge	?
-NN	.
-NN	.
-0	1
-0	1
-ROOT	P
-ROOT	P
-
-
-What	plunge	?
-WDT	NN	.
-WP	NN	.
-2	0	2
-2	0	2
-NMOD	ROOT	P
-NMOD	ROOT	P
-
 
 Twenty	-	four	New	York	Stock	Exchange	issues	hit	52	-	week	highs	during	Friday	's	trading	,	despite	the	Dow	Jones	Industrial	Average	's	190.58	-	point	plunge	.
 CD	HYPH	CD	NNP	NNP	NNP	NNP	NNS	VBD	CD	HYPH	NN	NNS	IN	NNP	POS	NN	,	IN	DT	NNP	NNP	NNP	NNP	POS	CD	HYPH	NN	NN	.
@@ -30674,24 +29603,6 @@ SBJ	ROOT	ADV	P	ADV	NMOD	NMOD	SBJ	SUB	PRD	AMOD	AMOD	TMP	AMOD	NMOD	AMOD	TMP	P	NMOD
 20
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	A2	_
 
-Growth	is	slower	.
-NN	VBZ	JJR	.
-NN	VBZ	JJR	.
-2	0	2	2
-2	0	2	2
-SBJ	ROOT	PRD	P
-SBJ	ROOT	PRD	P
-
-
-Profits	are	softer	.
-NNS	VBP	JJR	.
-NNS	VBP	JJR	.
-2	0	2	2
-2	0	2	2
-SBJ	ROOT	PRD	P
-SBJ	ROOT	PRD	P
-
-
 Debt	burdens	are	heavier	.
 NN	NNS	VBP	JJR	.
 NN	NNS	VBP	JJR	.
@@ -31245,15 +30156,6 @@ LOC-PRD	TITLE	NAME	PMOD	P	PRN	P	LOC	P	ROOT	TMP	P	P	NMOD	SBJ	COORD	NMOD	OBJ	NMOD	
 _	_	_	A0	_	_	_	_	_	_	AM-TMP	_	_	_	_	_	_	_	_	_	_
 AM-ADV	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	A1	_	AM-TMP	_
 
-They	are	more	sophisticated	this	time	.
-PRP	VBP	RBR	JJ	DT	NN	.
-PRP	VBP	RBR	JJ	DT	NN	.
-2	0	4	2	6	2	2
-2	0	4	2	6	2	2
-SBJ	ROOT	AMOD	PRD	NMOD	TMP	P
-SBJ	ROOT	AMOD	PRD	NMOD	TMP	P
-
-
 The	chemical	industry	is	expected	to	report	that	profits	eroded	in	the	third	quarter	because	of	skidding	prices	in	the	commodity	end	of	the	business	.
 DT	NN	NN	VBZ	VBN	TO	VB	IN	NNS	VBD	IN	DT	JJ	NN	IN	IN	VBG	NNS	IN	DT	NN	NN	IN	DT	NN	.
 DT	NN	NN	VBZ	VBN	TO	VB	IN	NNS	VBN	IN	DT	JJ	NN	IN	IN	VBG	NNS	IN	DT	NN	NN	IN	DT	NN	.
@@ -31312,15 +30214,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	AM-MNR	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	
 _	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	A0	A2	_	_	_	_
-
-``	This	could	be	the	first	of	five	or	six	down	quarters	.	''
-``	DT	MD	VB	DT	JJ	IN	CD	CC	CD	JJ	NNS	.	''
-``	DT	MD	VB	DT	JJ	IN	CD	CC	CD	RP	NNS	.	''
-3	3	0	3	6	4	6	12	8	9	12	7	3	3
-0	3	0	3	6	4	6	12	8	9	10	7	3	3
-P	SBJ	ROOT	VC	NMOD	PRD	NMOD	NMOD	COORD	CONJ	NMOD	PMOD	P	P
-ROOT	SBJ	ROOT	VC	NMOD	PRD	NMOD	NMOD	COORD	CONJ	PRT	PMOD	P	P
-
 
 Perhaps	most	prominent	,	Dow	Chemical	Co.	,	which	as	of	midyear	had	racked	up	eight	consecutive	record	quarters	,	is	expected	to	report	that	profit	decreased	in	the	latest	quarter	from	a	year	earlier	,	if	only	by	a	shade	.
 RB	RBS	JJ	,	NNP	NNP	NNP	,	WDT	IN	IN	NN	VBD	VBN	RP	CD	JJ	NN	NNS	,	VBZ	VBN	TO	VB	IN	NN	VBD	IN	DT	JJS	NN	IN	DT	NN	RBR	,	IN	RB	IN	DT	NN	.
@@ -31791,15 +30684,6 @@ _	_	_	_	_	_	_	_	_	_	_	A2	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	A0	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_
 
-Dow	Chemical	Co.	--
-NNP	NNP	NNP	:
-NNP	NNP	NNP	:
-2	0	2	2
-2	0	2	2
-NAME	ROOT	POSTHON	P
-NAME	ROOT	POSTHON	P
-
-
 $	150	million	of	8.55	%	senior	notes	due	Oct.	15	,	2009	,	priced	at	par	.
 $	CD	CD	IN	CD	NN	JJ	NNS	JJ	NNP	CD	,	CD	,	VBN	IN	NN	.
 $	CD	CD	IN	CD	NN	JJ	NNS	JJ	NNP	CD	,	CD	,	VBN	IN	NN	.
@@ -31833,15 +30717,6 @@ _	_	_	_	_	A2	A0	_	_	_	_	_	_	A2	_	_	A0	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_
 AM-ADV	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	AM-MOD	_	_	AM-MNR	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	A0	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	A0	_	_	_	_	_
-
-Centel	Capital	Corp.	--
-NNP	NNP	NNP	:
-NNP	NNP	NNP	:
-2	0	2	2
-2	0	2	2
-NAME	ROOT	POSTHON	P
-NAME	ROOT	POSTHON	P
-
 
 $	150	million	of	9	%	debentures	due	Oct.	15	,	2019	,	priced	at	99.943	to	yield	9.008	%	.
 $	CD	CD	IN	CD	NN	NNS	JJ	NNP	CD	,	CD	,	VBN	IN	CD	TO	VB	CD	NN	.
@@ -31878,15 +30753,6 @@ _	_	_	A2	A0	_	_	_	A2	_	_	_	_	A0	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_
 AM-ADV	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	AM-MOD	_	_	AM-MNR	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	A0	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	A0	_	_	_	_	_
-
-Federal	Home	Loan	Mortgage	Corp.	--
-NNP	NNP	NNP	NNP	NNP	:
-NNP	NNP	NNP	NNP	NNP	:
-4	3	4	0	4	4
-4	3	4	0	4	4
-NAME	NAME	NAME	ROOT	POSTHON	P
-NAME	NAME	NAME	ROOT	POSTHON	P
-
 
 $	500	million	of	Remic	mortgage	securities	offered	in	13	classes	by	Prudential	-	Bache	Securities	Inc	.
 $	CD	CD	IN	NNP	NN	NNS	VBN	IN	CD	NNS	IN	NNP	HYPH	NNP	NNP	NNP	.
@@ -31928,15 +30794,6 @@ _	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 AM-ADV	_	_	_	_	_	_	_	A1	_	A3	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A4	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 
-Federal	Home	Loan	Mortgage	Corp.	--
-NNP	NNP	NNP	NNP	NNP	:
-NNP	NNP	NNP	NNP	NNP	:
-4	3	4	0	4	4
-4	3	4	0	4	4
-NAME	NAME	NAME	ROOT	POSTHON	P
-NAME	NAME	NAME	ROOT	POSTHON	P
-
-
 $	300	million	of	Remic	mortgage	securities	offered	by	Citicorp	Securities	Markets	Inc	.
 $	CD	CD	IN	NNP	NN	NNS	VBN	IN	NNP	NNP	NNP	NNP	.
 $	CD	CD	IN	NNP	NN	NNS	VBN	IN	NNP	NNPS	NNP	NNP	.
@@ -31968,15 +30825,6 @@ NMOD	SBJ	ROOT	ADV	AMOD	PRD	P
 NMOD	SBJ	ROOT	ADV	AMOD	PRD	P
 1
 A1	_	_	_	_	_	_
-
-Federal	Home	Loan	Mortgage	Corp.	--
-NNP	NNP	NNP	NNP	NNP	:
-NNP	NNP	NNP	NNP	NNP	:
-4	3	4	0	4	4
-4	3	4	0	4	4
-NAME	NAME	NAME	ROOT	POSTHON	P
-NAME	NAME	NAME	ROOT	POSTHON	P
-
 
 $	200	million	of	stripped	mortgage	securities	underwritten	by	BT	Securities	Corp	.
 $	CD	CD	IN	VBN	NN	NNS	VBN	IN	NNP	NNP	NNP	.

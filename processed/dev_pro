@@ -335,15 +335,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-TMP	A2	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	A3	AM-ADV	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	A0	A2	_
 
-Two	-	Way	Street
-CD	HYPH	NNP	NNP
-CD	HYPH	NNP	NNP
-3	1	4	0
-3	1	4	0
-HMOD	HYPH	NMOD	ROOT
-NMOD	HYPH	NMOD	ROOT
-
-
 If	the	sixty	-	day	plant	-	closing	law	's	fair	,	Why	should	we	not	then	amend	the	writ	To	require	that	all	employees	give	Similar	notice	before	they	quit	?
 IN	DT	CD	HYPH	NN	NN	HYPH	VBG	NN	VBZ	JJ	,	WRB	MD	PRP	RB	RB	VB	DT	NN	TO	VB	IN	DT	NNS	VBP	JJ	NN	IN	PRP	VBP	.
 IN	DT	NN	HYPH	NN	NN	HYPH	VBG	NN	POS	NN	,	WRB	MD	PRP	RB	RB	VB	DT	NN	TO	VB	IN	DT	NNS	VBP	JJ	NN	IN	PRP	VBP	.
@@ -359,24 +350,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	A1	AM-TMP	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_
 
---	Rollin	S.	Trexler	.
-:	NNP	NNP	NNP	.
-:	NNP	NNP	NNP	.
-4	4	4	0	4
-4	4	4	0	4
-P	NAME	NAME	ROOT	P
-P	NAME	NAME	ROOT	P
-
-
-Candid	Comment
-NNP	NNP
-JJ	NN
-2	0
-2	0
-NAME	ROOT
-NMOD	ROOT
-
-
 When	research	projects	are	curtailed	due	to	government	funding	cuts	,	are	we	``	caught	with	our	grants	down	''	?
 WRB	NN	NNS	VBP	VBN	JJ	TO	NN	NN	NNS	,	VBP	PRP	``	VBN	IN	PRP$	NNS	IN	''	.
 WRB	NN	NNS	VBP	VBN	JJ	TO	NN	NN	NNS	,	VBP	PRP	``	VBN	IN	PRP$	NNS	RP	''	.
@@ -390,15 +363,6 @@ R-AM-TMP	_	A1	_	_	_	AM-CAU	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	A0	A1	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	A2	_	_	_	_	_
-
---	C.E.	Friedman	.
-:	NNP	NNP	.
-:	NNP	NNP	.
-3	3	0	3
-3	3	0	3
-P	NAME	ROOT	P
-P	NAME	ROOT	P
-
 
 Assuming	the	stock	market	does	n't	crash	again	and	completely	discredit	yuppies	and	trading	rooms	,	American	television	audiences	in	a	few	months	may	be	seeing	Britain	's	concept	of	both	.
 VBG	DT	NN	NN	VBZ	RB	VB	RB	CC	RB	VB	NNS	CC	NN	NNS	,	JJ	NN	NNS	IN	DT	DT	NNS	MD	VB	VBG	NNP	POS	NN	IN	DT	.
@@ -610,15 +574,6 @@ A0	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 A0	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A0	AM-TMP	A1	A2	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	AM-MOD	_	A1	_
-
-Ah	,	perfidious	Columbia	!
-UH	,	JJ	NNP	.
-UH	,	JJ	NNP	.
-0	1	4	1	1
-4	4	4	0	4
-ROOT	P	NMOD	DEP	P
-DEP	P	NMOD	ROOT	P
-
 
 The	trade	figures	turn	out	well	,	and	all	those	recently	unloaded	bonds	spurt	in	price	.
 DT	NN	NNS	VBP	RP	RB	,	CC	PDT	DT	RB	VBN	NNS	VBP	IN	NN	.
@@ -963,15 +918,6 @@ _	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	A2	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-LOC	_	_	_	_	_	AM-TMP	_	_	_
 
-The	seeds	already	are	in	the	script	.
-DT	NNS	RB	VBP	IN	DT	NN	.
-DT	NNS	RB	VBP	IN	DT	NN	.
-2	4	4	0	4	7	5	4
-2	4	4	0	4	7	5	4
-NMOD	SBJ	ADV	ROOT	LOC-PRD	NMOD	PMOD	P
-NMOD	SBJ	TMP	ROOT	LOC-PRD	NMOD	PMOD	P
-
-
 The	first	episode	concluded	with	a	marvelously	cute	scene	in	which	the	trading	-	room	crew	minded	a	baby	,	the	casualty	of	a	broken	marriage	at	the	firm	.
 DT	JJ	NN	VBD	IN	DT	RB	JJ	NN	IN	WDT	DT	NN	HYPH	NN	NN	VBD	DT	NN	,	DT	NN	IN	DT	VBN	NN	IN	DT	NN	.
 DT	JJ	NN	VBD	IN	DT	RB	JJ	NN	IN	WDT	DT	NN	HYPH	NN	NN	JJ	DT	NN	,	DT	NN	IN	DT	VBN	NN	IN	DT	NN	.
@@ -1052,15 +998,6 @@ SBJ	ROOT	ADV	NMOD	NMOD	NMOD	PMOD	P	SBJ	NMOD	P	ADV	NAME	NMOD	SUFFIX	OBJ	NMOD	PMOD
 _	_	_	_	_	_	A1	_	R-A1	_	_	AM-ADV	_	_	_	_	_	_	_
 _	_	_	_	_	_	A0	_	R-A0	_	_	_	_	_	_	A1	A2	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_
-
-And	all	the	while	,	the	bonds	are	in	the	baby	's	diaper	.
-CC	PDT	DT	NN	,	DT	NNS	VBP	IN	DT	NN	POS	NN	.
-CC	PDT	DT	NN	,	DT	NNS	VBP	IN	DT	NN	POS	NN	.
-8	4	4	8	8	7	8	0	8	11	13	11	9	8
-8	4	4	8	8	7	8	0	8	11	13	11	9	8
-DEP	NMOD	NMOD	TMP	P	NMOD	SBJ	ROOT	PRD	NMOD	NMOD	SUFFIX	PMOD	P
-DEP	NMOD	NMOD	TMP	P	NMOD	SBJ	ROOT	LOC-PRD	NMOD	NMOD	SUFFIX	PMOD	P
-
 
 It	should	run	forever	.
 PRP	MD	VB	RB	.
@@ -1790,15 +1727,6 @@ _	_	A2	_	_	_	A1	_	_	_	_
 _	_	_	_	_	A1	_	_	_	_	_
 _	_	_	_	_	_	A1	_	AM-MNR	_	_
 
-c	-	Domestic	car
-SYM	:	JJ	NN
-NN	:	JJ	NN
-4	4	4	0
-0	1	4	1
-DEP	P	NMOD	ROOT
-ROOT	P	NMOD	NMOD
-
-
 d	-	Percentage	change	is	greater	than	999	%	.
 SYM	:	NN	NN	VBZ	JJR	IN	CD	NN	.
 NN	HYPH	NN	NN	VBZ	JJR	IN	CD	NN	.
@@ -2098,15 +2026,6 @@ SBJ	COORD	CONJ	ROOT	VC	PRD	COORD	CONJ	P
 4
 A1	_	_	_	_	A2	_	_	_
 
-The	British	Broadcasting	Corp.	and	the	U.S.	State	Department	's	Voice	of	America	broadcast	over	Hungarian	airwaves	,	though	only	a	few	hours	a	day	each	in	Hungarian	.
-DT	NNP	NNP	NNP	CC	DT	NNP	NNP	NNP	POS	NNP	IN	NNP	VBP	IN	JJ	NNS	,	IN	RB	DT	DT	NNS	DT	NN	DT	IN	NN	.
-DT	NNP	NNP	NNP	CC	DT	NNP	NNP	NNP	POS	NNP	IN	NNP	NN	IN	JJ	NNS	,	IN	RB	DT	DT	NNS	DT	NN	DT	IN	NNP	.
-3	3	14	3	3	9	9	9	13	9	13	13	5	0	14	17	15	14	14	23	20	20	26	25	26	14	14	27	14
-3	3	11	3	3	9	9	9	5	9	12	29	14	12	12	17	15	12	12	23	20	20	25	25	29	29	29	27	0
-NMOD	NAME	SBJ	POSTHON	COORD	NMOD	NMOD	NAME	NMOD	SUFFIX	NAME	NAME	CONJ	ROOT	LOC	NMOD	PMOD	P	ADV	NMOD	DEP	DEP	NMOD	NMOD	ADV	TMP	MNR	PMOD	P
-NMOD	NAME	NMOD	POSTHON	COORD	NMOD	NAME	NAME	CONJ	SUFFIX	NMOD	NMOD	NMOD	PMOD	TMP	NMOD	PMOD	P	ADV	NMOD	DEP	DEP	NMOD	NMOD	NMOD	P	DEP	PMOD	ROOT
-
-
 Australian	press	magnate	Rupert	Murdoch	has	bought	50	%	stakes	in	two	popular	and	gossipy	Hungarian	newspapers	,	while	Britain	's	Robert	Maxwell	has	let	it	be	known	here	that	he	is	thinking	about	similar	moves	.
 JJ	NN	NN	NNP	NNP	VBZ	VBN	CD	NN	NNS	IN	CD	JJ	CC	JJ	JJ	NNS	,	IN	NNP	POS	NNP	NNP	VBZ	VBN	PRP	VB	VBN	RB	IN	PRP	VBZ	VBG	IN	JJ	NNS	.
 JJ	NN	NN	NNP	NNP	VBZ	VBN	CD	NN	NNS	IN	CD	JJ	CC	JJ	JJ	NNS	,	IN	NNP	POS	NNP	NNP	VBZ	VBN	PRP	VB	VBN	RB	IN	PRP	VBZ	VBG	IN	JJ	NNS	.
@@ -2237,15 +2156,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	R-A0	_	A1	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	R-A0	_	_	_	_	A1	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_	_
-
-``	That	is	a	miracle	.	''
-``	DT	VBZ	DT	NN	.	''
-``	DT	VBZ	DT	NN	.	''
-3	3	0	5	3	3	3
-3	3	0	5	3	3	3
-P	SBJ	ROOT	NMOD	PRD	P	P
-P	SBJ	ROOT	NMOD	PRD	P	P
-
 
 It	's	a	far	cry	from	the	previous	treatment	of	the	network	,	which	had	to	overcome	jamming	of	its	frequencies	and	intimidation	of	local	correspondents	(	who	filed	reports	to	the	network	by	phone	,	secret	messengers	or	letters	)	.
 PRP	VBZ	DT	JJ	NN	IN	DT	JJ	NN	IN	DT	NN	,	WDT	VBD	TO	VB	NN	IN	PRP$	NNS	CC	NN	IN	JJ	NNS	(	WP	VBD	NNS	TO	DT	NN	IN	NN	,	JJ	NNS	CC	NNS	)	.
@@ -2516,15 +2426,6 @@ AM-DIS	_	_	_	A1	_	_	_	A0	_	_	_	_	_	_	_	_
 _	_	_	_	A0	_	_	_	A1	_	_	_	_	_	_	_	_
 AM-DIS	AM-PNC	_	_	_	_	_	_	A0	_	_	A1	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_
-
-The	Pet	Shop	Boys	are	big	this	year	in	Budapest	.
-DT	NNP	NNP	NNPS	VBP	JJ	DT	NN	IN	NNP	.
-DT	NNP	NNP	NNS	VBP	JJ	DT	NN	IN	NNP	.
-4	3	4	5	0	5	8	5	5	9	5
-4	3	4	5	0	5	8	5	5	9	5
-NMOD	NAME	NAME	SBJ	ROOT	PRD	NMOD	TMP	LOC	PMOD	P
-NMOD	NAME	NMOD	SBJ	ROOT	PRD	NMOD	TMP	LOC	PMOD	P
-
 
 ``	We	are	starving	for	all	the	news	,	''	says	Mr.	Deak	,	the	student	.
 ``	PRP	VBP	VBG	IN	PDT	DT	NN	,	''	VBZ	NNP	NNP	,	DT	NN	.
@@ -3148,15 +3049,6 @@ _	_	A0	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A2	_
 _	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 
-Not	necessarily	.
-RB	RB	.
-RB	RB	.
-0	1	1
-0	1	1
-ROOT	AMOD	P
-ROOT	AMOD	P
-
-
 Polls	show	wide	,	generalized	support	for	some	vague	concept	of	service	,	but	the	bill	now	under	discussion	lacks	any	passionate	public	backing	.
 NNS	VBP	JJ	,	VBN	NN	IN	DT	JJ	NN	IN	NN	,	CC	DT	NN	RB	IN	NN	VBZ	DT	JJ	JJ	NN	.
 NNS	VBP	JJ	,	VBN	NN	IN	DT	JJ	NN	IN	NN	,	CC	DT	NN	RB	IN	NN	VBZ	DT	JJ	JJ	NN	.
@@ -3672,15 +3564,6 @@ _	_	A0	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	A1	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	A1	_
 
-Then	there	are	instinctive	opponents	.
-RB	EX	VBP	JJ	NNS	.
-RB	EX	VBP	JJ	NNS	.
-3	3	0	5	3	3
-3	3	0	5	3	3
-ADV	SBJ	ROOT	NMOD	PRD	P
-ADV	SBJ	ROOT	NMOD	PRD	P
-
-
 To	libertarians	,	mandatory	service	is	an	abomination	and	voluntary	systems	are	illegitimate	uses	of	tax	money	.
 TO	NNS	,	JJ	NN	VBZ	DT	NN	CC	JJ	NNS	VBP	JJ	NNS	IN	NN	NN	.
 TO	NNS	,	JJ	NN	VBZ	DT	NN	CC	JJ	NNS	VBP	JJ	NNS	IN	NN	NN	.
@@ -3776,42 +3659,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	_	_	A1	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-NEG	_	A1	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	AM-NEG	AM-ADV	_	_
 
-Would	service	be	voluntary	or	compulsory	?
-MD	NN	VB	JJ	CC	JJ	.
-MD	VB	VB	JJ	CC	JJ	.
-0	1	1	3	4	5	1
-0	1	2	3	4	5	1
-ROOT	SBJ	VC	PRD	COORD	CONJ	P
-ROOT	VC	OPRD	PRD	COORD	CONJ	P
-
-
-Short	or	long	?
-JJ	CC	JJ	.
-JJ	CC	JJ	.
-0	1	2	1
-0	1	2	1
-ROOT	COORD	CONJ	P
-ROOT	COORD	CONJ	P
-
-
-Part	-	time	or	full	-	time	?
-RB	HYPH	NN	CC	JJ	HYPH	NN	.
-NN	HYPH	NN	CC	JJ	HYPH	NN	.
-3	1	0	3	7	5	4	3
-3	1	0	3	7	5	4	3
-HMOD	HYPH	ROOT	COORD	HMOD	HYPH	CONJ	P
-HMOD	HYPH	ROOT	COORD	HMOD	HYPH	CONJ	P
-
-
-Paid	or	unpaid	?
-VBN	CC	JJ	.
-VBN	CC	JJ	.
-0	1	2	1
-0	1	2	1
-ROOT	COORD	CONJ	P
-ROOT	COORD	CONJ	P
-
-
 Would	participants	live	at	home	and	work	nearby	or	live	in	barracks	and	work	on	public	lands	?
 MD	NNS	VB	IN	NN	CC	VB	RB	CC	VB	IN	NNS	CC	VB	IN	JJ	NNS	.
 MD	NNS	VB	IN	NN	CC	VB	RB	CC	VB	IN	NNS	CC	VB	IN	JJ	NNS	.
@@ -3870,42 +3717,6 @@ DEP	SBJ	ROOT	VC	P
 3
 _	R-A0	AM-MOD	_	_
 
-Only	males	,	as	with	the	draft	,	or	both	sexes	?
-JJ	NNS	,	IN	IN	DT	NN	,	CC	DT	NNS	.
-JJ	NNS	,	IN	IN	DT	NN	,	CC	DT	NNS	.
-2	0	2	2	4	7	5	2	2	11	9	2
-2	12	12	12	4	7	5	4	4	11	9	0
-NMOD	ROOT	P	NMOD	PMOD	NMOD	PMOD	P	COORD	NMOD	CONJ	P
-NMOD	NMOD	P	NMOD	PMOD	NMOD	PMOD	P	COORD	NMOD	CONJ	ROOT
-
-
-Youth	only	or	all	ages	?
-NN	RB	CC	DT	NNS	.
-NN	RB	CC	DT	NNS	.
-0	1	1	5	3	1
-5	5	2	3	0	5
-ROOT	NMOD	COORD	NMOD	CONJ	P
-NMOD	NMOD	COORD	CONJ	ROOT	P
-
-
-Middle	-	class	people	,	or	poor	people	,	or	a	genuine	cross	-	section	?
-NN	HYPH	NN	NN	,	CC	JJ	NN	,	CC	DT	JJ	JJ	HYPH	NN	.
-JJ	HYPH	NN	NNS	,	CC	JJ	NNS	,	CC	DT	JJ	NN	HYPH	NN	.
-3	1	4	0	4	4	8	6	8	8	15	15	15	13	10	4
-3	1	4	0	4	4	8	6	4	4	15	15	15	13	10	4
-HMOD	HYPH	NMOD	ROOT	P	COORD	NMOD	CONJ	P	COORD	NMOD	NMOD	HMOD	HYPH	CONJ	P
-HMOD	HYPH	NMOD	ROOT	P	COORD	NMOD	CONJ	P	COORD	NMOD	NMOD	HMOD	HYPH	CONJ	P
-
-
-Many	or	few	?
-DT	CC	DT	.
-DT	CC	DT	.
-0	1	2	1
-0	1	2	1
-ROOT	COORD	CONJ	P
-ROOT	COORD	CONJ	P
-
-
 Those	are	not	trivial	questions	,	and	the	label	``	national	service	''	answers	none	of	them	.
 DT	VBP	RB	JJ	NNS	,	CC	DT	NN	``	JJ	NN	''	VBZ	NN	IN	PRP	.
 DT	VBP	RB	JJ	NNS	,	CC	DT	NN	``	JJ	NN	''	VBZ	NN	IN	PRP	.
@@ -3963,15 +3774,6 @@ SBJ	ROOT	VC	LOC	NMOD	PMOD	P
 2	5
 A1	AM-MOD	_	A2	_	_	_
 _	A1	_	_	_	_	_
-
-2	.	``	Service	''	should	be	service	.
-LS	.	``	NN	''	MD	VB	NN	.
-LS	.	``	NN	''	MD	VB	NN	.
-6	1	6	6	6	0	6	7	6
-6	1	4	1	4	0	6	7	6
-DEP	P	P	SBJ	P	ROOT	VC	PRD	P
-SBJ	P	P	APPO	P	ROOT	VC	PRD	P
-
 
 As	commonly	understood	,	service	implies	sacrifice	.
 IN	RB	VBN	,	NN	VBZ	NN	.
@@ -4049,15 +3851,6 @@ DEP	NMOD	NMOD	ROOT	P
 1
 AM-CAU	_	A1	A2	_
 
-3	.	Encouragement	is	fine	;	compulsion	is	not	.
-LS	.	NN	VBZ	JJ	:	NN	VBZ	RB	.
-LS	.	NN	VBZ	JJ	:	NN	VBZ	RB	.
-4	1	4	0	4	4	8	4	8	4
-3	1	4	0	4	4	8	4	8	4
-DEP	P	SBJ	ROOT	PRD	P	SBJ	VC	ADV	P
-NMOD	P	SBJ	ROOT	PRD	P	SBJ	COORD	ADV	P
-
-
 Compelled	service	is	unconstitutional	.
 VBN	NN	VBZ	JJ	.
 VBN	NN	VBZ	JJ	.
@@ -4067,15 +3860,6 @@ NMOD	SBJ	ROOT	PRD	P
 NMOD	SBJ	ROOT	PRD	P
 0
 _	A2	_	_	_
-
-It	is	also	unwise	and	unenforceable	.
-PRP	VBZ	RB	JJ	CC	JJ	.
-PRP	VBZ	RB	JJ	CC	JJ	.
-2	0	2	2	4	5	2
-2	0	2	2	4	5	2
-SBJ	ROOT	ADV	PRD	COORD	CONJ	P
-SBJ	ROOT	ADV	PRD	COORD	CONJ	P
-
 
 (	Who	will	throw	several	hundred	thousand	refusers	in	jail	each	year	?	)
 (	WP	MD	VB	DT	CD	CD	NNS	IN	NN	DT	NN	.	)
@@ -4129,15 +3913,6 @@ _	A0	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-MOD	_	_	A1	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	A1	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	R-A0	AM-ADV	_	A1	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_
-
-4	.	Good	programs	are	not	cheap	.
-LS	.	JJ	NNS	VBP	RB	JJ	.
-LS	.	JJ	NNS	VBP	RB	JJ	.
-5	1	4	5	0	5	5	5
-0	1	4	5	1	5	5	1
-DEP	P	NMOD	SBJ	ROOT	ADV	PRD	P
-ROOT	P	NMOD	SBJ	COORD	ADV	PRD	P
-
 
 Enthusiasts	assume	that	national	service	would	get	important	work	done	cheaply	:	forest	fires	fought	,	housing	rehabilitated	,	students	tutored	,	day	-	care	centers	staffed	.
 NNS	VBP	IN	JJ	NN	MD	VB	JJ	NN	VBD	RB	:	NN	NNS	VBD	,	NN	VBD	,	NNS	VBD	,	NN	HYPH	NN	NNS	VBD	.
@@ -4222,15 +3997,6 @@ HMOD	HYPH	NMOD	SBJ	ROOT	PRD	P	COORD	NMOD	SBJ	TMP	CONJ	DIR	DEP	PMOD	DEP	NMOD	ADV	
 11
 _	_	_	_	_	_	_	_	_	A1	AM-TMP	_	A2	_	_	_	_	_	_
 
-Are	they	worth	that	?
-VBP	PRP	JJ	DT	.
-VBP	PRP	JJ	DT	.
-0	1	1	3	1
-0	1	1	3	1
-ROOT	SBJ	PRD	AMOD	P
-ROOT	SBJ	PRD	NMOD	P
-
-
 Evaluations	suggest	that	good	ones	are	--	especially	so	if	the	effects	on	participants	are	counted	.
 NNS	VBP	IN	JJ	NNS	VBP	:	RB	IN	IN	DT	NNS	IN	NNS	VBP	VBN	.
 NNS	VBP	IN	JJ	NNS	VBP	:	RB	RB	IN	DT	NNS	IN	NNS	VBP	VBN	.
@@ -4243,15 +4009,6 @@ A0	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A1	A2	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_
 
-But	the	calculations	are	challengeable	.
-CC	DT	NNS	VBP	JJ	.
-CC	DT	NNS	VBP	JJ	.
-4	3	4	0	4	4
-4	3	4	0	4	4
-DEP	NMOD	SBJ	ROOT	PRD	P
-DEP	NMOD	SBJ	ROOT	PRD	P
-
-
 5	.	Underclass	youth	are	a	special	concern	.
 LS	.	NNS	NN	VBP	DT	JJ	NN	.
 LS	.	NN	NN	VBP	DT	JJ	NN	.
@@ -4261,15 +4018,6 @@ DEP	P	NMOD	SBJ	ROOT	NMOD	NMOD	PRD	P
 SBJ	P	NMOD	APPO	ROOT	NMOD	NMOD	PRD	P
 7
 _	_	_	_	_	_	AM-MNR	A0	_
-
-Are	such	expenditures	worthwhile	,	then	?
-VBP	DT	NNS	JJ	,	RB	.
-VBP	JJ	NNS	JJ	,	RB	.
-0	3	1	1	1	1	1
-0	3	1	1	1	1	1
-ROOT	NMOD	SBJ	PRD	P	ADV	P
-ROOT	NMOD	SBJ	PRD	P	ADV	P
-
 
 Yes	,	if	targeted	.
 UH	,	IN	VBN	.
@@ -4510,15 +4258,6 @@ SBJ	ROOT	NMOD	PRD	HYPH	HMOD	NMOD	P	NMOD	PMOD	P	OBJ	NMOD	SBJ	VC	P	P
 SBJ	ROOT	NMOD	PRD	HYPH	HMOD	NMOD	P	NAME	SBJ	P	OBJ	EXTR	SBJ	ROOT	P	P
 14
 _	_	_	_	_	_	_	_	_	_	_	R-A1	AM-MOD	A0	_	_	_
-
-(	Lexington	Books	,	1986	)	.
-(	NNP	NNPS	,	CD	)	.
-(	NNP	NNS	,	CD	)	.
-3	3	0	3	3	3	3
-5	3	5	5	0	5	5
-P	NAME	ROOT	P	TMP	P	P
-P	NMOD	NMOD	P	ROOT	P	P
-
 
 Federal	Reserve	Chairman	Alan	Greenspan	was	on	the	telephones	,	making	it	clear	to	officials	in	the	U.S.	and	abroad	that	the	Fed	was	prepared	to	inject	massive	amounts	of	money	into	the	banking	system	,	as	it	did	in	October	1987	,	if	the	action	were	needed	to	prevent	a	financial	crisis	.
 NNP	NNP	NN	NNP	NNP	VBD	IN	DT	NNS	,	VBG	PRP	JJ	TO	NNS	IN	DT	NNP	CC	RB	IN	DT	NNP	VBD	VBN	TO	VB	JJ	NNS	IN	NN	IN	DT	NN	NN	,	IN	PRP	VBD	IN	NNP	CD	,	IN	DT	NN	VBD	VBN	TO	VB	DT	JJ	NN	.
@@ -5122,15 +4861,6 @@ DEP	P	DEP	ADV	NAME	NMOD	NMOD	PMOD	ROOT
 _	_	_	AM-MNR	_	_	_	_	_
 _	_	_	_	_	_	A1	A2	_
 
-e	-	In	Canadian	dollars	.
-SYM	:	IN	JJ	NNS	.
-NN	:	IN	JJ	NNS	.
-6	6	6	5	3	0
-0	1	1	5	3	1
-DEP	P	DEP	NMOD	PMOD	ROOT
-ROOT	P	NMOD	NMOD	PMOD	P
-
-
 f	-	As	of	Wednesday	's	close	.
 SYM	:	IN	IN	NNP	POS	NN	.
 NN	:	IN	IN	NNP	POS	NN	.
@@ -5140,24 +4870,6 @@ DEP	P	TMP	PMOD	NMOD	SUFFIX	PMOD	ROOT
 DEP	P	TMP	PMOD	NMOD	SUFFIX	PMOD	ROOT
 6
 _	_	_	_	AM-TMP	_	_	_
-
-g	-	10.06.89	NAV:	22.15	.
-SYM	:	CD	NN	CD	.
-NN	HYPH	NN	NNP	NN	.
-6	6	4	6	4	0
-3	1	5	5	0	5
-DEP	P	NMOD	DEP	HMOD	ROOT
-HMOD	HYPH	NMOD	NMOD	ROOT	P
-
-
-z	-	Not	available	.
-SYM	:	RB	JJ	.
-NN	HYPH	RB	JJ	.
-5	5	4	5	0
-4	1	1	0	4
-DEP	P	AMOD	DEP	ROOT
-SBJ	HYPH	NMOD	ROOT	P
-
 
 Put	down	that	phone	.
 VB	IN	DT	NN	.
@@ -5448,15 +5160,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	A0	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	A1	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-ADV	_	AM-DIR	_	_
-
-Generally	,	it	is	n't	wise	to	be	in	and	out	''	of	the	stock	market	.
-RB	,	PRP	VBZ	RB	JJ	TO	VB	IN	CC	IN	''	IN	DT	NN	NN	.
-RB	,	PRP	VBZ	RB	JJ	TO	VB	IN	CC	IN	''	IN	DT	NN	NN	.
-4	4	4	0	4	4	6	7	8	9	10	11	11	16	16	9	4
-4	4	4	0	4	4	6	7	8	9	10	9	9	16	16	13	4
-ADV	P	SBJ	ROOT	ADV	PRD	AMOD	IM	LOC-PRD	COORD	CONJ	P	PMOD	NMOD	NMOD	PMOD	P
-ADV	P	SBJ	ROOT	ADV	PRD	AMOD	IM	PRD	COORD	CONJ	P	PMOD	NMOD	NMOD	PMOD	P
-
 
 Mr.	Ibbotson	thinks	that	this	week	is	``	going	to	be	a	roller	-	coaster	week	.	''
 NNP	NNP	VBZ	IN	DT	NN	VBZ	``	VBG	TO	VB	DT	NN	HYPH	NN	NN	.	''
@@ -6086,15 +5789,6 @@ P	SBJ	OBJ	PRT	ADV	NMOD	NMOD	PMOD	COORD	DEP	NMOD	CONJ	P	P	TITLE	SBJ	ROOT	P
 _	A0	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_
 _	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	_
-
-``	It	's	totally	different	.	''
-``	PRP	VBZ	RB	JJ	.	''
-``	PRP	VBZ	RB	JJ	.	''
-3	3	0	5	3	3	3
-3	3	0	5	3	3	3
-P	SBJ	ROOT	AMOD	PRD	P	P
-P	SBJ	ROOT	AMOD	PRD	P	P
-
 
 He	said	the	offering	was	designed	to	create	long	-	term	incentives	for	employees	.
 PRP	VBD	DT	NN	VBD	VBN	TO	VB	JJ	HYPH	NN	NNS	IN	NNS	.
@@ -6994,15 +6688,6 @@ P	ROOT	OBJ	OPRD	AMOD	NMOD	COORD	CONJ	PMOD
 P	ROOT	OBJ	OPRD	AMOD	NMOD	COORD	CONJ	PMOD
 1
 _	_	A1	A2	_	_	_	_	_
-
-SEC	proposals	(	May	1988	)	:
-NNP	NNS	(	NNP	CD	)	:
-NNP	NNS	(	NNP	CD	)	:
-2	0	5	5	2	5	2
-2	5	5	5	0	5	5
-NMOD	ROOT	P	NMOD	PRN	P	P
-NMOD	NMOD	P	NMOD	ROOT	P	P
-
 
 --	Require	prompt	reports	of	large	securities	trades	.
 :	VB	JJ	NNS	IN	JJ	NNS	NNS	.
@@ -8265,15 +7950,6 @@ DEP	NMOD	ADV	P	NMOD	SUFFIX	NMOD	SBJ	ROOT	VC	ADV	PMOD	P
 _	A0	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	A0	_	AM-MNR	_	_	_	_	_	_
 
-It	's	also	costly	.
-PRP	VBZ	RB	JJ	.
-PRP	VBZ	RB	JJ	.
-2	0	2	2	2
-2	0	2	2	2
-SBJ	ROOT	ADV	PRD	P
-SBJ	ROOT	ADV	PRD	P
-
-
 Mr.	Kaye	says	he	has	paid	more	than	$	70,000	in	legal	fees	so	far	.
 NNP	NNP	VBZ	PRP	VBZ	VBN	RBR	IN	$	CD	IN	JJ	NNS	RB	RB	.
 NNP	NNP	VBZ	PRP	VBZ	VBN	RBR	IN	$	CD	IN	JJ	NNS	RB	RB	.
@@ -9450,15 +9126,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A0	_	AM-NEG	_	_	_	A1	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-MNR	_	_	_	A1	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_
 
-It	was	herd	instinct	.	''
-PRP	VBD	NN	NN	.	''
-PRP	VBD	NN	NN	.	''
-2	0	4	2	2	2
-2	0	4	2	2	2
-SBJ	ROOT	NMOD	PRD	P	P
-SBJ	ROOT	NMOD	PRD	P	P
-
-
 He	adds	:	``	The	junk	market	has	witnessed	some	trouble	and	now	some	people	think	that	if	the	equity	market	gets	creamed	that	means	the	economy	will	be	terrible	and	that	's	bad	for	junk	.
 PRP	VBZ	:	``	DT	NN	NN	VBZ	VBN	DT	NN	CC	RB	DT	NN	VBP	IN	IN	DT	NN	NN	VBZ	VBN	DT	VBZ	DT	NN	MD	VB	JJ	CC	DT	VBZ	JJ	IN	NN	.
 PRP	VBZ	:	``	DT	NN	NN	VBZ	VBN	DT	NN	CC	RB	DT	NNS	VBP	IN	IN	DT	NN	NN	VBZ	VBN	DT	VBZ	DT	NN	MD	VB	JJ	CC	DT	VBZ	JJ	IN	NN	.
@@ -9647,15 +9314,6 @@ P	NMOD	TMP	SBJ	ADV	OBJ	OBJ	ADV	PMOD	NMOD	NMOD	NMOD	PMOD	P	P	SBJ	ROOT	P
 5	16
 _	_	AM-TMP	A0	AM-ADV	_	_	_	_	_	_	_	A1	_	_	_	_	_
 _	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	A0	_	_
-
-``	This	year	,	at	best	,	it	's	in	one	in	every	five	or	six	.
-``	DT	NN	,	IN	RB	,	PRP	VBZ	IN	CD	IN	DT	CD	CC	CD	.
-``	DT	NN	,	IN	JJS	,	PRP	VBZ	IN	CD	IN	DT	CD	CC	CD	.
-9	3	9	9	9	5	9	9	0	9	13	13	10	13	14	15	9
-17	3	9	9	9	5	9	9	17	9	10	9	14	12	14	15	0
-P	NMOD	TMP	P	ADV	DEP	P	SBJ	ROOT	LOC-PRD	DEP	COORD	PMOD	COORD	COORD	CONJ	P
-DEP	NMOD	SBJ	P	ADV	AMOD	P	SBJ	DEP	LOC-PRD	PMOD	LOC	NMOD	PMOD	COORD	CONJ	ROOT
-
 
 And	our	credit	standards	have	n't	changed	one	iota	.	''
 CC	PRP$	NN	NNS	VBP	RB	VBN	CD	NN	.	''
@@ -9909,15 +9567,6 @@ _	_	_	_	_	_	_	_	A0	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A1	_	_	A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	A1	A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
-
-Friday	's	Market	Activity
-NNP	POS	NNP	NNP
-NNP	POS	NN	NN
-4	1	4	0
-4	1	4	0
-NMOD	SUFFIX	NAME	ROOT
-NMOD	SUFFIX	NMOD	ROOT
-
 
 Prices	of	Treasury	bonds	surged	in	the	biggest	rally	of	the	year	as	investors	fled	a	plummeting	stock	market	.
 NNS	IN	NNP	NNS	VBD	IN	DT	JJS	NN	IN	DT	NN	IN	NNS	VBD	DT	VBG	NN	NN	.
@@ -10434,15 +10083,6 @@ _	_	A0	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	A0	_	A1	_	_	_	_	_	_	_	_
 _	_	_	A1	_	A2	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A1	_	_	A2	_
-
-Congratulations	,	Mr.	Secretary	and	Mr.	Congressman	.
-UH	,	NNP	NN	CC	NNP	NN	.
-NNS	,	NNP	NN	CC	NNP	NN	.
-4	4	4	0	4	7	5	4
-8	8	4	8	4	7	5	0
-DEP	P	NMOD	ROOT	COORD	NMOD	CONJ	P
-DEP	P	NMOD	DEP	COORD	NMOD	CONJ	ROOT
-
 
 Even	more	important	,	in	our	view	,	was	the	Treasury	's	threat	to	thrash	the	dollar	.
 RB	RBR	JJ	,	IN	PRP$	NN	,	VBD	DT	NNP	POS	NN	TO	VB	DT	NN	.
@@ -11324,15 +10964,6 @@ _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-LOC	_	_
 
-As	for	Mr.	Papandreou	?
-IN	IN	NNP	NNP	.
-IN	IN	NNP	NNP	.
-0	1	4	2	1
-0	1	4	2	1
-ROOT	PMOD	TITLE	PMOD	P
-ROOT	PMOD	TITLE	PMOD	P
-
-
 He	's	not	exactly	sitting	pretty	at	this	stage	.
 PRP	VBZ	RB	RB	VBG	RB	IN	DT	NN	.
 PRP	VBZ	RB	RB	VBG	RB	IN	DT	NN	.
@@ -11750,33 +11381,6 @@ _	_	_	_	_	_	_	_	_	_	_	AM-EXT	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	A0	_	_	A1	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_
 
-Markets	--
-NNS	:
-NNS	:
-0	1
-0	1
-ROOT	P
-ROOT	P
-
-
-Stocks	:	Volume	251,170,000	shares	.
-NNS	:	NN	CD	NNS	.
-NNS	:	NN	CD	NNS	.
-0	1	1	5	3	1
-0	1	1	5	3	1
-ROOT	P	NMOD	NMOD	APPO	P
-ROOT	P	NMOD	NMOD	APPO	P
-
-
-Dow	Jones	industrials	2569.26	,	off	190.58	;	transportation	1406.29	,	off	78.06	;	utilities	211.96	,	off	7.29	.
-NNP	NNP	NNS	CD	,	IN	CD	:	NN	CD	,	IN	CD	:	NNS	CD	,	IN	CD	.
-NNP	NNP	NNS	NN	,	IN	NN	:	NN	NN	,	IN	NN	:	NNS	NN	,	IN	NN	.
-2	3	4	0	4	4	6	4	10	4	10	10	12	10	16	10	16	16	18	4
-2	4	4	0	4	4	6	4	10	4	4	4	12	4	16	4	4	4	18	4
-NAME	NMOD	NMOD	ROOT	P	NMOD	AMOD	P	NMOD	COORD	P	NMOD	AMOD	P	NMOD	COORD	P	NMOD	AMOD	P
-NAME	NMOD	NMOD	ROOT	P	NMOD	PMOD	P	NMOD	APPO	P	NMOD	PMOD	P	NMOD	APPO	P	NMOD	PMOD	P
-
-
 Bonds	:	Shearson	Lehman	Hutton	Treasury	index	3421.29	,	up
 NNS	:	NNP	NNP	NNP	NNP	NN	CD	,	IN
 NNS	:	NNP	NNP	NNP	NNP	NN	NN	,	RB
@@ -11797,15 +11401,6 @@ NMOD	P	NAME	NMOD	NMOD	NMOD	ROOT	P	NMOD	AMOD	P	NMOD	NMOD	APPO	P	NMOD	AMOD	P
 5	12
 _	_	_	A0	A1	_	A2	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	A1	_	A2	_	_	_	_
-
-Dollar	:	142.10	yen	,	off	2.07	;	1.8740	marks	,	off	0.0343	.
-NN	:	CD	NN	,	IN	CD	:	CD	NNS	,	IN	CD	.
-NN	:	CD	NN	,	IN	NN	:	CD	NNS	,	IN	NN	.
-10	10	4	10	4	4	6	10	10	0	10	10	12	10
-10	10	4	10	4	4	6	4	10	0	10	10	12	10
-NMOD	P	NMOD	NMOD	P	NMOD	AMOD	P	NMOD	ROOT	P	NMOD	AMOD	P
-NMOD	P	NMOD	NMOD	P	NMOD	PMOD	P	NMOD	ROOT	P	NMOD	PMOD	P
-
 
 A	federal	appeals	court	in	San	Francisco	ruled	that	shareholders	ca	n't	hold	corporate	officials	liable	for	false	sales	projections	on	new	products	if	the	news	media	concurrently	revealed	substantial	information	about	the	product	's	flaws	.
 DT	JJ	NNS	NN	IN	NNP	NNP	VBD	IN	NNS	MD	RB	VB	JJ	NNS	JJ	IN	JJ	NNS	NNS	IN	JJ	NNS	IN	DT	NN	NNS	RB	VBD	JJ	NN	IN	DT	NN	POS	NNS	.
@@ -12244,15 +11839,6 @@ P	NMOD	SBJ	OBJ	ADV	NMOD	NMOD	PRD	P	P	TITLE	SBJ	ROOT	P
 6	12
 _	_	_	_	_	_	_	A0	_	_	_	_	_	_
 _	_	_	A1	_	_	_	_	_	_	_	A0	_	_
-
-HOUSTON	-	CALGARY	ALLIANCE	:
-NNP	NNP	NNP	NNP	:
-NNP	HYPH	NNP	NNP	:
-3	3	4	0	4
-4	4	4	0	4
-HMOD	HMOD	NMOD	ROOT	P
-NAME	NAME	NAME	ROOT	P
-
 
 Fulbright	&	Jaworski	of	Houston	and	Fenerty	,	Robertson	,	Fraser	&	Hatch	of	Calgary	,	Alberta	,	are	affiliating	to	help	serve	their	energy	-	industry	clients	.
 NNP	NNP	NNP	IN	NNP	CC	NNP	NNP	NNP	NNP	NNP	NNP	NNP	IN	NNP	,	NNP	,	VBP	VBG	TO	VB	VB	PRP$	NN	HYPH	NN	NNS	.
@@ -13177,15 +12763,6 @@ _	_	_	_	_	_	_	A1	AM-LOC	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	
 _	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-MOD	_	A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	AM-MNR	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_
-
-The	company	did	n't	elaborate	.
-DT	NN	VBD	RB	VBP	.
-DT	NN	VBD	RB	VB	.
-2	3	0	3	3	3
-2	3	0	3	3	3
-NMOD	SBJ	ROOT	ADV	VC	P
-NMOD	SBJ	ROOT	ADV	VC	P
-
 
 The	diversified	energy	and	minerals	concern	said	that	a	depressed	uranium	market	is	responsible	for	the	temporary	mothballing	of	the	plant	,	but	that	the	plant	can	be	reactivated	quickly	when	the	market	improves	.
 DT	VBN	NN	CC	NNS	NN	VBD	IN	DT	VBN	NN	NN	VBZ	JJ	IN	DT	JJ	NN	IN	DT	NN	,	CC	IN	DT	NN	MD	VB	VBN	RB	WRB	DT	NN	VBZ	.
@@ -14980,15 +14557,6 @@ A1	A2	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	A1	_	_	C-A1	_	AM-TMP	_	_	_	_	_	_	_	_	_	_
 _	A1	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	_	_	_	_	A1	_	_
-
-Employment	is	now	4	%	higher	than	in	1983	.
-NN	VBZ	RB	CD	NN	JJR	IN	IN	CD	.
-NNP	VBZ	RB	CD	NN	JJR	IN	IN	CD	.
-2	0	2	5	2	5	5	7	8	2
-2	0	2	5	6	2	6	7	8	2
-SBJ	ROOT	TMP	DEP	PRD	AMOD	AMOD	PMOD	PMOD	P
-SBJ	ROOT	TMP	NMOD	AMOD	PRD	AMOD	TMP	PMOD	P
-
 
 Buying	income	in	real	dollars	actually	increased	15	%	between	1983	and	1987	(	the	most	recent	year	available	)	.
 VBG	NN	IN	JJ	NNS	RB	VBD	CD	NN	IN	CD	CC	CD	(	DT	RBS	JJ	NN	JJ	)	.
@@ -17032,24 +16600,6 @@ _	_	_	_	AM-NEG	A0	A1	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	A1	_	_	A2	_	_	_	_
 _	_	_	_	_	_	_	A0	_	_	_	_	_	A1	_
 
-That	's	the	problem	,	is	n't	it	?	''
-DT	VBZ	DT	NN	,	VBZ	RB	PRP	.	''
-DT	VBZ	DT	NN	,	VBZ	RB	PRP	.	''
-2	0	4	2	2	2	6	6	2	2
-2	0	4	2	2	2	6	6	2	2
-SBJ	ROOT	NMOD	PRD	P	COORD	ADV	SBJ	P	P
-SBJ	ROOT	NMOD	PRD	P	COORD	ADV	SBJ	P	P
-
-
-Indeed	it	is	.
-RB	PRP	VBZ	.
-RB	PRP	VBZ	.
-3	3	0	3
-3	3	0	3
-ADV	SBJ	ROOT	P
-ADV	SBJ	ROOT	P
-
-
 Congress	has	said	repeatedly	it	wants	no	part	of	the	mess	,	urging	the	studios	and	the	networks	,	which	license	rights	to	air	shows	made	by	the	studios	,	to	work	out	their	own	compromise	.
 NNP	VBZ	VBN	RB	PRP	VBZ	DT	NN	IN	DT	NN	,	VBG	DT	NNS	CC	DT	NNS	,	WDT	VBP	NNS	TO	NN	NNS	VBN	IN	DT	NNS	,	TO	VB	RP	PRP$	JJ	NN	.
 NNP	VBZ	VBN	RB	PRP	VBZ	DT	NN	IN	DT	NN	,	VBG	DT	NNS	CC	DT	NNS	,	WDT	VBP	NNS	TO	VB	NNS	VBN	IN	DT	NNS	,	TO	VB	RP	PRP$	JJ	NN	.
@@ -17370,15 +16920,6 @@ _	_	_	_	_	_	A1	_	_	_	_	_	_	A2	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	_	A1	_	_	_	_	_	_	_	_	_	_	_
 _	_	_	_	_	_	_	_	_	A1	A0	_	_	_	_	_	_	_	_	_	_	_
-
-Six	years	ago	they	were	tantalizingly	close	.
-CD	NNS	IN	PRP	VBD	RB	JJ	.
-CD	NNS	RB	PRP	VBD	RB	JJ	.
-2	3	5	5	0	7	5	5
-2	3	5	5	0	7	5	5
-NMOD	AMOD	TMP	SBJ	ROOT	AMOD	PRD	P
-NMOD	AMOD	TMP	SBJ	ROOT	AMOD	PRD	P
-
 
 The	Reagan	-	era	Federal	Communications	Commission	had	ruled	in	favor	of	killing	most	of	the	rules	.
 DT	NNP	HYPH	NNP	NNP	NNPS	NNP	VBD	VBN	IN	NN	IN	VBG	DT	IN	DT	NNS	.
