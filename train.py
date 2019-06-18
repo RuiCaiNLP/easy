@@ -57,8 +57,8 @@ if __name__ == "__main__":
             if global_step % 1 == 0:
                 print("testing...")
                 correct_noNull_predicts = 0.
-                noNull_predicts = 0.
-                noNull_labels = 0.
+                noNull_predicts = 0.1
+                noNull_labels = 0.0
                 test_data_loader = DataLoader("processed/dev_pro", vocab)
                 for words, tags, preds, rels in \
                         test_data_loader.get_batches(batch_size=1, shuffle=False):

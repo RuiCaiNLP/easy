@@ -54,7 +54,8 @@ def srl2ptb(origin_data):
             for i in range(len(sentence)):
                 SRL_label_set.append(sentence[i][14+arg_idx])
             one_sample.append(SRL_label_set)
-        srl_data.append(one_sample)
+        if len(pred_set) > 0:
+            srl_data.append(one_sample)
 
     return srl_data
 
