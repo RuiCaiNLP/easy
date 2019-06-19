@@ -133,23 +133,30 @@ class simpleParser(nn.Module):
         if isTrain or not isTrain:
             for i, preds in enumerate(pred_golds):
                 candidate_preds = preds
-                for j in range(preds_num[i]):
-                    rel_targets_selected.append(rel_targets[offset_targets+j])
-                offset_targets += preds_num[i]
+                #for j in range(preds_num[i]):
+                #   rel_targets_selected.append(rel_targets[offset_targets+j])
+
                 candidate_preds_batch.append(candidate_preds)
 
         # only for train, sort it, and then add the top 0.2 portion
         if isTrain:
             for i in range(batch_size):
-                candidate_preds_num = int(num_tokens[i]* 0.2)
+                candidate_preds_num = int(num_tokens[i]* 0.4)
                 sorted_preds = pred_indices[i][: candidate_preds_num].cpu().numpy()
                 for candidate in sorted_preds:
                     if not candidate in candidate_preds_batch[i]:
                         candidate_preds_batch[i].append(candidate)
-                        null_targets = np.zeros((seq_len), dtype=np.int32)
-                        null_targets[:num_tokens[i]] = [42] * num_tokens[i]
-                        rel_targets_selected.append(null_targets)
 
+        for i, candidate_preds in enumerate(candidate_preds_batch):
+            for j, candidate in enumerate(candidate_preds):
+                if j < preds_num[i]:
+                    rel_targets_selected.append(rel_targets[offset_targets + j])
+
+                else:
+                    null_targets = np.zeros((seq_len), dtype=np.int32)
+                    null_targets[:num_tokens[i]] = [42] * num_tokens[i]
+                    rel_targets_selected.append(null_targets)
+            offset_targets += preds_num[i]
         # find sample indices, mask, preds indices, according to final candidate preds
         for i in range(batch_size):
             for j in range(len(candidate_preds_batch[i])):
@@ -161,6 +168,9 @@ class simpleParser(nn.Module):
         g_arg_selected = g_arg.index_select(0, torch.tensor(sample_indices_selected))
         g_pred_selected = g_pred.view(batch_size*seq_len, -1).index_select(0, torch.tensor(preds_indices_selected))
 
+        print(sample_indices_selected)
+        print(candidate_preds_batch)
+        print(rel_targets_selected)
 
         W_rel = self.rel_W
 
