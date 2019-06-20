@@ -222,6 +222,7 @@ class DataLoader(object):
                 preds_num = len(sample[3])
 
                 for j in range(preds_num):
+
                     rel_target = np.zeros((max_len), dtype=np.int32)
                     rel_target[:len(sample[4 + j])] = sample[4 + j]
                     rel_targets.append(rel_target)

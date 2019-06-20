@@ -132,7 +132,7 @@ class simpleParser(nn.Module):
         # labeled data, gold predicates are given
         if isTrain or not isTrain:
             for i, preds in enumerate(pred_golds):
-                candidate_preds = preds
+                candidate_preds = [ele for ele in preds]
                 #for j in range(preds_num[i]):
                 #   rel_targets_selected.append(rel_targets[offset_targets+j])
 
