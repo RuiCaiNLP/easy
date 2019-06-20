@@ -141,7 +141,7 @@ class simpleParser(nn.Module):
         # only for train, sort it, and then add the top 0.2 portion
         if isTrain:
             for i in range(batch_size):
-                candidate_preds_num = int(num_tokens[i]* 0.4)
+                candidate_preds_num = int(num_tokens[i]* 0.0)
                 sorted_preds = pred_indices[i][: candidate_preds_num].cpu().numpy()
                 for candidate in sorted_preds:
                     if not candidate in candidate_preds_batch[i]:
@@ -181,7 +181,13 @@ class simpleParser(nn.Module):
                               total_preds_num,
                               num_outputs=self._vocab.rel_size, bias_x=True, bias_y=True)
 
+        uniScores_pred = uniScores_pred.view(batch_size, seq_len, 1).expand(batch_size, seq_len, self._vocab.rel_size)
+        uniScores_arg = uniScores_arg.view(batch_size, seq_len, 1).expand(batch_size, seq_len, self._vocab.rel_size)
+        uniScores_pred_selected = uniScores_pred.index_select(0, torch.tensor(sample_indices_selected))
+        uniScores_arg_selected = uniScores_arg.index_select(0, torch.tensor(sample_indices_selected))
+        rel_logits += uniScores_arg_selected + uniScores_pred_selected
         flat_rel_logits = rel_logits.view(total_preds_num*seq_len, self._vocab.rel_size)
+
 
         if isTrain:
 
@@ -199,7 +205,7 @@ class simpleParser(nn.Module):
             loss_function = nn.CrossEntropyLoss(ignore_index=0)
 
             rel_loss = loss_function(flat_rel_logits, torch.from_numpy(targets_1D).to(device))
-            print(rel_accuracy, rel_loss)
+
             return rel_accuracy, rel_loss
 
 

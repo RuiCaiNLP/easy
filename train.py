@@ -49,12 +49,15 @@ if __name__ == "__main__":
             trainer.zero_grad()
             parser.train()
             accuracy, loss = parser(words, tags, preds, rels, isTrain=True)
+            if global_step % 30 == 0 :
+                print("global step#%d, accuracy:%.2f" %(global_step, accuracy))
+                print(loss)
             loss.backward()
             trainer.step()
 
             global_step += 1
 
-            if global_step % 100 == 0:
+            if global_step % 300 == 0:
                 print("testing...")
                 correct_noNull_predicts = 0.
                 noNull_predicts = 0.1
