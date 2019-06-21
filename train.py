@@ -39,6 +39,7 @@ if __name__ == "__main__":
     trainer = optim.Adam(parser.parameters(), lr=0.001)
     epoch = 0
     best_F1 = 0.
+    parser.to(device)
 
     while global_step < 5000:
         print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '\nStart training epoch #%d' % (epoch,)
