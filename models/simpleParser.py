@@ -165,8 +165,8 @@ class simpleParser(nn.Module):
                 preds_indices_selected.append(candidate_preds_batch[i][j]+offset_words)
             offset_words += int(seq_len)
 
-        g_arg_selected = g_arg.index_select(0, torch.tensor(sample_indices_selected))
-        g_pred_selected = g_pred.view(batch_size*seq_len, -1).index_select(0, torch.tensor(preds_indices_selected))
+        g_arg_selected = g_arg.index_select(0, torch.tensor(sample_indices_selected).to(device))
+        g_pred_selected = g_pred.view(batch_size*seq_len, -1).index_select(0, torch.tensor(preds_indices_selected).to(device))
 
         #print(sample_indices_selected)
         #print(candidate_preds_batch)
@@ -183,8 +183,8 @@ class simpleParser(nn.Module):
 
         uniScores_pred = uniScores_pred.view(batch_size, seq_len, 1).expand(batch_size, seq_len, self._vocab.rel_size)
         uniScores_arg = uniScores_arg.view(batch_size, seq_len, 1).expand(batch_size, seq_len, self._vocab.rel_size)
-        uniScores_pred_selected = uniScores_pred.index_select(0, torch.tensor(sample_indices_selected))
-        uniScores_arg_selected = uniScores_arg.index_select(0, torch.tensor(sample_indices_selected))
+        uniScores_pred_selected = uniScores_pred.index_select(0, torch.tensor(sample_indices_selected).to(device))
+        uniScores_arg_selected = uniScores_arg.index_select(0, torch.tensor(sample_indices_selected).to(device))
         rel_logits += uniScores_arg_selected + uniScores_pred_selected
 
         ##enforce the score of null to be 0
