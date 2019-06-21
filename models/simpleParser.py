@@ -186,6 +186,9 @@ class simpleParser(nn.Module):
         uniScores_pred_selected = uniScores_pred.index_select(0, torch.tensor(sample_indices_selected))
         uniScores_arg_selected = uniScores_arg.index_select(0, torch.tensor(sample_indices_selected))
         rel_logits += uniScores_arg_selected + uniScores_pred_selected
+
+        ##enforce the score of null to be 0
+        rel_logits[:,:, 42] = torch.zeros(total_preds_num, seq_len).to(device)
         flat_rel_logits = rel_logits.view(total_preds_num*seq_len, self._vocab.rel_size)
 
 
