@@ -41,7 +41,7 @@ if __name__ == "__main__":
     best_F1 = 0.
     parser.to(device)
 
-    while global_step < 50000:
+    while global_step < 500000:
         print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '\nStart training epoch #%d' % (epoch,)
         epoch += 1
         for words, tags, preds, rels in \
