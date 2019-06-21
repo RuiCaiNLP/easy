@@ -67,6 +67,8 @@ class simpleParser(nn.Module):
         self.mlp_pred_b = nn.Parameter(torch.from_numpy(np.zeros(mlp_size,).astype("float32")).to(device))
         self.mlp_size = mlp_size
         self.dropout_mlp = dropout_mlp
+        self.emb_dropout = nn.Dropout(p=dropout_lstm_input)
+        self.hidden_dropout = nn.Dropout(p=dropout_lstm_hidden)
         self.mlp_dropout = nn.Dropout(p=dropout_mlp)
 
         self.rel_W = nn.Parameter(torch.from_numpy(np.zeros((mlp_size + 1, vocab.rel_size * (mlp_size + 1))).astype("float32")).to(device))
@@ -99,10 +101,11 @@ class simpleParser(nn.Module):
 
 
         emb_inputs = torch.cat((word_embs, pre_embs, tag_embs), dim=2)
-
+        emb_inputs = self.emb_dropout(emb_inputs)
 
         init_hidden = self.init_hidden(batch_size)
         top_recur, hidden = self.BiLSTM(emb_inputs, init_hidden)
+        top_recur = self.dropout_lstm_hidden(top_recur)
         del init_hidden
 
         if isTrain and False:
