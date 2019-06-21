@@ -41,7 +41,7 @@ if __name__ == "__main__":
     best_F1 = 0.
     parser.to(device)
 
-    while global_step < 5000:
+    while global_step < 50000:
         print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '\nStart training epoch #%d' % (epoch,)
         epoch += 1
         for words, tags, preds, rels in \
@@ -51,7 +51,7 @@ if __name__ == "__main__":
             parser.train()
             accuracy, loss = parser(words, tags, preds, rels, isTrain=True)
             if global_step % 30 == 0 :
-                print("global step#%d, accuracy:%.2f" %(global_step, accuracy))
+                print("epoch %d, global step#%d, accuracy:%.2f" %(epoch, global_step, accuracy))
                 print(loss)
             loss.backward()
             trainer.step()
