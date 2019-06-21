@@ -59,24 +59,25 @@ if __name__ == "__main__":
             global_step += 1
 
             if global_step % 300 == 0:
-                print("testing...")
-                parser.eval()
-                correct_noNull_predicts = 0.
-                noNull_predicts = 0.1
-                noNull_labels = 0.0
-                test_data_loader = DataLoader("processed/dev_pro", vocab)
-                for words, tags, preds, rels in \
-                        test_data_loader.get_batches(batch_size=10, shuffle=False):
-                    a, b, c = parser(words, tags, preds, rels, isTrain=False)
-                    correct_noNull_predicts += a
-                    noNull_predicts += b
-                    noNull_labels += c
+                with torch.no_grad():
+                    print("testing...")
+                    parser.eval()
+                    correct_noNull_predicts = 0.
+                    noNull_predicts = 0.1
+                    noNull_labels = 0.0
+                    test_data_loader = DataLoader("processed/dev_pro", vocab)
+                    for words, tags, preds, rels in \
+                            test_data_loader.get_batches(batch_size=10, shuffle=False):
+                        a, b, c = parser(words, tags, preds, rels, isTrain=False)
+                        correct_noNull_predicts += a
+                        noNull_predicts += b
+                        noNull_labels += c
 
-                P = correct_noNull_predicts/noNull_predicts
-                R = correct_noNull_predicts/noNull_labels
-                F = 2*P*R / (P + R + 0.1)
-                print(correct_noNull_predicts, noNull_predicts, noNull_labels)
-                print("tested", P, R, F)
+                    P = correct_noNull_predicts/noNull_predicts
+                    R = correct_noNull_predicts/noNull_labels
+                    F = 2*P*R / (P + R + 0.1)
+                    print(correct_noNull_predicts, noNull_predicts, noNull_labels)
+                    print("tested", P, R, F)
 
 
 
