@@ -105,7 +105,7 @@ class simpleParser(nn.Module):
 
         init_hidden = self.init_hidden(batch_size)
         top_recur, hidden = self.BiLSTM(emb_inputs, init_hidden)
-        top_recur = self.dropout_lstm_hidden(top_recur)
+        top_recur = self.hidden_dropout(top_recur)
         del init_hidden
 
         if isTrain and False:
