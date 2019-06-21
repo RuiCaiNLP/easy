@@ -60,6 +60,7 @@ if __name__ == "__main__":
 
             if global_step % 300 == 0:
                 print("testing...")
+                parser.eval()
                 correct_noNull_predicts = 0.
                 noNull_predicts = 0.1
                 noNull_labels = 0.0
