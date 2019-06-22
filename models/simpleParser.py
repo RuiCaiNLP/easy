@@ -16,7 +16,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 class simpleParser(nn.Module):
     def __init__(self, vocab, word_dims=100, pret_dims=100, tag_dims=16,
                  lstm_layers=3, lstm_hiddens=512, dropout_lstm_input=0.3, dropout_lstm_hidden=0.3,
-                 mlp_size=500,
+                 mlp_size=400,
                  dropout_mlp=0.2):
         super(simpleParser, self).__init__()
         #pc = dy.ParameterCollection()
@@ -35,7 +35,7 @@ class simpleParser(nn.Module):
         self.lstm_hiddens = lstm_hiddens
         self.dropout_x = dropout_lstm_input
         self.dropout_h = dropout_lstm_hidden
-        input_dims = word_dims + pret_dims + tag_dims
+        input_dims = word_dims + pret_dims
 
 
 
@@ -100,18 +100,13 @@ class simpleParser(nn.Module):
         tag_embs = self.tag_embs(torch.from_numpy(tag_inputs.astype('int64')).to(device))
 
 
-        emb_inputs = torch.cat((word_embs, pre_embs, tag_embs), dim=2)
+        emb_inputs = torch.cat((word_embs, pre_embs), dim=2)
         emb_inputs = self.emb_dropout(emb_inputs)
 
         init_hidden = self.init_hidden(batch_size)
         top_recur, hidden = self.BiLSTM(emb_inputs, init_hidden)
         top_recur = self.hidden_dropout(top_recur)
         del init_hidden
-
-        if isTrain and False:
-            dropout_dim = Variable(torch.bernoulli(
-                torch.Tensor(1, batch_size, 2*self.lstm_hiddens).fill_(1 - self.dropout_mlp)), requires_grad=False).to(device)
-            top_recur = top_recur * dropout_dim.expand(seq_len, batch_size, 2*self.lstm_hiddens)
 
         g_arg = F.relu(self.mlp_arg(top_recur))
         g_pred = F.relu(self.mlp_pred(top_recur))

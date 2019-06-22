@@ -76,8 +76,11 @@ if __name__ == "__main__":
                     P = correct_noNull_predicts/noNull_predicts
                     R = correct_noNull_predicts/noNull_labels
                     F = 2*P*R / (P + R + 0.00001)
+                    if F > best_F1:
+                        best_F1 = F
                     print(correct_noNull_predicts, noNull_predicts, noNull_labels)
                     print("tested", P, R, F)
+                    print("history best:", best_F1)
 
 
 

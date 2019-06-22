@@ -78,15 +78,17 @@ class Vocab(object):
         print(len(self._id2word))
         words_in_train_data = set(self._id2word)
         emb_size = 0
+        pretrained_used_nums = 0
         with open(self._pret_file) as f:
             for line in f.readlines():
                 line = line.strip().split()
                 if line:
                     word, data = line[0], line[1:]
                     if word in words_in_train_data:
+                        pretrained_used_nums += 1
                         embs[self._word2id[word]] = data
                         emb_size = len(data)
-
+        print("pretranied words in train set numbers:", pretrained_used_nums)
         for idx, emb in enumerate(embs):
             if not emb:
                 embs[idx] = np.zeros(emb_size)
