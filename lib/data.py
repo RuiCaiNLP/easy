@@ -21,6 +21,7 @@ class Vocab(object):
                 if info:
                     if content_idx == 0:
                         for word in info:
+                            word = word.lower()
                             word_counter[word] += 1
                     elif content_idx == 1 or content_idx == 2:
                         for tag in info:
