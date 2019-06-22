@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
                     P = correct_noNull_predicts/noNull_predicts
                     R = correct_noNull_predicts/noNull_labels
-                    F = 2*P*R / (P + R + 0.1)
+                    F = 2*P*R / (P + R + 0.00001)
                     print(correct_noNull_predicts, noNull_predicts, noNull_labels)
                     print("tested", P, R, F)
 
