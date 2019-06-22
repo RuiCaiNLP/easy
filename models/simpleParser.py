@@ -139,7 +139,7 @@ class simpleParser(nn.Module):
         # only for train, sort it, and then add the top 0.2 portion
         if isTrain:
             for i in range(batch_size):
-                candidate_preds_num = int(num_tokens[i]* 0.4)
+                candidate_preds_num = int(num_tokens[i]* 0)
                 sorted_preds = pred_indices[i][: candidate_preds_num].cpu().numpy()
                 for candidate in sorted_preds:
                     if not candidate in candidate_preds_batch[i]:
@@ -191,7 +191,7 @@ class simpleParser(nn.Module):
         #rel_logits += uniScores_arg_selected + uniScores_pred_selected
 
         ##enforce the score of null to be 0
-        #rel_logits[:,:, 42] = torch.zeros(total_preds_num, seq_len).to(device)
+        rel_logits[:,:, 42] = torch.zeros(total_preds_num, seq_len).to(device)
         flat_rel_logits = rel_logits.view(total_preds_num*seq_len, self._vocab.rel_size)
 
 
