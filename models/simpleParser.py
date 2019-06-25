@@ -230,9 +230,9 @@ class simpleParser(nn.Module):
         show = 0
         for msk, label_gold, label_predict in zip(mask_selected, rel_targets, rel_predicts):
             if show == 0:
-                print("++++++++++++++++++++++++++++++++++++++++++++++")
-                print(label_gold)
-                print(label_predict)
+                #print("++++++++++++++++++++++++++++++++++++++++++++++")
+                #print(label_gold)
+                #print(label_predict)
                 show = 1
             for i in range(len(label_predict)):
                 if msk[i] > 0:
