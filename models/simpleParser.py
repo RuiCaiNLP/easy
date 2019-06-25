@@ -227,9 +227,13 @@ class simpleParser(nn.Module):
         noNull_predict = 0
         noNull_labels = 0
 
+        show = 0
         for msk, label_gold, label_predict in zip(mask_selected, rel_targets, rel_predicts):
-            print(label_gold)
-            print(label_predict)
+            if show == 0:
+                print("++++++++++++++++++++++++++++++++++++++++++++++")
+                print(label_gold)
+                print(label_predict)
+                show = 1
             for i in range(len(label_predict)):
                 if msk[i] > 0:
                     if label_gold[i] != 42:
