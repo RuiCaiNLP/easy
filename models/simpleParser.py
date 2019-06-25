@@ -144,7 +144,7 @@ class simpleParser(nn.Module):
                 candidate_preds_num = int(num_tokens[i]* 0.4)
                 sorted_preds = pred_indices[i][: candidate_preds_num].cpu().numpy()
                 for candidate in sorted_preds:
-                    if not candidate in candidate_preds_batch[i]:
+                    if not candidate in candidate_preds_batch[i] and False:
                         candidate_preds_batch[i].append(candidate)
 
 
@@ -191,7 +191,7 @@ class simpleParser(nn.Module):
 
         uniScores_arg = uniScores_arg.view(batch_size, seq_len, 1).expand(-1, -1, self._vocab.rel_size)
         uniScores_arg_selected = uniScores_arg.index_select(0, torch.tensor(sample_indices_selected).to(device))
-        rel_logits = rel_logits + uniScores_arg_selected + uniScores_pred_selected
+        rel_logits = rel_logits + uniScores_arg_selected # + uniScores_pred_selected
 
         ##enforce the score of null to be 0
         rel_logits[:, :, 42] = torch.zeros(total_preds_num, seq_len, requires_grad=False).to(device)
