@@ -136,20 +136,16 @@ class simpleParser(nn.Module):
 
                 candidate_preds_batch.append(candidate_preds)
 
-        print('#######################')
-        print(pred_golds)
+
 
         # only for train, sort it, and then add the top 0.2 portion
         if isTrain:
             for i in range(batch_size):
                 candidate_preds_num = int(num_tokens[i]* 0.4)
                 sorted_preds = pred_indices[i][: candidate_preds_num].cpu().numpy()
-                print(sorted_preds)
-                """
                 for candidate in sorted_preds:
                     if not candidate in candidate_preds_batch[i]:
                         candidate_preds_batch[i].append(candidate)
-                """
 
 
         for i, candidate_preds in enumerate(candidate_preds_batch):
@@ -232,6 +228,8 @@ class simpleParser(nn.Module):
         noNull_labels = 0
 
         for msk, label_gold, label_predict in zip(mask_selected, rel_targets, rel_predicts):
+            print(label_gold)
+            print(label_predict)
             for i in range(len(label_predict)):
                 if msk[i] > 0:
                     if label_gold[i] != 42:
