@@ -142,7 +142,7 @@ class simpleParser(nn.Module):
         # only for train, sort it, and then add the top 0.2 portion
         if isTrain:
             for i in range(batch_size):
-                candidate_preds_num = int(num_tokens[i]* 0.4)
+                candidate_preds_num = int(num_tokens[i]* 0.)
                 sorted_preds = pred_indices[i][: candidate_preds_num].cpu().numpy()
                 print(sorted_preds)
                 for candidate in sorted_preds:
