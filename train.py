@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
             global_step += 1
 
-            if global_step % 3000 == 0:
+            if global_step % 500 == 0:
                 with torch.no_grad():
                     print("testing...")
                     parser.eval()
