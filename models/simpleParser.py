@@ -136,11 +136,15 @@ class simpleParser(nn.Module):
 
                 candidate_preds_batch.append(candidate_preds)
 
+        print('#######################')
+        print(pred_golds)
+
         # only for train, sort it, and then add the top 0.2 portion
         if isTrain:
             for i in range(batch_size):
                 candidate_preds_num = int(num_tokens[i]* 0.4)
                 sorted_preds = pred_indices[i][: candidate_preds_num].cpu().numpy()
+                print(sorted_preds)
                 for candidate in sorted_preds:
                     if not candidate in candidate_preds_batch[i]:
                         candidate_preds_batch[i].append(candidate)
@@ -191,11 +195,12 @@ class simpleParser(nn.Module):
         rel_logits = rel_logits + uniScores_arg_selected + uniScores_pred_selected
 
         ##enforce the score of null to be 0
-        rel_logits[:,:, 42] = torch.zeros(total_preds_num, seq_len).to(device)
-        rel_logits[:, :, 0] = (torch.zeros(total_preds_num, seq_len) - torch.tensor(100000.)).to(device)
+        rel_logits[:, :, 42] = torch.zeros(total_preds_num, seq_len, requires_grad=False).to(device)
+        rel_logits[:, :, 0] = (torch.zeros(total_preds_num, seq_len, requires_grad=False) - torch.tensor(1000000.)).to(device)
         flat_rel_logits = rel_logits.view(total_preds_num*seq_len, self._vocab.rel_size)
 
 
+        #print(rel_targets_selected)
         if isTrain:
 
             mask_1D = np.array(mask_selected).reshape(-1)
