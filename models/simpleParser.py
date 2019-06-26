@@ -211,9 +211,8 @@ class simpleParser(nn.Module):
             #targets_1D = dynet_flatten_numpy(rel_targets)
             targets_1D = np.array(rel_targets_selected).astype("int64").reshape(-1)
 
-            rel_correct = np.equal(rel_preds, targets_1D).astype(np.float32) * mask_1D
+            rel_correct = np.equal(rel_preds, targets_1D-1).astype(np.float32) * mask_1D
             rel_accuracy = np.sum(rel_correct) / mask_1D.sum()
-
 
             loss_function = nn.CrossEntropyLoss(ignore_index=-1)
 
@@ -240,11 +239,11 @@ class simpleParser(nn.Module):
                 show = 1
             for i in range(len(label_predict)):
                 if msk[i] > 0:
-                    if label_gold[i] != 41:
+                    if label_gold[i]-1 != 41:
                         noNull_labels += 1
                     if label_predict[i] != 41:
                         noNull_predict+= 1
-                        if label_predict[i] == label_gold[i]:
+                        if label_predict[i] == label_gold[i]-1:
                             correct_noNull_predict += 1
 
         return correct_noNull_predict, noNull_predict, noNull_labels
