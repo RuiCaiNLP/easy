@@ -195,7 +195,7 @@ class simpleParser(nn.Module):
 
         ##enforce the score of null to be 0
         rel_logits[:, :, 42] = torch.zeros(total_preds_num, seq_len, requires_grad=False).to(device)
-        #rel_logits[:, :, 0] = (torch.zeros(total_preds_num, seq_len, requires_grad=False) - torch.tensor(1000000.)).to(device)
+        rel_logits[:, :, 0] = (torch.zeros(total_preds_num, seq_len, requires_grad=False) - torch.tensor(1000000.)).to(device)
         flat_rel_logits = rel_logits.view(total_preds_num*seq_len, self._vocab.rel_size)
 
 
