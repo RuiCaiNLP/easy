@@ -45,7 +45,7 @@ if __name__ == "__main__":
         print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '\nStart training epoch #%d' % (epoch,)
         epoch += 1
         for words, tags, preds, rels in \
-                data_loader.get_batches(batch_size=10, shuffle=True):
+                data_loader.get_batches(batch_size=25, shuffle=True):
             parser.zero_grad()
             trainer.zero_grad()
             parser.train()

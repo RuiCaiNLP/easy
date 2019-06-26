@@ -15,8 +15,8 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class simpleParser(nn.Module):
     def __init__(self, vocab, word_dims=100, pret_dims=100, tag_dims=16,
-                 lstm_layers=3, lstm_hiddens=512, dropout_lstm_input=0.3, dropout_lstm_hidden=0.3,
-                 mlp_size=400,
+                 lstm_layers=3, lstm_hiddens=200, dropout_lstm_input=0.5, dropout_lstm_hidden=0.3,
+                 mlp_size=150,
                  dropout_mlp=0.2):
         super(simpleParser, self).__init__()
         #pc = dy.ParameterCollection()
@@ -46,13 +46,23 @@ class simpleParser(nn.Module):
         #init.orthogonal_(self.BiLSTM.all_weights[1][0])
         #init.orthogonal_(self.BiLSTM.all_weights[1][1])
 
-        self.mlp_arg_uniScore = nn.Sequential(nn.Linear(mlp_size, int(mlp_size/2)),
-                                     nn.ReLU(),
-                                     nn.Linear(int(mlp_size/2), 1))
-
-        self.mlp_pred_uniScore = nn.Sequential(nn.Linear(mlp_size, int(mlp_size/2)),
+        self.mlp_arg_uniScore = nn.Sequential(nn.Linear(2*lstm_hiddens, 150),
                                               nn.ReLU(),
-                                              nn.Linear(int(mlp_size/2), 1))
+                                              nn.Linear(150, 150),
+                                              nn.ReLU(),
+                                              nn.Linear(150, 1))
+
+        self.mlp_pred_uniScore = nn.Sequential(nn.Linear(2*lstm_hiddens, 150),
+                                              nn.ReLU(),
+                                              nn.Linear(150, 150),
+                                              nn.ReLU(),
+                                              nn.Linear(150, 1))
+
+        self.arg_pred_uniScore = nn.Sequential(nn.Linear(4 * lstm_hiddens, 150),
+                                               nn.ReLU(),
+                                               nn.Linear(150, 150),
+                                               nn.ReLU(),
+                                               nn.Linear(150, 1))
 
         self.mlp_pred = nn.Linear(2*lstm_hiddens, mlp_size)
         self.mlp_arg = nn.Linear(2 * lstm_hiddens, mlp_size)
@@ -71,8 +81,9 @@ class simpleParser(nn.Module):
         self.hidden_dropout = nn.Dropout(p=dropout_lstm_hidden)
         self.mlp_dropout = nn.Dropout(p=dropout_mlp)
 
-        self.rel_W = nn.Parameter(torch.from_numpy(np.zeros((mlp_size + 1, vocab.rel_size * (mlp_size + 1))).astype("float32")).to(device))
+        self.rel_W = nn.Parameter(torch.from_numpy(np.zeros((2*lstm_hiddens, vocab.rel_size * (2*lstm_hiddens))).astype("float32")).to(device))
         #self._pc = pc
+        self.pair_weight = nn.Parameter(torch.Tensor([0.5, 0.5]))
 
 
 
@@ -108,8 +119,10 @@ class simpleParser(nn.Module):
         top_recur = self.hidden_dropout(top_recur)
         del init_hidden
 
-        g_arg = F.relu(self.mlp_arg(top_recur))
-        g_pred = F.relu(self.mlp_pred(top_recur))
+        #g_arg = F.relu(self.mlp_arg(top_recur))
+        #g_pred = F.relu(self.mlp_pred(top_recur))
+        g_arg = top_recur
+        g_pred = top_recur
 
         # B T
         uniScores_arg = self.mlp_arg_uniScore(g_arg).view(batch_size, seq_len)
@@ -178,11 +191,18 @@ class simpleParser(nn.Module):
         total_preds_num = g_pred_selected.size()[0]
 
 
-        rel_logits = bilinear(g_arg_selected, W_rel, g_pred_selected, self.mlp_size, seq_len, 1,
+        bilinear_scores = bilinear(g_arg_selected, W_rel, g_pred_selected, self.mlp_size, seq_len, 1,
                               total_preds_num,
-                              num_outputs=self._vocab.rel_size, bias_x=True, bias_y=True)
+                              num_outputs=self._vocab.rel_size, bias_x=False, bias_y=False)
 
+        g_pred_selected_expand = g_pred_selected.view(total_preds_num, 1, -1).expand(-1, seq_len, -1)
 
+        g_pred_arg_pair = torch.cat((g_arg_selected, g_pred_selected_expand), 2)
+        g_pair_UniScores = self.arg_pred_uniScore(g_pred_arg_pair)
+
+        pair_weight = F.softmax(self.pair_weight, dim=0)
+
+        biaffine_scores = pair_weight[0]*bilinear_scores + pair_weight[1]*g_pair_UniScores
 
         uniScores_pred = uniScores_pred.view(batch_size, seq_len, 1)
         uniScores_pred_selected = \
@@ -191,12 +211,11 @@ class simpleParser(nn.Module):
 
         uniScores_arg = uniScores_arg.view(batch_size, seq_len, 1).expand(-1, -1, self._vocab.rel_size)
         uniScores_arg_selected = uniScores_arg.index_select(0, torch.tensor(sample_indices_selected).to(device))
-        rel_logits = rel_logits + uniScores_arg_selected # + uniScores_pred_selected
+
+        rel_logits = biaffine_scores + uniScores_arg_selected # + uniScores_pred_selected
 
         ##enforce the score of null to be 0
         rel_logits[:, :, 42] = torch.zeros(total_preds_num, seq_len, requires_grad=False).to(device)
-        #rel_logits[:, :, 0] = (torch.zeros(total_preds_num, seq_len, requires_grad=False) - torch.tensor(1000000.)).to(device)
-
         flat_rel_logits = rel_logits.view(total_preds_num*seq_len, self._vocab.rel_size)[:, 1:]
 
 
