@@ -225,7 +225,7 @@ class simpleParser(nn.Module):
 
 
         ##test
-        rel_probs = F.softmax(flat_rel_logits, 1).view(total_preds_num, seq_len, self._vocab.rel_size).cpu().data.numpy()
+        rel_probs = F.softmax(flat_rel_logits, 1).view(total_preds_num, seq_len, (self._vocab.rel_size-1)).cpu().data.numpy()
         rel_predicts = np.argmax(rel_probs, 2)
         correct_noNull_predict = 0
         noNull_predict = 0
@@ -240,9 +240,9 @@ class simpleParser(nn.Module):
                 show = 1
             for i in range(len(label_predict)):
                 if msk[i] > 0:
-                    if label_gold[i] != 42:
+                    if label_gold[i] != 41:
                         noNull_labels += 1
-                    if label_predict[i] != 42:
+                    if label_predict[i] != 41:
                         noNull_predict+= 1
                         if label_predict[i] == label_gold[i]:
                             correct_noNull_predict += 1
