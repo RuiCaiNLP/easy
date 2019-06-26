@@ -195,8 +195,10 @@ class simpleParser(nn.Module):
 
         ##enforce the score of null to be 0
         rel_logits[:, :, 42] = torch.zeros(total_preds_num, seq_len, requires_grad=False).to(device)
-        rel_logits[:, :, 0] = (torch.zeros(total_preds_num, seq_len, requires_grad=False) - torch.tensor(1000000.)).to(device)
-        flat_rel_logits = rel_logits.view(total_preds_num*seq_len, self._vocab.rel_size)
+        #rel_logits[:, :, 0] = (torch.zeros(total_preds_num, seq_len, requires_grad=False) - torch.tensor(1000000.)).to(device)
+
+        flat_rel_logits = rel_logits.view(total_preds_num*seq_len, self._vocab.rel_size)[:, 1:]
+
 
 
         #print(rel_targets_selected)
@@ -213,9 +215,11 @@ class simpleParser(nn.Module):
             rel_accuracy = np.sum(rel_correct) / mask_1D.sum()
 
 
-            loss_function = nn.CrossEntropyLoss(ignore_index=0)
+            loss_function = nn.CrossEntropyLoss(ignore_index=-1)
 
-            rel_loss = loss_function(flat_rel_logits, torch.from_numpy(targets_1D).to(device))
+            targets_1D = (torch.from_numpy(targets_1D)-1).to(device)
+
+            rel_loss = loss_function(flat_rel_logits, targets_1D)
 
             return rel_accuracy, rel_loss
 
