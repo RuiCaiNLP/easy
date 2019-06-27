@@ -54,7 +54,7 @@ if __name__ == "__main__":
                 print("epoch %d, global step#%d, accuracy:%.2f" %(epoch, global_step, accuracy))
                 print(loss)
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(parser.parameters(), 5)
+            #torch.nn.utils.clip_grad_norm_(parser.parameters(), 5)
 
             trainer.step()
 
