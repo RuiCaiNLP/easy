@@ -48,20 +48,26 @@ class simpleParser(nn.Module):
 
         self.mlp_arg_uniScore = nn.Sequential(nn.Linear(2*lstm_hiddens, 150),
                                               nn.ReLU(),
+                                              nn.Dropout(p=dropout_mlp),
                                               nn.Linear(150, 150),
                                               nn.ReLU(),
+                                              nn.Dropout(p=dropout_mlp),
                                               nn.Linear(150, 1))
 
         self.mlp_pred_uniScore = nn.Sequential(nn.Linear(2*lstm_hiddens, 150),
-                                              nn.ReLU(),
-                                              nn.Linear(150, 150),
-                                              nn.ReLU(),
-                                              nn.Linear(150, 1))
+                                               nn.ReLU(),
+                                               nn.Dropout(p=dropout_mlp),
+                                                nn.Linear(150, 150),
+                                               nn.ReLU(),
+                                               nn.Dropout(p=dropout_mlp),
+                                               nn.Linear(150, 1))
 
         self.arg_pred_uniScore = nn.Sequential(nn.Linear(4 * lstm_hiddens, 150),
                                                nn.ReLU(),
+                                               nn.Dropout(p=dropout_mlp),
                                                nn.Linear(150, 150),
                                                nn.ReLU(),
+                                               nn.Dropout(p=dropout_mlp),
                                                nn.Linear(150, 1))
 
         self.mlp_pred = nn.Linear(2*lstm_hiddens, mlp_size)
@@ -81,7 +87,7 @@ class simpleParser(nn.Module):
         self.hidden_dropout = nn.Dropout(p=dropout_lstm_hidden)
         self.mlp_dropout = nn.Dropout(p=dropout_mlp)
 
-        self.rel_W = nn.Parameter(torch.from_numpy(np.zeros((2*lstm_hiddens, vocab.rel_size * (2*lstm_hiddens))).astype("float32")).to(device))
+        self.rel_W = nn.Parameter(torch.from_numpy(np.zeros((2*lstm_hiddens+1, vocab.rel_size * (2*lstm_hiddens+1))).astype("float32")).to(device))
         #self._pc = pc
         self.pair_weight = nn.Parameter(torch.Tensor([0.5, 0.5]))
 
@@ -193,7 +199,7 @@ class simpleParser(nn.Module):
 
         bilinear_scores = bilinear(g_arg_selected, W_rel, g_pred_selected, self.mlp_size, seq_len, 1,
                               total_preds_num,
-                              num_outputs=self._vocab.rel_size, bias_x=False, bias_y=False)
+                              num_outputs=self._vocab.rel_size, bias_x=True, bias_y=True)
 
         g_pred_selected_expand = g_pred_selected.view(total_preds_num, 1, -1).expand(-1, seq_len, -1)
 
