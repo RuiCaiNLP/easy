@@ -48,26 +48,20 @@ class simpleParser(nn.Module):
 
         self.mlp_arg_uniScore = nn.Sequential(nn.Linear(2*lstm_hiddens, 150),
                                               nn.ReLU(),
-                                              nn.Dropout(p=dropout_mlp),
                                               nn.Linear(150, 150),
                                               nn.ReLU(),
-                                              nn.Dropout(p=dropout_mlp),
                                               nn.Linear(150, 1))
 
         self.mlp_pred_uniScore = nn.Sequential(nn.Linear(2*lstm_hiddens, 150),
                                                nn.ReLU(),
-                                               nn.Dropout(p=dropout_mlp),
                                                 nn.Linear(150, 150),
                                                nn.ReLU(),
-                                               nn.Dropout(p=dropout_mlp),
                                                nn.Linear(150, 1))
 
         self.arg_pred_uniScore = nn.Sequential(nn.Linear(4 * lstm_hiddens, 150),
                                                nn.ReLU(),
-                                               nn.Dropout(p=dropout_mlp),
                                                nn.Linear(150, 150),
                                                nn.ReLU(),
-                                               nn.Dropout(p=dropout_mlp),
                                                nn.Linear(150, 1))
 
         self.mlp_pred = nn.Linear(2*lstm_hiddens, mlp_size)
