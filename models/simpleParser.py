@@ -41,10 +41,10 @@ class simpleParser(nn.Module):
 
         self.BiLSTM = nn.LSTM(input_size=input_dims, hidden_size=lstm_hiddens, batch_first=True,
                                 bidirectional=True, num_layers=3)
-        #init.orthogonal_(self.BiLSTM.all_weights[0][0])
-        #init.orthogonal_(self.BiLSTM.all_weights[0][1])
-        #init.orthogonal_(self.BiLSTM.all_weights[1][0])
-        #init.orthogonal_(self.BiLSTM.all_weights[1][1])
+        init.orthogonal_(self.BiLSTM.all_weights[0][0])
+        init.orthogonal_(self.BiLSTM.all_weights[0][1])
+        init.orthogonal_(self.BiLSTM.all_weights[1][0])
+        init.orthogonal_(self.BiLSTM.all_weights[1][1])
 
         self.mlp_arg_uniScore = nn.Sequential(nn.Linear(2*lstm_hiddens, 150),
                                               nn.ReLU(),
