@@ -111,7 +111,9 @@ class simpleParser(nn.Module):
         seq_len = word_inputs.shape[1]
         marker = self._vocab.PAD
         mask = np.greater(word_inputs, marker).astype(np.int64)
+
         num_tokens = np.sum(mask, axis=1)
+
         word_embs = self.word_embs(torch.from_numpy(word_inputs.astype('int64')).to(device))
         pre_embs = self.pret_word_embs(torch.from_numpy(word_inputs.astype('int64')).to(device))
         tag_embs = self.tag_embs(torch.from_numpy(tag_inputs.astype('int64')).to(device))
@@ -121,7 +123,15 @@ class simpleParser(nn.Module):
         emb_inputs = self.emb_dropout(emb_inputs)
 
         init_hidden = self.init_hidden(batch_size)
-        top_recur, hidden = self.BiLSTM(emb_inputs, init_hidden)
+        embeds_sort, lengths_sort, unsort_idx = self.sort_batch(emb_inputs, num_tokens)
+        embeds_sort = rnn.pack_padded_sequence(embeds_sort, lengths_sort, batch_first=True)
+        # hidden states [time_steps * batch_size * hidden_units]
+        hidden_states, last_hidden = self.BiLSTM(embeds_sort, init_hidden)
+        # it seems that hidden states is already batch first, we don't need swap the dims
+        # hidden_states = hidden_states.permute(1, 2, 0).contiguous().view(self.batch_size, -1, )
+        hidden_states, lens = rnn.pad_packed_sequence(hidden_states, batch_first=True)
+        # hidden_states = hidden_states.transpose(0, 1)
+        top_recur = hidden_states[unsort_idx]
         top_recur = self.hidden_dropout(top_recur)
         del init_hidden
 
@@ -279,3 +289,11 @@ class simpleParser(nn.Module):
 
     def load(self, load_path):
         self._pc.populate(load_path)
+
+    @staticmethod
+    def sort_batch(x, l):
+        l = torch.from_numpy(np.asarray(l))
+        l_sorted, sidx = l.sort(0, descending=True)
+        x_sorted = x[sidx]
+        _, unsort_idx = sidx.sort()
+        return x_sorted, l_sorted, unsort_idx
