@@ -6,7 +6,7 @@ import os
 
 
 class Vocab(object):
-    PAD, DUMMY, UNK = 0, 1, 2
+    PAD, UNK, NUM, FlOAT = 0, 1, 2, 3
 
     def __init__(self, input_file, pret_file, min_occur_count=1):
         word_counter = Counter()
@@ -21,7 +21,7 @@ class Vocab(object):
                 if info:
                     if content_idx == 0:
                         for word in info:
-                            word = word.lower()
+                            word = self.normalize(word)
                             word_counter[word] += 1
                     elif content_idx == 1 or content_idx == 2:
                         for tag in info:
@@ -33,8 +33,8 @@ class Vocab(object):
                 else:
                     content_idx = 0
 
-        self._id2word = ['<PAD>', '<DUMMY>', '<UNK>']
-        self._id2tag = ['<PAD>', '<DUMMY>', '<UNK>']
+        self._id2word = ['<PAD>',  '<UNK>', '<NUM>', '<FLOAT>']
+        self._id2tag = ['<PAD>', '<UNK>']
         self._id2rel = ['<PAD>']
 
         for word, count in word_counter.most_common():
@@ -55,6 +55,32 @@ class Vocab(object):
         self._rel2id = reverse(self._id2rel)
         print("Vocab info: #words %d #tags %d #rels %d" % \
               (self.vocab_size,  self.tag_size, self.rel_size))
+
+    def normalize(self, token):
+        penn_tokens = {
+            '-LRB-': '(',
+            '-RRB-': ')',
+            '-LSB-': '[',
+            '-RSB-': ']',
+            '-LCB-': '{',
+            '-RCB-': '}'
+        }
+
+        if token in penn_tokens:
+            return penn_tokens[token]
+
+        token = token.lower()
+        try:
+            int(token)
+            return "<NUM>"
+        except:
+            pass
+        try:
+            float(token.replace(',', ''))
+            return "<FLOAT>"
+        except:
+            pass
+        return token
 
     def _add_pret_words(self, pret_file):
         self._words_in_train_data = len(self._id2word)
@@ -161,6 +187,7 @@ class DataLoader(object):
     def __init__(self, input_file, vocab):
         sents = []
         sent = []
+        self.vocab = vocab
         with open(input_file) as f:
             content_idx = 0
             for line in f.readlines():
@@ -229,4 +256,6 @@ class DataLoader(object):
                     rel_target = np.zeros((max_len), dtype=np.int32)
                     rel_target[:len(sample[4 + j])] = sample[4 + j]
                     rel_targets.append(rel_target)
+            #print(words_inputs[0])
+            #print(self.vocab.id2word(list(words_inputs[0])))
             yield words_inputs, tag_inputs, pred_indices, rel_targets
