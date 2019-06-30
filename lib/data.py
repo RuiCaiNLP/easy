@@ -194,7 +194,7 @@ class DataLoader(object):
                 info = line.strip().split()
                 if info:
                     if content_idx == 0:
-                        words = [vocab.word2id(word.lower()) for word in info]
+                        words = [vocab.word2id(vocab.normalize(word.lower())) for word in info]
                         sent.append(words)
                     elif content_idx == 1 or content_idx == 2:
                         tags = [vocab.tag2id(tag) for tag in info]
