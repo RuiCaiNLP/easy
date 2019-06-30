@@ -3,7 +3,7 @@ from __future__ import division
 from collections import Counter
 import numpy as np
 import os
-
+import random
 
 class Vocab(object):
     PAD, UNK, NUM, FlOAT = 0, 1, 2, 3
@@ -232,8 +232,9 @@ class DataLoader(object):
             batches.append(batch_samples)
         print("log")
         print(len(batches))
+
         if shuffle:
-            np.random.shuffle(batches)
+            random.shuffle(batches)
 
         for batch_samples in batches:
             max_len = 0
