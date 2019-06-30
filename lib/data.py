@@ -188,7 +188,6 @@ class DataLoader(object):
         sents = []
         sent = []
         self.vocab = vocab
-        self.batches = []
         with open(input_file) as f:
             content_idx = 0
             for line in f.readlines():
@@ -226,18 +225,18 @@ class DataLoader(object):
         return [x[1] for x in sorted(zip(self._record, range(len(self._record))))]
 
     def get_batches(self, batch_size, shuffle = True):
-        if self.batches == []:
-            batches_num = int(len(self.samples)/batch_size)
-            for idx in range(batches_num):
-                batch_samples = self.samples[idx*batch_size: (idx+1)*batch_size]
-                self.batches.append(batch_samples)
-            print("log")
-            print(len(self.batches))
+        batches = []
+        batches_num = int(len(self.samples)/batch_size)
+        for idx in range(batches_num):
+            batch_samples = self.samples[idx*batch_size: (idx+1)*batch_size]
+            batches.append(batch_samples)
+        print("log")
+        print(len(batches))
 
         if shuffle:
-            random.shuffle(self.batches)
+            random.shuffle(batches)
 
-        for batch_samples in self.batches:
+        for batch_samples in batches:
             max_len = 0
             for sample in batch_samples:
                 if len(sample[0]) > max_len:
