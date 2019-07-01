@@ -10,9 +10,25 @@ def read_conll(filename):
                 sentence = []
         if len(sentence) > 0:
             data.append(sentence)
-            sentence = []
     return data
 
+def read_conll_fr(filename):
+    data = []
+    sentence = []
+    with open(filename, 'r') as fp:
+        for line in fp:
+            if len(line.strip()) > 0:
+                if line.startswith('#'):
+                    continue
+                if '-' in line.strip().split()[0]:
+                    continue
+                sentence.append(line.strip().split())
+            else:
+                data.append(sentence)
+                sentence = []
+        if len(sentence) > 0:
+            data.append(sentence)
+    return data
 
 
 
@@ -59,6 +75,49 @@ def srl2ptb(origin_data):
 
     return srl_data
 
+def srl2ptb_fr(origin_data):
+    srl_data = []
+    for sentence in origin_data:
+        one_sample = []
+        pred_set = []
+        word_set = []
+        gold_pos_set = []
+        predict_pos_set = []
+        gold_dep_label_set = []
+        predict_dep_label_set = []
+        gold_dep_head_set = []
+        predict_dep_head_set = []
+        SRL_label_sets = []
+
+        for i in range(len(sentence)):
+            word_set.append(sentence[i][1])
+            gold_pos_set.append(sentence[i][3])
+            predict_pos_set.append(sentence[i][4])
+            gold_dep_head_set.append(sentence[i][6])
+            predict_dep_head_set.append(sentence[i][6])
+            gold_dep_label_set.append(sentence[i][7])
+            predict_dep_label_set.append(sentence[i][7])
+            if sentence[i][8] == 'Y':
+                pred_set.append(str(i))
+
+        one_sample.append(word_set)
+        one_sample.append(gold_pos_set)
+        one_sample.append(predict_pos_set)
+        one_sample.append(gold_dep_head_set)
+        one_sample.append(predict_dep_head_set)
+        one_sample.append(gold_dep_label_set)
+        one_sample.append(predict_dep_label_set)
+        one_sample.append(pred_set)
+        for arg_idx in range(len(pred_set)):
+            SRL_label_set = []
+            for i in range(len(sentence)):
+                SRL_label_set.append(sentence[i][10+arg_idx])
+            one_sample.append(SRL_label_set)
+        if len(pred_set) > 0:
+            srl_data.append(one_sample)
+
+    return srl_data
+
 
 
 def save(srl_data, path):
@@ -99,5 +158,21 @@ if __name__ == '__main__':
     test_srl = srl2ptb(test_conll)
     save(test_srl, '%s/test_pro' % args.out_dir)
     os.system('cp %s %s/test_raw' % (args.test, args.out_dir))
+
+
+    if args.train_fr:
+        train_conll = read_conll_fr(args.train_fr)
+        train_srl = srl2ptb_fr(train_conll)
+        save(train_srl, '%s/train_pro_fr' % args.out_dir)
+    if args.dev_fr:
+        dev_conll = read_conll_fr(args.dev_fr)
+        dev_srl = srl2ptb_fr(dev_conll)
+        save(dev_srl, '%s/dev_pro_fr' % args.out_dir)
+        os.system('cp %s %s/dev_raw_fr' % (args.dev_fr, args.out_dir))
+    if args.test_fr:
+        test_conll = read_conll_fr(args.test_fr)
+        test_srl = srl2ptb_fr(test_conll)
+        save(test_srl, '%s/test_pro_fr' % args.out_dir)
+        os.system('cp %s %s/test_raw_fr' % (args.test_fr, args.out_dir))
 
 

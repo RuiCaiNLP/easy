@@ -55,6 +55,7 @@ class Vocab(object):
         self._rel2id = reverse(self._id2rel)
         print("Vocab info: #words %d #tags %d #rels %d" % \
               (self.vocab_size,  self.tag_size, self.rel_size))
+        print(self._id2rel)
 
     def normalize(self, token):
         penn_tokens = {
@@ -260,3 +261,55 @@ class DataLoader(object):
             #print(words_inputs[0])
             #print(self.vocab.id2word(list(words_inputs[0])))
             yield words_inputs, tag_inputs, pred_indices, rel_targets
+
+class PlainDataLoader(object):
+    def __init__(self, input_file, vocab):
+        self.sents = []
+        sent = []
+        with open(input_file) as f:
+            print("reading plain text")
+            for line in f.readlines():
+                info = line.strip().split()
+                if info:
+                    assert (len(info) > 0), 'Illegal line: %s' % line
+                    for word in info:
+                        word = vocab.word2id(word.lower())
+                        sent.append(word)
+                    self.sents.append(sent)
+                    sent = []
+                else:
+                    print(info)
+                    print(line)
+
+            print("sens", len(self.sents))
+
+
+    def get_batches(self, batch_size, shuffle=False):
+        batches = []
+        sentences_num = len(self.sents)
+        batch_num = int(sentences_num*1.0/batch_size)
+        batch = []
+        lengths = []
+        print("batch num", batch_num)
+        for id, sent in enumerate(self.sents):
+            idx = id+1
+            if idx > batch_size*batch_num:
+                break
+            if idx%batch_size==0:
+                batch.append(sent)
+                batches.append(batch)
+                batch = []
+            else:
+                batch.append(sent)
+
+        for id, batch in enumerate(batches):
+            max_len = 0
+            for sentence in batch:
+                lengths.append(len(sentence))
+                if len(sentence)>max_len:
+                    max_len = len(sentence)
+            batch_mask = np.zeros((batch_size, max_len), dtype=np.int32)
+            for idx, sent in enumerate(batch):
+                batch_mask[idx][:len(sent)] = np.array(sent, dtype=np.int32)
+
+            yield batch_mask.T, lengths

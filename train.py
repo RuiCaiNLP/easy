@@ -5,7 +5,7 @@ import sys, time, os, cPickle
 sys.path.append('..')
 #import dynet as dy
 import numpy as np
-from lib import Vocab, DataLoader
+from lib import Vocab, DataLoader, PlainDataLoader
 from models import simpleParser
 
 import argparse
@@ -28,9 +28,14 @@ if __name__ == "__main__":
     np.random.seed(666)
     torch.manual_seed(1)
 
-
+    print("loading English vocab...")
     vocab = Vocab("processed/train_pro", "glove.6B.100d.txt", 1)
-    cPickle.dump(vocab, open("vocab_save", 'w'))
+
+    print("loading French vocab...")
+    vocab_fr = Vocab("processed/train_pro_fr", "less.fr.300.vec", 1)
+
+    plain_data_loader = PlainDataLoader("plain.fr-en.en", vocab)
+    plain_data_loader_fr = PlainDataLoader("plain.fr-en.fr", vocab_fr)
 
     data_loader = DataLoader("processed/train_pro", vocab)
     global_step = 0
@@ -84,6 +89,29 @@ if __name__ == "__main__":
                     print(correct_noNull_predicts, noNull_predicts, noNull_labels)
                     print("tested", P, R, F)
                     print("history best:", best_F1)
+
+            try:
+                words_en, lengths_en = Plain_English_data_Generator.next()
+                words_fr, lengths_fr = Plain_French_data_Generator.next()
+
+            except StopIteration:
+                print("start a new unlabeled epoch")
+                Plain_English_data_Generator = plain_data_loader.get_batches(batch_size=10)
+                Plain_French_data_Generator = plain_data_loader_fr.get_batches(batch_size=10)
+                words_en, lengths_en = Plain_English_data_Generator.next()
+                words_fr, lengths_fr = Plain_French_data_Generator.next()
+
+
+            # dy.renew_cg()
+            parser.zero_grad()
+            trainer_fr.zero_grad()
+            parser.train()
+            loss = parser('unlabeled', words_en, words_fr, alignments, lengths_en, lengths_fr)
+            # loss = loss * 0.5
+            #loss.backward()
+            #trainer_fr.step()
+            print("unlabeled: Step #%d:  loss %.3f\r\r" %
+                  (global_step,  loss))
 
 
 
