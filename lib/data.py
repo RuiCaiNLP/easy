@@ -312,4 +312,4 @@ class PlainDataLoader(object):
             for idx, sent in enumerate(batch):
                 batch_mask[idx][:len(sent)] = np.array(sent, dtype=np.int32)
 
-            yield batch_mask.T, lengths
+            yield batch_mask, lengths

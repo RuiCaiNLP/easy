@@ -6,7 +6,7 @@ sys.path.append('..')
 #import dynet as dy
 import numpy as np
 from lib import Vocab, DataLoader, PlainDataLoader
-from models import simpleParser
+from models import AlignParser
 
 import argparse
 
@@ -40,12 +40,14 @@ if __name__ == "__main__":
     data_loader = DataLoader("processed/train_pro", vocab)
     global_step = 0
 
-    parser = simpleParser(vocab)
+    parser = AlignParser(vocab, vocab_fr)
     trainer = optim.Adam(parser.parameters(), lr=0.001)
     epoch = 0
     best_F1 = 0.
     parser.to(device)
 
+    Plain_English_data_Generator = plain_data_loader.get_batches(batch_size=10)
+    Plain_French_data_Generator = plain_data_loader_fr.get_batches(batch_size=10)
     while global_step < 500000:
         print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '\nStart training epoch #%d' % (epoch,)
         epoch += 1
@@ -55,7 +57,7 @@ if __name__ == "__main__":
             trainer.zero_grad()
             parser.train()
 
-            accuracy, loss = parser(words, tags, preds, rels, isTrain=True)
+            accuracy, loss = parser("labeled", words, tags, preds, rels, isTrain=True)
             if global_step % 30 == 0 :
                 print("epoch %d, global step#%d, accuracy:%.2f" %(epoch, global_step, accuracy))
                 print(loss)
@@ -90,6 +92,7 @@ if __name__ == "__main__":
                     print("tested", P, R, F)
                     print("history best:", best_F1)
 
+            # start unlabeled training#
             try:
                 words_en, lengths_en = Plain_English_data_Generator.next()
                 words_fr, lengths_fr = Plain_French_data_Generator.next()
@@ -104,14 +107,13 @@ if __name__ == "__main__":
 
             # dy.renew_cg()
             parser.zero_grad()
-            trainer_fr.zero_grad()
+            trainer.zero_grad()
             parser.train()
-            loss = parser('unlabeled', words_en, words_fr, alignments, lengths_en, lengths_fr)
-            # loss = loss * 0.5
-            #loss.backward()
-            #trainer_fr.step()
-            print("unlabeled: Step #%d:  loss %.3f\r\r" %
-                  (global_step,  loss))
+            loss = parser('unlabeled', (words_en, words_fr))
+            if global_step % 30 == 0:
+
+                print("unlabeled: Step #%d:  loss %.3f\r\r" %
+                      (global_step,  loss))
 
 
 
