@@ -110,6 +110,8 @@ class AlignParser(nn.Module):
         init.orthogonal_(self.BiLSTM_fr.all_weights[1][0])
         init.orthogonal_(self.BiLSTM_fr.all_weights[1][1])
 
+        self.hidden_dropout_fr = nn.Dropout(p=dropout_lstm_hidden)
+
     def init_hidden(self, batch_size):
         return (torch.zeros(self.lstm_layers * 2, batch_size, self.lstm_hiddens, requires_grad=False).to(device),
                 torch.zeros(self.lstm_layers * 2, batch_size, self.lstm_hiddens, requires_grad=False).to(device))
@@ -185,7 +187,7 @@ class AlignParser(nn.Module):
                 candidate_preds_num = int(num_tokens[i]* 0.4)
                 sorted_preds = pred_indices[i][: candidate_preds_num].cpu().numpy()
                 for candidate in sorted_preds:
-                    if not candidate in candidate_preds_batch[i] and False:
+                    if not candidate in candidate_preds_batch[i]:
                         candidate_preds_batch[i].append(candidate)
 
 
@@ -313,7 +315,146 @@ class AlignParser(nn.Module):
 
         num_tokens_en = np.sum(mask_en, axis=1)
         num_tokens_fr = np.sum(mask_fr, axis=1)
-        print(num_tokens_en,num_tokens_fr)
+
+        word_embs_en = self.word_embs(torch.from_numpy(word_inputs_en.astype('int64')).to(device))
+        pre_embs_en = self.pret_word_embs(torch.from_numpy(word_inputs_en.astype('int64')).to(device))
+
+        emb_inputs_en = torch.cat((word_embs_en, pre_embs_en), dim=2)
+        emb_inputs_en = self.emb_dropout(emb_inputs_en)
+
+        init_hidden = self.init_hidden(batch_size)
+        embeds_sort, lengths_sort, unsort_idx = self.sort_batch(emb_inputs_en, num_tokens_en)
+        embeds_sort = rnn.pack_padded_sequence(embeds_sort, lengths_sort, batch_first=True)
+        # hidden states [time_steps * batch_size * hidden_units]
+        hidden_states, last_hidden = self.BiLSTM(embeds_sort, init_hidden)
+        # it seems that hidden states is already batch first, we don't need swap the dims
+        # hidden_states = hidden_states.permute(1, 2, 0).contiguous().view(self.batch_size, -1, )
+        hidden_states, lens = rnn.pad_packed_sequence(hidden_states, batch_first=True)
+        # hidden_states = hidden_states.transpose(0, 1)
+        top_recur = hidden_states[unsort_idx]
+        top_recur = self.hidden_dropout(top_recur)
+
+        g_arg = top_recur
+        g_pred = top_recur
+
+        # B T
+        uniScores_arg = self.mlp_arg_uniScore(g_arg).view(batch_size, seq_len_en)
+        uniScores_pred = self.mlp_pred_uniScore(g_pred).view(batch_size, seq_len_en)
+
+        pred_sorted, pred_indices = torch.sort(uniScores_pred, descending=True)
+
+        candidate_preds_batch = []
+        sample_indices_selected = []
+        preds_indices_selected = []
+        rel_targets_selected = []
+        mask_selected = []
+        offset_words = 0
+        offset_targets = 0
+
+        # labeled data, gold predicates are given
+
+        for i in range(batch_size):
+            candidate_preds = []
+            candidate_preds_batch.append(candidate_preds)
+
+        # only for train, sort it, and then add the top 0.2 portion
+
+        for i in range(batch_size):
+            candidate_preds_num = int(num_tokens_en[i] * 0.4)
+            sorted_preds = pred_indices[i][: candidate_preds_num].cpu().numpy()
+            for candidate in sorted_preds:
+                if not candidate in candidate_preds_batch[i]:
+                    candidate_preds_batch[i].append(candidate)
+
+        # find sample indices, mask, preds indices, according to final candidate preds
+        for i in range(batch_size):
+            for j in range(len(candidate_preds_batch[i])):
+                sample_indices_selected.append(i)
+                mask_selected.append(mask_en[i])
+                preds_indices_selected.append(candidate_preds_batch[i][j] + offset_words)
+            offset_words += int(seq_len_en)
+
+        g_arg_selected = g_arg.contiguous().index_select(0, torch.tensor(sample_indices_selected).to(device))
+        g_pred_selected = g_pred.contiguous().view(batch_size * seq_len_en, -1).index_select(0, torch.tensor(
+            preds_indices_selected).to(device))
+
+        # print(sample_indices_selected)
+        # print(candidate_preds_batch)
+        # print(rel_targets_selected)
+
+        W_rel = self.rel_W
+
+        total_preds_num = g_pred_selected.size()[0]
+
+        bilinear_scores = bilinear(g_arg_selected, W_rel, g_pred_selected, self.mlp_size, seq_len_en, 1,
+                                   total_preds_num,
+                                   num_outputs=self._vocab.rel_size, bias_x=True, bias_y=True)
+
+        g_pred_selected_expand = g_pred_selected.view(total_preds_num, 1, -1).expand(-1, seq_len_en, -1)
+
+        g_pred_arg_pair = torch.cat((g_arg_selected, g_pred_selected_expand), 2)
+        g_pair_UniScores = self.arg_pred_uniScore(g_pred_arg_pair)
+
+        pair_weight = F.softmax(self.pair_weight, dim=0)
+
+        biaffine_scores = pair_weight[0] * bilinear_scores + pair_weight[1] * g_pair_UniScores
+
+        uniScores_pred = uniScores_pred.view(batch_size, seq_len_en, 1)
+        uniScores_pred_selected = \
+            uniScores_pred.view(batch_size * seq_len_en, 1).index_select(0,
+                                                                      torch.tensor(preds_indices_selected).to(device))
+        uniScores_pred_selected = uniScores_pred_selected.view(total_preds_num, 1, 1).expand(-1, seq_len_en,
+                                                                                             self._vocab.rel_size)
+
+        uniScores_arg = uniScores_arg.view(batch_size, seq_len_en, 1).expand(-1, -1, self._vocab.rel_size)
+        uniScores_arg_selected = uniScores_arg.index_select(0, torch.tensor(sample_indices_selected).to(device))
+
+        rel_logits = biaffine_scores + uniScores_arg_selected + uniScores_pred_selected
+
+        ##enforce the score of null to be 0
+        rel_logits[:, :, 42] = torch.zeros(total_preds_num, seq_len_en, requires_grad=False).to(device)
+        flat_rel_logits = rel_logits.view(total_preds_num * seq_len_en, self._vocab.rel_size)[:, 1:]
+
+        rel_probs = F.softmax(flat_rel_logits, 1).view(total_preds_num, seq_len_en,
+                                                       (self._vocab.rel_size - 1)).cpu().data.numpy()
+        rel_predicts = np.argmax(rel_probs, 2)
+
+
+
+
+        """
+        for i in range(total_preds_num):
+            print(preds_indices_selected[i])
+            predicate = word_inputs_en.reshape(batch_size*seq_len_en,)[preds_indices_selected[i]]
+            print(predicate)
+            print(self._vocab.id2word(predicate))
+            roles = list(rel_predicts[i]+1)
+            print(self._vocab.id2rel(roles))
+            """
+
+        word_embs_fr = self.word_embs_fr(torch.from_numpy(word_inputs_fr.astype('int64')).to(device))
+        pre_embs_fr = self.pret_word_embs_fr(torch.from_numpy(word_inputs_fr.astype('int64')).to(device))
+
+        emb_inputs_fr = torch.cat((word_embs_fr, pre_embs_fr), dim=2)
+        emb_inputs_fr = self.emb_dropout(emb_inputs_fr)
+
+        init_hidden = self.init_hidden(batch_size)
+        embeds_sort, lengths_sort, unsort_idx = self.sort_batch(emb_inputs_fr, num_tokens_fr)
+        embeds_sort = rnn.pack_padded_sequence(embeds_sort, lengths_sort, batch_first=True)
+        # hidden states [time_steps * batch_size * hidden_units]
+        hidden_states, last_hidden = self.BiLSTM_fr(embeds_sort, init_hidden)
+        # it seems that hidden states is already batch first, we don't need swap the dims
+        # hidden_states = hidden_states.permute(1, 2, 0).contiguous().view(self.batch_size, -1, )
+        hidden_states, lens = rnn.pad_packed_sequence(hidden_states, batch_first=True)
+        # hidden_states = hidden_states.transpose(0, 1)
+        top_recur = hidden_states[unsort_idx]
+        top_recur = self.hidden_dropout_fr(top_recur)
+        del init_hidden
+
+        # g_arg = F.relu(self.mlp_arg(top_recur))
+        # g_pred = F.relu(self.mlp_pred(top_recur))
+        g_arg_fr = top_recur
+        g_pred_fr = top_recur
         return 0
 
 
