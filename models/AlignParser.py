@@ -103,7 +103,7 @@ class AlignParser(nn.Module):
         self.dropout_h_fr = dropout_lstm_hidden_fr
         input_dims_fr = word_dims_fr + pret_dims_fr
 
-        self.BiLSTM_fr = nn.LSTM(input_size=input_dims, hidden_size=lstm_hiddens, batch_first=True,
+        self.BiLSTM_fr = nn.LSTM(input_size=input_dims_fr, hidden_size=lstm_hiddens, batch_first=True,
                               bidirectional=True, num_layers=3)
         init.orthogonal_(self.BiLSTM_fr.all_weights[0][0])
         init.orthogonal_(self.BiLSTM_fr.all_weights[0][1])
@@ -399,7 +399,6 @@ class AlignParser(nn.Module):
 
         biaffine_scores = pair_weight[0] * bilinear_scores + pair_weight[1] * g_pair_UniScores
 
-        uniScores_pred = uniScores_pred.view(batch_size, seq_len_en, 1)
         uniScores_pred_selected = \
             uniScores_pred.view(batch_size * seq_len_en, 1).index_select(0,
                                                                       torch.tensor(preds_indices_selected).to(device))
@@ -418,7 +417,6 @@ class AlignParser(nn.Module):
         rel_probs = F.softmax(flat_rel_logits, 1).view(total_preds_num, seq_len_en,
                                                        (self._vocab.rel_size - 1)).cpu().data.numpy()
         rel_predicts = np.argmax(rel_probs, 2)
-
 
 
 
@@ -447,15 +445,70 @@ class AlignParser(nn.Module):
         # hidden_states = hidden_states.permute(1, 2, 0).contiguous().view(self.batch_size, -1, )
         hidden_states, lens = rnn.pad_packed_sequence(hidden_states, batch_first=True)
         # hidden_states = hidden_states.transpose(0, 1)
-        top_recur = hidden_states[unsort_idx]
-        top_recur = self.hidden_dropout_fr(top_recur)
+        top_recur_fr = hidden_states[unsort_idx]
+        top_recur_fr = self.hidden_dropout_fr(top_recur)
         del init_hidden
 
         # g_arg = F.relu(self.mlp_arg(top_recur))
         # g_pred = F.relu(self.mlp_pred(top_recur))
-        g_arg_fr = top_recur
-        g_pred_fr = top_recur
-        return 0
+        g_arg_fr = top_recur_fr
+        g_pred_fr = top_recur_fr
+
+
+
+        top_recur_fr_T = top_recur_fr.transpose(1, 2)
+        atten_matrix = torch.bmm(top_recur, top_recur_fr_T)
+
+        atten_e2f = F.softmax(atten_matrix, dim=2)
+
+        weighted_fr = torch.bmm(atten_e2f, top_recur_fr)
+
+        uniScores_arg_cp = self.mlp_arg_uniScore(weighted_fr).view(batch_size, seq_len_en)
+        uniScores_pred_cp = self.mlp_pred_uniScore(weighted_fr).view(batch_size, seq_len_en)
+
+        ## immitate the argument hidden states
+        g_arg_selected_cp = weighted_fr.contiguous().index_select(0, torch.tensor(sample_indices_selected).to(device))
+        g_pred_selected_cp = weighted_fr.contiguous().view(batch_size * seq_len_en, -1).index_select(0, torch.tensor(
+            preds_indices_selected).to(device))
+
+
+        bilinear_scores_cp = bilinear(g_arg_selected_cp, W_rel, g_pred_selected_cp , self.mlp_size, seq_len_en, 1,
+                                   total_preds_num,
+                                   num_outputs=self._vocab.rel_size, bias_x=True, bias_y=True)
+
+        g_pred_selected_expand_cp = g_pred_selected_cp.view(total_preds_num, 1, -1).expand(-1, seq_len_en, -1)
+
+        g_pred_arg_pair_cp = torch.cat((g_arg_selected_cp, g_pred_selected_expand_cp), 2)
+        g_pair_UniScores_cp = self.arg_pred_uniScore(g_pred_arg_pair_cp)
+
+        pair_weight_cp = F.softmax(self.pair_weight, dim=0)
+
+        biaffine_scores_cp = pair_weight_cp[0] * bilinear_scores_cp + pair_weight_cp[1] * g_pair_UniScores_cp
+
+        uniScores_pred_selected_cp = \
+            uniScores_pred_cp.view(batch_size * seq_len_en, 1).index_select(0,
+                                                                         torch.tensor(preds_indices_selected).to(
+                                                                             device))
+        uniScores_pred_selected_cp = uniScores_pred_selected_cp.view(total_preds_num, 1, 1).expand(-1, seq_len_en,
+                                                                                             self._vocab.rel_size)
+
+        uniScores_arg_cp = uniScores_arg_cp.view(batch_size, seq_len_en, 1).expand(-1, -1, self._vocab.rel_size)
+        uniScores_arg_selected_cp = uniScores_arg_cp.index_select(0, torch.tensor(sample_indices_selected).to(device))
+
+        rel_logits_cp = biaffine_scores_cp + uniScores_arg_selected_cp + uniScores_pred_selected_cp
+
+        ##enforce the score of null to be 0
+        rel_logits_cp[:, :, 42] = torch.zeros(total_preds_num, seq_len_en, requires_grad=False).to(device)
+        flat_rel_logits_cp = rel_logits_cp.view(total_preds_num * seq_len_en, self._vocab.rel_size)[:, 1:]
+
+
+
+        unlabeled_loss_function = nn.KLDivLoss(reduce=False)
+        teacher_softmax = F.softmax(flat_rel_logits, dim=1).detach()
+        student_softmax = F.log_softmax(flat_rel_logits_cp, dim=1)
+        loss = unlabeled_loss_function(student_softmax, teacher_softmax)
+        loss = torch.sum(loss)
+        return loss
 
 
     @staticmethod

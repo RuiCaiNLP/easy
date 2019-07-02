@@ -66,9 +66,9 @@ if __name__ == "__main__":
 
             trainer.step()
 
-            global_step += 1
 
-            if global_step % 500 == 0:
+
+            if (global_step+1) % 500 == 0:
                 with torch.no_grad():
                     print("testing...")
                     parser.eval()
@@ -111,9 +111,13 @@ if __name__ == "__main__":
             parser.train()
             loss = parser('unlabeled', (words_en, words_fr))
             if global_step % 30 == 0:
+                print("unlabeled: Step #%d:  " %
+                      (global_step))
+                print(loss)
+            loss.backward()
+            trainer.step()
 
-                print("unlabeled: Step #%d:  loss %.3f\r\r" %
-                      (global_step,  loss))
+            global_step += 1
 
 
 
