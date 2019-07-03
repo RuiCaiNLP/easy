@@ -114,8 +114,21 @@ if __name__ == "__main__":
                 print("unlabeled: Step #%d:  " %
                       (global_step))
                 print(loss)
+            for i in parser.mlp_arg_uniScore.parameters():
+                i.requires_grad = False
+            for i in parser.mlp_pred_uniScore.parameters():
+                i.requires_grad = False
+            for i in parser.arg_pred_uniScore.parameters():
+                i.requires_grad = False
             loss.backward()
             trainer.step()
+
+            for i in parser.mlp_arg_uniScore.parameters():
+                i.requires_grad = True
+            for i in parser.mlp_pred_uniScore.parameters():
+                i.requires_grad = True
+            for i in parser.arg_pred_uniScore.parameters():
+                i.requires_grad = True
 
             global_step += 1
 
