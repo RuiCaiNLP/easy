@@ -58,7 +58,7 @@ if __name__ == "__main__":
             parser.train()
 
             accuracy, loss = parser("labeled", words, tags, preds, rels, isTrain=True)
-            if global_step % 30 == 0 :
+            if global_step % 30 == 0:
                 print("epoch %d, global step#%d, accuracy:%.2f" %(epoch, global_step, accuracy))
                 print(loss)
             loss.backward()
@@ -78,7 +78,7 @@ if __name__ == "__main__":
                     test_data_loader = DataLoader("processed/dev_pro", vocab)
                     for words, tags, preds, rels in \
                             test_data_loader.get_batches(batch_size=10, shuffle=False):
-                        a, b, c = parser(words, tags, preds, rels, isTrain=False)
+                        a, b, c = parser("labeled", words, tags, preds, rels, isTrain=False)
                         correct_noNull_predicts += a
                         noNull_predicts += b
                         noNull_labels += c
