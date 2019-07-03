@@ -40,9 +40,28 @@ if __name__ == "__main__":
     data_loader = DataLoader("processed/train_pro", vocab)
     global_step = 0
 
+
     parser = AlignParser(vocab, vocab_fr)
-    trainer = optim.Adam(parser.parameters(), lr=0.001)
-    trainer_fr = optim.Adam(parser.parameters(), lr=0.001)
+    trainer = optim.Adam(filter(lambda p: p.requires_grad, parser.parameters()), lr=0.001)
+    for i in parser.mlp_arg_uniScore.parameters():
+        i.requires_grad = False
+    for i in parser.mlp_pred_uniScore.parameters():
+        i.requires_grad = False
+    for i in parser.arg_pred_uniScore.parameters():
+        i.requires_grad = False
+    parser.rel_W.requires_grad = False
+    parser.pair_weight.requires_grad = False
+    trainer_fr = optim.Adam(filter(lambda p: p.requires_grad, parser.parameters()), lr=0.001)
+    for i in parser.mlp_arg_uniScore.parameters():
+        i.requires_grad = True
+    for i in parser.mlp_pred_uniScore.parameters():
+        i.requires_grad = True
+    for i in parser.arg_pred_uniScore.parameters():
+        i.requires_grad = True
+
+    parser.rel_W.requires_grad = True
+    parser.pair_weight.requires_grad = True
+
     epoch = 0
     best_F1 = 0.
     parser.to(device)
