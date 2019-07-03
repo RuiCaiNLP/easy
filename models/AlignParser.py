@@ -507,6 +507,19 @@ class AlignParser(nn.Module):
         teacher_softmax = F.softmax(flat_rel_logits, dim=1).detach()
         student_softmax = F.log_softmax(flat_rel_logits_cp, dim=1)
         loss = unlabeled_loss_function(student_softmax, teacher_softmax)
+
+        sample_nums = np.array(num_tokens_en).sum()
+
+        loss_mask = np.ones(loss.size(), dtype='float32')
+        for i in range(batch_size):
+            for j in range(seq_len_en):
+                if j >= num_tokens_en[i]:
+                    loss_mask[i][j] = 0.0
+        loss_mask = torch.from_numpy(loss_mask).to(device)
+
+        loss = torch.sum(loss_mask * loss)
+        loss = loss / sample_nums
+
         loss = torch.sum(loss)
         return loss
 
