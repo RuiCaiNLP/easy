@@ -120,6 +120,8 @@ if __name__ == "__main__":
                 i.requires_grad = False
             for i in parser.arg_pred_uniScore.parameters():
                 i.requires_grad = False
+            for i in parser.rel_W.parameters():
+                i.requires_grad = False
             loss.backward()
             trainer.step()
 
@@ -128,6 +130,8 @@ if __name__ == "__main__":
             for i in parser.mlp_pred_uniScore.parameters():
                 i.requires_grad = True
             for i in parser.arg_pred_uniScore.parameters():
+                i.requires_grad = True
+            for i in parser.rel_W.parameters():
                 i.requires_grad = True
 
             global_step += 1
