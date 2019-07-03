@@ -42,6 +42,7 @@ if __name__ == "__main__":
 
     parser = AlignParser(vocab, vocab_fr)
     trainer = optim.Adam(parser.parameters(), lr=0.001)
+    trainer_fr = optim.Adam(parser.parameters(), lr=0.001)
     epoch = 0
     best_F1 = 0.
     parser.to(device)
@@ -107,7 +108,7 @@ if __name__ == "__main__":
 
             # dy.renew_cg()
             parser.zero_grad()
-            trainer.zero_grad()
+            trainer_fr.zero_grad()
             parser.train()
             loss = parser('unlabeled', (words_en, words_fr))
             if global_step % 30 == 0:
@@ -124,7 +125,7 @@ if __name__ == "__main__":
             parser.rel_W.requires_grad = False
             parser.pair_weight.requires_grad = False
             loss.backward()
-            trainer.step()
+            trainer_fr.step()
 
             for i in parser.mlp_arg_uniScore.parameters():
                 i.requires_grad = True
