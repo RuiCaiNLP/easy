@@ -334,6 +334,7 @@ class AlignParser(nn.Module):
         top_recur = hidden_states[unsort_idx]
         top_recur = self.hidden_dropout(top_recur)
 
+        top_recur = top_recur.detach()
         g_arg = top_recur
         g_pred = top_recur
 
@@ -457,6 +458,8 @@ class AlignParser(nn.Module):
 
 
         top_recur_fr_T = top_recur_fr.transpose(1, 2)
+
+
         atten_matrix = torch.bmm(top_recur, top_recur_fr_T)
 
         atten_e2f = F.softmax(atten_matrix, dim=2)
