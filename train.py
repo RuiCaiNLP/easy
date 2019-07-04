@@ -129,11 +129,11 @@ if __name__ == "__main__":
             parser.zero_grad()
             trainer_fr.zero_grad()
             parser.train()
-            loss = parser('unlabeled', (words_en, words_fr))
+            a, b, c, loss = parser('unlabeled', (words_en, words_fr))
             if global_step % 30 == 0:
                 print("unlabeled: Step #%d:  " %
                       (global_step))
-                print(loss)
+                print(a, b, c, loss)
             for i in parser.mlp_arg_uniScore.parameters():
                 i.requires_grad = False
             for i in parser.mlp_pred_uniScore.parameters():

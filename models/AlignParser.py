@@ -103,14 +103,14 @@ class AlignParser(nn.Module):
         self.dropout_h_fr = dropout_lstm_hidden_fr
         input_dims_fr = word_dims_fr + pret_dims_fr
 
-        self.BiLSTM_fr = nn.LSTM(input_size=input_dims_fr, hidden_size=lstm_hiddens, batch_first=True,
+        self.BiLSTM_fr = nn.LSTM(input_size=input_dims_fr, hidden_size=lstm_hiddens_fr, batch_first=True,
                               bidirectional=True, num_layers=3)
         init.orthogonal_(self.BiLSTM_fr.all_weights[0][0])
         init.orthogonal_(self.BiLSTM_fr.all_weights[0][1])
         init.orthogonal_(self.BiLSTM_fr.all_weights[1][0])
         init.orthogonal_(self.BiLSTM_fr.all_weights[1][1])
 
-        self.hidden_dropout_fr = nn.Dropout(p=dropout_lstm_hidden)
+        self.hidden_dropout_fr = nn.Dropout(p=dropout_lstm_hidden_fr)
 
     def init_hidden(self, batch_size):
         return (torch.zeros(self.lstm_layers * 2, batch_size, self.lstm_hiddens, requires_grad=False).to(device),
@@ -174,9 +174,6 @@ class AlignParser(nn.Module):
         if isTrain or not isTrain:
             for i, preds in enumerate(pred_golds):
                 candidate_preds = [ele for ele in preds]
-                #for j in range(preds_num[i]):
-                #   rel_targets_selected.append(rel_targets[offset_targets+j])
-
                 candidate_preds_batch.append(candidate_preds)
 
 
@@ -242,7 +239,7 @@ class AlignParser(nn.Module):
         uniScores_arg = uniScores_arg.view(batch_size, seq_len, 1).expand(-1, -1, self._vocab.rel_size)
         uniScores_arg_selected = uniScores_arg.index_select(0, torch.tensor(sample_indices_selected).to(device))
 
-        rel_logits = biaffine_scores + uniScores_arg_selected  + uniScores_pred_selected
+        rel_logits = biaffine_scores + uniScores_arg_selected + uniScores_pred_selected
 
         ##enforce the score of null to be 0
         rel_logits[:, :, 42] = torch.zeros(total_preds_num, seq_len, requires_grad=False).to(device)
@@ -459,7 +456,7 @@ class AlignParser(nn.Module):
 
         atten_matrix = torch.bmm(top_recur, top_recur_fr_T)
 
-        atten_e2f = F.softmax(atten_matrix, dim=2)
+        atten_e2f = F.softmax(atten_matrix, dim=2) * mask_fr
 
         weighted_fr = torch.bmm(atten_e2f, top_recur_fr)
 
@@ -472,18 +469,33 @@ class AlignParser(nn.Module):
             preds_indices_selected).to(device))
 
 
-        bilinear_scores_cp = bilinear(g_arg_selected_cp, W_rel, g_pred_selected_cp , self.mlp_size, seq_len_en, 1,
+        bilinear_scores_argcp_predcp = bilinear(g_arg_selected_cp, W_rel, g_pred_selected_cp , self.mlp_size, seq_len_en, 1,
                                    total_preds_num,
                                    num_outputs=self._vocab.rel_size, bias_x=True, bias_y=True)
 
+        bilinear_scores_arg_predcp = bilinear(g_arg_selected, W_rel, g_pred_selected_cp, self.mlp_size, seq_len_en,
+                                                1,
+                                                total_preds_num,
+                                                num_outputs=self._vocab.rel_size, bias_x=True, bias_y=True)
+
+        bilinear_scores_argcp_pred = bilinear(g_arg_selected_cp, W_rel, g_pred_selected, self.mlp_size, seq_len_en,
+                                                1,
+                                                total_preds_num,
+                                                num_outputs=self._vocab.rel_size, bias_x=True, bias_y=True)
+
         g_pred_selected_expand_cp = g_pred_selected_cp.view(total_preds_num, 1, -1).expand(-1, seq_len_en, -1)
 
-        g_pred_arg_pair_cp = torch.cat((g_arg_selected_cp, g_pred_selected_expand_cp), 2)
-        g_pair_UniScores_cp = self.arg_pred_uniScore(g_pred_arg_pair_cp)
 
-        pair_weight_cp = F.softmax(self.pair_weight, dim=0)
+        g_pred_arg_pair_argcp_predcp = torch.cat((g_arg_selected_cp, g_pred_selected_expand_cp), 2)
+        g_pair_UniScores_argcp_predcp = self.arg_pred_uniScore(g_pred_arg_pair_argcp_predcp)
 
-        biaffine_scores_cp = pair_weight_cp[0] * bilinear_scores_cp + pair_weight_cp[1] * g_pair_UniScores_cp
+        g_pred_arg_pair_arg_predcp = torch.cat((g_arg_selected, g_pred_selected_expand_cp), 2)
+        g_pair_UniScores_arg_predcp = self.arg_pred_uniScore(g_pred_arg_pair_arg_predcp)
+
+        g_pred_arg_pair_argcp_pred = torch.cat((g_arg_selected_cp, g_pred_selected_expand), 2)
+        g_pair_UniScores_argcp_pred = self.arg_pred_uniScore(g_pred_arg_pair_argcp_pred)
+
+
 
         uniScores_pred_selected_cp = \
             uniScores_pred_cp.view(batch_size * seq_len_en, 1).index_select(0,
@@ -495,19 +507,37 @@ class AlignParser(nn.Module):
         uniScores_arg_cp = uniScores_arg_cp.view(batch_size, seq_len_en, 1).expand(-1, -1, self._vocab.rel_size)
         uniScores_arg_selected_cp = uniScores_arg_cp.index_select(0, torch.tensor(sample_indices_selected).to(device))
 
-        rel_logits_cp = biaffine_scores_cp + uniScores_arg_selected_cp + uniScores_pred_selected_cp
+        biaffine_scores_argcp_predcp = pair_weight[0] * bilinear_scores_argcp_predcp + pair_weight[1] \
+                                                                                       * g_pair_UniScores_argcp_predcp
+        biaffine_scores_arg_predcp = pair_weight[0] * bilinear_scores_arg_predcp + pair_weight[1]\
+                                                                                   * g_pair_UniScores_arg_predcp
+        biaffine_scores_argcp_pred = pair_weight[0] * bilinear_scores_argcp_pred + pair_weight[1] \
+                                                                                   * g_pair_UniScores_argcp_pred
 
-        ##enforce the score of null to be 0
-        rel_logits_cp[:, :, 42] = torch.zeros(total_preds_num, seq_len_en, requires_grad=False).to(device)
-        flat_rel_logits_cp = rel_logits_cp.view(total_preds_num * seq_len_en, self._vocab.rel_size)[:, 1:]
+        rel_logits_argcp_predcp = biaffine_scores_argcp_predcp + uniScores_arg_selected_cp + uniScores_pred_selected_cp
+        rel_logits_argcp_predcp[:, :, 42] = torch.zeros(total_preds_num, seq_len_en, requires_grad=False).to(device)
+        flat_rel_logits_argcp_predcp = rel_logits_argcp_predcp.view(total_preds_num * seq_len_en, self._vocab.rel_size)[:, 1:]
 
+        rel_logits_arg_predcp = biaffine_scores_arg_predcp + uniScores_arg_selected + uniScores_pred_selected_cp
+        rel_logits_arg_predcp[:, :, 42] = torch.zeros(total_preds_num, seq_len_en, requires_grad=False).to(device)
+        flat_rel_logits_arg_predcp = rel_logits_argcp_predcp.view(total_preds_num * seq_len_en, self._vocab.rel_size)[
+                                       :, 1:]
 
+        rel_logits_argcp_pred = biaffine_scores_argcp_pred + uniScores_arg_selected_cp + uniScores_pred_selected
+        rel_logits_argcp_pred[:, :, 42] = torch.zeros(total_preds_num, seq_len_en, requires_grad=False).to(device)
+        flat_rel_logits_argcp_pred = rel_logits_argcp_pred.view(total_preds_num * seq_len_en, self._vocab.rel_size)[
+                                       :, 1:]
 
         unlabeled_loss_function = nn.KLDivLoss(reduce=False)
         teacher_softmax = F.softmax(flat_rel_logits, dim=1).detach()
-        student_softmax = F.log_softmax(flat_rel_logits_cp, dim=1)
-        loss = unlabeled_loss_function(student_softmax, teacher_softmax)
+        student_softmax_argcp_predcp = F.log_softmax(flat_rel_logits_argcp_predcp, dim=1)
+        student_softmax_arg_predcp = F.log_softmax(flat_rel_logits_arg_predcp, dim=1)
+        student_softmax_argcp_pred = F.log_softmax(flat_rel_logits_argcp_pred, dim=1)
+        loss_argcp_predcp = unlabeled_loss_function(student_softmax_argcp_predcp, teacher_softmax)
+        loss_arg_predcp = unlabeled_loss_function(student_softmax_arg_predcp, teacher_softmax)
+        loss_argcp_pred = unlabeled_loss_function(student_softmax_argcp_pred, teacher_softmax)
 
+        loss = loss_argcp_predcp + loss_arg_predcp + loss_argcp_pred
         sample_nums = np.array(num_tokens_en).sum()
 
         loss_mask = np.ones(loss.size(), dtype='float32')
@@ -521,7 +551,7 @@ class AlignParser(nn.Module):
         loss = loss / sample_nums
 
         loss = torch.sum(loss)
-        return loss
+        return loss_argcp_predcp, loss_arg_predcp, loss_argcp_pred, loss
 
 
     @staticmethod
