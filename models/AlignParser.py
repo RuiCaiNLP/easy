@@ -309,7 +309,6 @@ class AlignParser(nn.Module):
         marker = self._vocab.PAD
         mask_en = np.greater(word_inputs_en, marker).astype(np.int64)
         mask_fr = np.greater(word_inputs_fr, marker).astype(np.int64)
-
         num_tokens_en = np.sum(mask_en, axis=1)
         num_tokens_fr = np.sum(mask_fr, axis=1)
 
@@ -346,6 +345,7 @@ class AlignParser(nn.Module):
         preds_indices_selected = []
         rel_targets_selected = []
         mask_selected = []
+        mask_selected_fr = []
         offset_words = 0
         offset_targets = 0
 
@@ -369,6 +369,7 @@ class AlignParser(nn.Module):
             for j in range(len(candidate_preds_batch[i])):
                 sample_indices_selected.append(i)
                 mask_selected.append(mask_en[i])
+                mask_selected_fr.append(mask_fr[i])
                 preds_indices_selected.append(candidate_preds_batch[i][j] + offset_words)
             offset_words += int(seq_len_en)
 
@@ -456,7 +457,10 @@ class AlignParser(nn.Module):
 
         atten_matrix = torch.bmm(top_recur, top_recur_fr_T)
 
-        atten_e2f = F.softmax(atten_matrix, dim=2) * mask_fr
+        mask_fr =  torch.from_numpy(np.array(mask_fr).astype("float32")).to(device).view(batch_size, 1, -1)
+        mask_fr_expand = mask_fr.expand(-1, seq_len_en, -1)
+
+        atten_e2f = F.softmax(atten_matrix, dim=2)*mask_fr_expand
 
         weighted_fr = torch.bmm(atten_e2f, top_recur_fr)
 
@@ -536,21 +540,23 @@ class AlignParser(nn.Module):
         loss_arg_predcp = unlabeled_loss_function(student_softmax_arg_predcp, teacher_softmax)
         loss_argcp_pred = unlabeled_loss_function(student_softmax_argcp_pred, teacher_softmax)
 
-        loss = loss_argcp_predcp + loss_arg_predcp + loss_argcp_pred
+
         sample_nums = np.array(num_tokens_en).sum()
 
-        loss_mask = np.ones(loss.size(), dtype='float32')
+        loss_mask = np.ones(loss_argcp_predcp.size(), dtype='float32')
         for i in range(batch_size):
             for j in range(seq_len_en):
                 if j >= num_tokens_en[i]:
                     loss_mask[i][j] = 0.0
         loss_mask = torch.from_numpy(loss_mask).to(device)
 
-        loss = torch.sum(loss_mask * loss)
-        loss = loss / sample_nums
-
-        loss = torch.sum(loss)
-        return loss_argcp_predcp, loss_arg_predcp, loss_argcp_pred, loss
+        a = [loss_argcp_predcp, loss_arg_predcp, loss_argcp_pred]
+        for i in range(len(a)):
+            loss = torch.sum(loss_mask * a[i])
+            loss = loss / sample_nums
+            a[i] = torch.sum(loss)
+        loss = a[0] + a[1] + a[2]
+        return a[0], a[1], a[2], loss
 
 
     @staticmethod
