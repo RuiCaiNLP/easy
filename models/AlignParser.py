@@ -498,8 +498,7 @@ class AlignParser(nn.Module):
 
 
         uniScores_pred_selected_cp = \
-            uniScores_pred_cp.view(batch_size * seq_len_en, 1).index_select(0,
-                                                                         torch.tensor(preds_indices_selected).to(
+            uniScores_pred_cp.view(batch_size * seq_len_en, 1).index_select(0, torch.tensor(preds_indices_selected).to(
                                                                              device))
         uniScores_pred_selected_cp = uniScores_pred_selected_cp.view(total_preds_num, 1, 1).expand(-1, seq_len_en,
                                                                                              self._vocab.rel_size)
@@ -520,7 +519,7 @@ class AlignParser(nn.Module):
 
         rel_logits_arg_predcp = biaffine_scores_arg_predcp + uniScores_arg_selected + uniScores_pred_selected_cp
         rel_logits_arg_predcp[:, :, 42] = torch.zeros(total_preds_num, seq_len_en, requires_grad=False).to(device)
-        flat_rel_logits_arg_predcp = rel_logits_argcp_predcp.view(total_preds_num * seq_len_en, self._vocab.rel_size)[
+        flat_rel_logits_arg_predcp = rel_logits_arg_predcp.view(total_preds_num * seq_len_en, self._vocab.rel_size)[
                                        :, 1:]
 
         rel_logits_argcp_pred = biaffine_scores_argcp_pred + uniScores_arg_selected_cp + uniScores_pred_selected
