@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
 
     parser = AlignParser(vocab, vocab_fr)
-    trainer = optim.Adam(filter(lambda p: p.requires_grad, parser.parameters()), lr=0.001)
+    trainer = optim.Adam(parser.parameters(), lr=0.001)
     """
     for i in parser.mlp_arg_uniScore.parameters():
         i.requires_grad = False
