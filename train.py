@@ -126,6 +126,7 @@ if __name__ == "__main__":
 
 
             # dy.renew_cg()
+            """
             parser.zero_grad()
             trainer_fr.zero_grad()
             parser.train()
@@ -157,6 +158,7 @@ if __name__ == "__main__":
             parser.pair_weight.requires_grad = True
 
             global_step += 1
+            """
 
 
 
