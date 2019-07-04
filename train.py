@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     parser = AlignParser(vocab, vocab_fr)
     trainer = optim.Adam(parser.parameters(), lr=0.001)
-    """
+
     for i in parser.mlp_arg_uniScore.parameters():
         i.requires_grad = False
     for i in parser.mlp_pred_uniScore.parameters():
@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     parser.rel_W.requires_grad = True
     parser.pair_weight.requires_grad = True
-    """
+
 
     epoch = 0
     best_F1 = 0.
@@ -126,9 +126,6 @@ if __name__ == "__main__":
                 words_en, lengths_en = Plain_English_data_Generator.next()
                 words_fr, lengths_fr = Plain_French_data_Generator.next()
 
-
-            # dy.renew_cg()
-            """
             parser.zero_grad()
             trainer_fr.zero_grad()
             parser.train()
@@ -158,7 +155,7 @@ if __name__ == "__main__":
 
             parser.rel_W.requires_grad = True
             parser.pair_weight.requires_grad = True
-            """
+
             global_step += 1
 
 
