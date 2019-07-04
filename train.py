@@ -156,9 +156,9 @@ if __name__ == "__main__":
 
             parser.rel_W.requires_grad = True
             parser.pair_weight.requires_grad = True
-
-            global_step += 1
             """
+            global_step += 1
+
 
 
 
