@@ -415,9 +415,6 @@ class AlignParser(nn.Module):
         rel_logits[:, :, 42] = torch.zeros(total_preds_num, seq_len_en, requires_grad=False).to(device)
         flat_rel_logits = rel_logits.view(total_preds_num * seq_len_en, self._vocab.rel_size)[:, 1:]
 
-        rel_probs = F.softmax(flat_rel_logits, 1).view(total_preds_num, seq_len_en,
-                                                       (self._vocab.rel_size - 1)).cpu().data.numpy()
-        rel_predicts = np.argmax(rel_probs, 2)
 
 
 
