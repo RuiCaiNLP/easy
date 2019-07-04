@@ -447,7 +447,7 @@ class AlignParser(nn.Module):
         hidden_states, lens = rnn.pad_packed_sequence(hidden_states, batch_first=True)
         # hidden_states = hidden_states.transpose(0, 1)
         top_recur_fr = hidden_states[unsort_idx]
-        top_recur_fr = self.hidden_dropout_fr(top_recur)
+        top_recur_fr = self.hidden_dropout_fr(top_recur_fr)
         del init_hidden
 
         # g_arg = F.relu(self.mlp_arg(top_recur))
