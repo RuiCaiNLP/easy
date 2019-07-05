@@ -555,7 +555,7 @@ class AlignParser(nn.Module):
             loss = torch.sum(loss_mask * a[i])
             loss = loss / sample_nums
             a[i] = torch.sum(loss)
-        loss = a[0] + a[1] + a[2]
+        loss = a[1]
         return a[0], a[1], a[2], loss
 
 
