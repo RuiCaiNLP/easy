@@ -260,7 +260,7 @@ class AlignSup(nn.Module):
         pre_embs_fr = self.pret_word_embs_fr(torch.from_numpy(word_inputs_fr.astype('int64')).to(device))
 
         emb_inputs_fr = torch.cat((word_embs_fr, pre_embs_fr), dim=2)
-        emb_inputs_fr = self.emb_dropout(emb_inputs_fr)
+        emb_inputs_fr = self.emb_dropout_fr(emb_inputs_fr)
 
         init_hidden = self.init_hidden(batch_size)
         embeds_sort, lengths_sort, unsort_idx = self.sort_batch(emb_inputs_fr, num_tokens_fr)
@@ -535,7 +535,8 @@ class AlignSup(nn.Module):
                         noNull_labels += 1
                     if label_predict[i] != 41:
                         noNull_predict += 1
-                        if label_predict[i] == label_gold[i] - 1:
+                        #if label_predict[i] == label_gold[i] - 1:
+                        if label_gold[i]!=42:
                             correct_noNull_predict += 1
 
         return correct_noNull_predict, noNull_predict, noNull_labels
