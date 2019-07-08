@@ -55,13 +55,13 @@ if __name__ == "__main__":
             trainer.zero_grad()
             parser.train()
 
-            accuracy, loss, a1, l1 = parser("labeled", (words, words_fr), tags, preds, rels,  isTrain=True)
+            accuracy, loss, a1, l1, a2, l2, a3, l3 = parser("labeled", (words, words_fr), tags, preds, rels,  isTrain=True)
             if global_step % 1 == 0:
                 print("epoch %d, global step#%d, accuracy:%.2f" %(epoch, global_step, accuracy))
                 print(loss)
                 print("epoch %d, global step#%d, accuracy:%.2f" % (epoch, global_step, a1))
                 print(l1)
-            loss += l1
+            loss += l1 + l2 + l3
             loss.backward()
             trainer.step()
 

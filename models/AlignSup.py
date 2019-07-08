@@ -352,20 +352,15 @@ class AlignSup(nn.Module):
         flat_rel_logits_argcp_pred = rel_logits_argcp_pred.view(total_preds_num * seq_len_en, self._vocab.rel_size)[
                                      :, 1:]
 
-        unlabeled_loss_function = nn.KLDivLoss(reduce=False)
-        teacher_softmax = F.softmax(flat_rel_logits, dim=1).detach()
-        student_softmax_argcp_predcp = F.log_softmax(flat_rel_logits_argcp_predcp, dim=1)
-        student_softmax_arg_predcp = F.log_softmax(flat_rel_logits_arg_predcp, dim=1)
-        student_softmax_argcp_pred = F.log_softmax(flat_rel_logits_argcp_pred, dim=1)
-        loss_argcp_predcp = unlabeled_loss_function(student_softmax_argcp_predcp, teacher_softmax)
-        loss_arg_predcp = unlabeled_loss_function(student_softmax_arg_predcp, teacher_softmax)
-        loss_argcp_pred = unlabeled_loss_function(student_softmax_argcp_pred, teacher_softmax)
+
 
 
         mask_1D = np.array(mask_selected).reshape(-1)
 
         rel_preds = torch.argmax(flat_rel_logits, 1).cpu().data.numpy().astype("int64")
-        rel_preds_argcp_predcp = torch.argmax(flat_rel_logits, 1).cpu().data.numpy().astype("int64")
+        rel_preds_argcp_predcp = torch.argmax(flat_rel_logits_argcp_predcp, 1).cpu().data.numpy().astype("int64")
+        rel_preds_argcp_pred = torch.argmax(flat_rel_logits_argcp_pred, 1).cpu().data.numpy().astype("int64")
+        rel_preds_arg_predcp = torch.argmax(flat_rel_logits_arg_predcp, 1).cpu().data.numpy().astype("int64")
 
         #targets_1D = dynet_flatten_numpy(rel_targets)
         targets_1D = np.array(rel_targets_selected).astype("int64").reshape(-1)
@@ -373,8 +368,12 @@ class AlignSup(nn.Module):
         rel_correct = np.equal(rel_preds, targets_1D-1).astype(np.float32) * mask_1D
         rel_accuracy = np.sum(rel_correct) / mask_1D.sum()
 
-        rel_correct_argcp_pred = np.equal(rel_preds_argcp_predcp , targets_1D-1).astype(np.float32) * mask_1D
+        rel_correct_argcp_pred = np.equal(rel_preds_argcp_pred, targets_1D-1).astype(np.float32) * mask_1D
         rel_accuracy_argcp_pred = np.sum(rel_correct_argcp_pred) / mask_1D.sum()
+        rel_correct_arg_predcp = np.equal(rel_preds_arg_predcp, targets_1D - 1).astype(np.float32) * mask_1D
+        rel_accuracy_arg_predcp = np.sum(rel_correct_arg_predcp) / mask_1D.sum()
+        rel_correct_argcp_predcp = np.equal(rel_preds_argcp_predcp, targets_1D - 1).astype(np.float32) * mask_1D
+        rel_accuracy_argcp_predcp = np.sum(rel_correct_argcp_predcp) / mask_1D.sum()
 
         loss_function = nn.CrossEntropyLoss(ignore_index=-1)
 
@@ -383,8 +382,13 @@ class AlignSup(nn.Module):
         rel_loss = loss_function(flat_rel_logits, targets_1D)
 
         rel_loss_argcp_pred = loss_function(flat_rel_logits_argcp_pred, targets_1D)
+        rel_loss_arg_predcp = loss_function(flat_rel_logits_arg_predcp, targets_1D)
+        rel_loss_argcp_predcp = loss_function(flat_rel_logits_argcp_predcp, targets_1D)
 
-        return rel_accuracy, rel_loss, rel_accuracy_argcp_pred, rel_loss_argcp_pred
+        return rel_accuracy, rel_loss, \
+               rel_accuracy_argcp_pred, rel_loss_argcp_pred, \
+               rel_accuracy_arg_predcp, rel_loss_arg_predcp, \
+               rel_accuracy_argcp_predcp, rel_loss_argcp_predcp
 
 
 
