@@ -106,7 +106,7 @@ class AlignSup(nn.Module):
         input_dims_fr = word_dims_fr + pret_dims_fr
 
         self.BiLSTM_fr = nn.LSTM(input_size=input_dims_fr, hidden_size=lstm_hiddens_fr, batch_first=True,
-                              bidirectional=True, num_layers=3)
+                              bidirectional=True, num_layers=1)
         init.orthogonal_(self.BiLSTM_fr.all_weights[0][0])
         init.orthogonal_(self.BiLSTM_fr.all_weights[0][1])
         init.orthogonal_(self.BiLSTM_fr.all_weights[1][0])
