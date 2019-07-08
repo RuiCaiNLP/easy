@@ -54,9 +54,11 @@ if __name__ == "__main__":
             parser.zero_grad()
             trainer.zero_grad()
             parser.train()
-
+            print("*********************************")
+            print(vocab.id2word(list(words[1])))
+            print(vocab_fr.id2word(list(words_fr[1])))
             accuracy, loss, a1, l1, a2, l2, a3, l3 = parser("labeled", (words, words_fr), tags, preds, rels,  isTrain=True)
-            if global_step % 1 == 0:
+            if global_step % 30 == 0:
                 print("epoch %d, global step#%d, accuracy:%.2f" %(epoch, global_step, accuracy))
                 print(loss)
                 print("epoch %d, global step#%d, accuracy:%.2f" % (epoch, global_step, a1))
@@ -67,7 +69,7 @@ if __name__ == "__main__":
 
 
 
-            if (global_step+1) % 134 == 0:
+            if (global_step+1) % 300 == 0:
                 with torch.no_grad():
                     print("testing...")
                     parser.eval()
