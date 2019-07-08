@@ -44,12 +44,11 @@ if __name__ == "__main__":
     best_F1 = 0.
     best_F1_fr = 0.
     parser.to(device)
-    Plain_French_data_Generator = plain_data_loader_fr.get_batches(batch_size=10)
     while global_step < 500000:
         print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '\nStart training epoch #%d' % (epoch,)
         epoch += 1
         for s1, s2 in \
-                zip(data_loader.get_batches(batch_size=10, shuffle=False), plain_data_loader_fr.get_batches(batch_size=10)):
+                zip(data_loader.get_batches(batch_size=5, shuffle=False), plain_data_loader_fr.get_batches(batch_size=5)):
             words, tags, preds, rels = s1
             words_fr, _ = s2
             parser.zero_grad()
@@ -68,7 +67,7 @@ if __name__ == "__main__":
 
 
 
-            if (global_step+1) % 670 == 0:
+            if (global_step+1) % 66 == 0:
                 with torch.no_grad():
                     print("testing...")
                     parser.eval()
