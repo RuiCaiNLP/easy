@@ -64,13 +64,11 @@ if __name__ == "__main__":
                 print(l1)
             loss += l1
             loss.backward()
-            #torch.nn.utils.clip_grad_norm_(parser.parameters(), 5)
-
             trainer.step()
 
 
 
-            if (global_step+1) % 600 == 0:
+            if (global_step+1) % 670 == 0:
                 with torch.no_grad():
                     print("testing...")
                     parser.eval()
@@ -99,7 +97,7 @@ if __name__ == "__main__":
                     correct_noNull_predicts = 0.
                     noNull_predicts = 0.1
                     noNull_labels = 0.0
-                    test_data_loader = DataLoader("processed/dev_pro_fr", vocab)
+                    test_data_loader = DataLoader("processed/dev_pro_fr", vocab_fr)
                     for words, tags, preds, rels in \
                             test_data_loader.get_batches(batch_size=10, shuffle=False):
                         a, b, c = parser("French", words, tags, preds, rels, isTrain=False)
