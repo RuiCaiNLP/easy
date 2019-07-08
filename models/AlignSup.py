@@ -527,6 +527,8 @@ class AlignSup(nn.Module):
         noNull_labels = 0
 
         for msk, label_gold, label_predict in zip(mask_selected, rel_targets, rel_predicts):
+            print(label_gold)
+            print(label_predict)
             for i in range(len(label_predict)):
                 if msk[i] > 0:
                     if label_gold[i] - 1 != 41:
