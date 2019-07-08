@@ -225,14 +225,15 @@ class DataLoader(object):
     def idx_sequence(self):
         return [x[1] for x in sorted(zip(self._record, range(len(self._record))))]
 
-    def get_batches(self, batch_size, shuffle = True):
+    def get_batches(self, batch_size, shuffle=True, clip=False):
         batches = []
         batches_num = int(len(self.samples)/batch_size)
         for idx in range(batches_num):
             batch_samples = self.samples[idx*batch_size: (idx+1)*batch_size]
             batches.append(batch_samples)
         print("log")
-        batches = batches[:67]
+        if clip:
+            batches = batches[:67]
         print(len(batches))
 
         if shuffle:

@@ -48,7 +48,7 @@ if __name__ == "__main__":
         print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), '\nStart training epoch #%d' % (epoch,)
         epoch += 1
         for s1, s2 in \
-                zip(data_loader.get_batches(batch_size=5, shuffle=False), plain_data_loader_fr.get_batches(batch_size=5)):
+                zip(data_loader.get_batches(batch_size=5, shuffle=False, clip=True), plain_data_loader_fr.get_batches(batch_size=5)):
             words, tags, preds, rels = s1
             words_fr, _ = s2
             parser.zero_grad()
@@ -76,8 +76,8 @@ if __name__ == "__main__":
                     noNull_labels = 0.0
                     test_data_loader = DataLoader("processed/dev_pro", vocab)
                     for words, tags, preds, rels in \
-                            test_data_loader.get_batches(batch_size=10, shuffle=False):
-                        a, b, c = parser("English", words, tags, preds, rels, isTrain=False)
+                            test_data_loader.get_batches(batch_size=5, shuffle=False):
+                        a, b, c = parser("English", words, tags, preds, rels, isTrain=False, clip=False)
                         correct_noNull_predicts += a
                         noNull_predicts += b
                         noNull_labels += c
@@ -98,7 +98,7 @@ if __name__ == "__main__":
                     noNull_labels = 0.0
                     test_data_loader = DataLoader("processed/dev_pro_fr", vocab_fr)
                     for words, tags, preds, rels in \
-                            test_data_loader.get_batches(batch_size=10, shuffle=False):
+                            test_data_loader.get_batches(batch_size=5, shuffle=False, clip=False):
                         a, b, c = parser("French", words, tags, preds, rels, isTrain=False)
                         correct_noNull_predicts += a
                         noNull_predicts += b
