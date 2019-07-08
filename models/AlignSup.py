@@ -287,6 +287,7 @@ class AlignSup(nn.Module):
         atten_e2f = F.softmax(atten_matrix, dim=2) * mask_fr_expand
 
         weighted_fr = torch.bmm(atten_e2f, top_recur_fr)
+        print(atten_e2f)
 
         uniScores_arg_cp = self.mlp_arg_uniScore(weighted_fr).view(batch_size, seq_len_en)
         uniScores_pred_cp = self.mlp_pred_uniScore(weighted_fr).view(batch_size, seq_len_en)
