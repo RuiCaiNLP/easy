@@ -287,10 +287,13 @@ class AlignSup(nn.Module):
 
 
         atten_e2f = F.softmax(atten_matrix + mask_fr_expand, dim=2)
+        max_weights, max_indices = torch.max(atten_e2f, 2)
 
         weighted_fr = torch.bmm(atten_e2f, top_recur_fr)
         #print(atten_e2f[1][1])
         #print(atten_e2f[1][1].sum())
+        print(max_weights)
+        print(max_indices)
 
         uniScores_arg_cp = self.mlp_arg_uniScore(weighted_fr).view(batch_size, seq_len_en)
         uniScores_pred_cp = self.mlp_pred_uniScore(weighted_fr).view(batch_size, seq_len_en)
@@ -535,8 +538,8 @@ class AlignSup(nn.Module):
                         noNull_labels += 1
                     if label_predict[i] != 41:
                         noNull_predict += 1
-                        #if label_predict[i] == label_gold[i] - 1:
-                        if label_gold[i]!=42:
+                        if label_predict[i] == label_gold[i] - 1:
+                        #if label_gold[i]!=42:
                             correct_noNull_predict += 1
 
         return correct_noNull_predict, noNull_predict, noNull_labels
