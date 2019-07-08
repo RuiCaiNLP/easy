@@ -232,6 +232,7 @@ class DataLoader(object):
             batch_samples = self.samples[idx*batch_size: (idx+1)*batch_size]
             batches.append(batch_samples)
         print("log")
+        batches = batches[:67]
         print(len(batches))
 
         if shuffle:
