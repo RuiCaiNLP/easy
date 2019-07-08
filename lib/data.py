@@ -236,7 +236,7 @@ class DataLoader(object):
             batches.append(batch_samples)
         print("log")
         if clip:
-            batches = batches[:67]
+            batches = batches[:int(2840/batch_size)]
         print(len(batches))
 
         if shuffle:
