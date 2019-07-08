@@ -15,10 +15,10 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class AlignSup(nn.Module):
     def __init__(self, vocab, vocab_fr, word_dims=100, pret_dims=100, tag_dims=16,
-                 lstm_layers=3, lstm_hiddens=200, dropout_lstm_input=0.5, dropout_lstm_hidden=0.3,
+                 lstm_layers=1, lstm_hiddens=200, dropout_lstm_input=0.5, dropout_lstm_hidden=0.3,
                  mlp_size=150, dropout_mlp=0.2,
                  word_dims_fr=300, pret_dims_fr=300, tag_dims_fr=16,
-                 lstm_layers_fr=3, lstm_hiddens_fr=200, dropout_lstm_input_fr=0.5, dropout_lstm_hidden_fr=0.3,
+                 lstm_layers_fr=1, lstm_hiddens_fr=200, dropout_lstm_input_fr=0.5, dropout_lstm_hidden_fr=0.3,
                  mlp_size_fr=150, dropout_mlp_fr=0.2
                  ):
         super(AlignSup, self).__init__()
@@ -38,7 +38,7 @@ class AlignSup(nn.Module):
         input_dims = word_dims + pret_dims
 
         self.BiLSTM = nn.LSTM(input_size=input_dims, hidden_size=lstm_hiddens, batch_first=True,
-                                bidirectional=True, num_layers=3)
+                                bidirectional=True, num_layers=1)
         init.orthogonal_(self.BiLSTM.all_weights[0][0])
         init.orthogonal_(self.BiLSTM.all_weights[0][1])
         init.orthogonal_(self.BiLSTM.all_weights[1][0])
