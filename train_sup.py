@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
 
 
-            if (global_step+1) % 66 == 0:
+            if (global_step+1) % 134 == 0:
                 with torch.no_grad():
                     print("testing...")
                     parser.eval()
