@@ -15,10 +15,10 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class AlignSup(nn.Module):
     def __init__(self, vocab, vocab_fr, word_dims=100, pret_dims=100, tag_dims=16,
-                 lstm_layers=1, lstm_hiddens=200, dropout_lstm_input=0.5, dropout_lstm_hidden=0.3,
+                 lstm_layers=3, lstm_hiddens=200, dropout_lstm_input=0.5, dropout_lstm_hidden=0.3,
                  mlp_size=150, dropout_mlp=0.2,
                  word_dims_fr=300, pret_dims_fr=300, tag_dims_fr=16,
-                 lstm_layers_fr=1, lstm_hiddens_fr=200, dropout_lstm_input_fr=0.5, dropout_lstm_hidden_fr=0.3,
+                 lstm_layers_fr=3, lstm_hiddens_fr=200, dropout_lstm_input_fr=0.5, dropout_lstm_hidden_fr=0.3,
                  mlp_size_fr=150, dropout_mlp_fr=0.2
                  ):
         super(AlignSup, self).__init__()
@@ -38,7 +38,7 @@ class AlignSup(nn.Module):
         input_dims = word_dims + pret_dims
 
         self.BiLSTM = nn.LSTM(input_size=input_dims, hidden_size=lstm_hiddens, batch_first=True,
-                                bidirectional=True, num_layers=1)
+                                bidirectional=True, num_layers=3)
         init.orthogonal_(self.BiLSTM.all_weights[0][0])
         init.orthogonal_(self.BiLSTM.all_weights[0][1])
         init.orthogonal_(self.BiLSTM.all_weights[1][0])
@@ -105,8 +105,12 @@ class AlignSup(nn.Module):
         self.dropout_h_fr = dropout_lstm_hidden_fr
         input_dims_fr = word_dims_fr + pret_dims_fr
 
+        self.transfer =  nn.Sequential(nn.Linear(input_dims_fr + 2 * lstm_hiddens, 2*lstm_hiddens),
+                                               nn.ReLU(),
+                                               nn.Dropout(0.2))
+
         self.BiLSTM_fr = nn.LSTM(input_size=input_dims_fr, hidden_size=lstm_hiddens_fr, batch_first=True,
-                              bidirectional=True, num_layers=1)
+                              bidirectional=True, num_layers=3)
         init.orthogonal_(self.BiLSTM_fr.all_weights[0][0])
         init.orthogonal_(self.BiLSTM_fr.all_weights[0][1])
         init.orthogonal_(self.BiLSTM_fr.all_weights[1][0])
@@ -277,7 +281,7 @@ class AlignSup(nn.Module):
 
 
         top_recur_W = torch.matmul(top_recur.detach(), self.atten_W)
-        top_recur_fr_T = top_recur_fr.transpose(1, 2)
+        top_recur_fr_T = self.transfer(torch.cat((top_recur_fr, emb_inputs_fr), 2)).transpose(1, 2)
 
         atten_matrix = torch.bmm(top_recur_W, top_recur_fr_T)
 
