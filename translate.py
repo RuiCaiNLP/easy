@@ -6,7 +6,7 @@ name_idxx = 0
 translator = Translator(service_urls=[name[name_idxx%3]])
 name_idxx+=1
 source_file = open("./processed/train_pro", 'r')
-dest_file = open("translate_fr", 'w')
+dest_file = open("translate_fr_2", 'w')
 index = 0
 num =0
 for line in source_file.readlines():
@@ -21,7 +21,7 @@ for line in source_file.readlines():
         num+=1
         if num % 500 ==0:
             print(num)
-            if num % 10 ==0:
+            if num % 100 ==0:
                 time.sleep(1)
             translator = Translator(service_urls=[name[name_idxx%3]])
             name_idxx += 1

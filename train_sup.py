@@ -34,7 +34,7 @@ if __name__ == "__main__":
     print("loading French vocab...")
     vocab_fr = Vocab("processed/train_pro_fr", "less.fr.300.vec", 1, vocab.rel_set)
 
-    plain_data_loader_fr = PlainDataLoader("translate_fr", vocab_fr)
+    plain_data_loader_fr = PlainDataLoader("translate_fr_cleaned", vocab_fr)
 
     data_loader = DataLoader("processed/train_pro", vocab)
     global_step = 0
