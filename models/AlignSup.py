@@ -278,7 +278,7 @@ class AlignSup(nn.Module):
 
         top_recur_fr_T = top_recur_fr.transpose(1, 2)
 
-        atten_matrix = torch.bmm(top_recur, top_recur_fr_T)
+        atten_matrix = torch.bmm(top_recur.detach(), top_recur_fr_T)
 
         mask_fr = torch.from_numpy(np.array(mask_fr).astype("float32")).to(device).view(batch_size, 1, -1)
         mask_fr_expand = mask_fr.expand(-1, seq_len_en, -1)
