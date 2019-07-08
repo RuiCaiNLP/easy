@@ -8,11 +8,14 @@ import random
 class Vocab(object):
     PAD, UNK, NUM, FlOAT = 0, 1, 2, 3
 
-    def __init__(self, input_file, pret_file, min_occur_count=1):
+    def __init__(self, input_file, pret_file, min_occur_count=1, init_relset = None):
         word_counter = Counter()
         tag_set = set()
-        rel_set = set()
-
+        if init_relset:
+            rel_set = init_relset
+        else:
+            rel_set = set()
+        self.rel_set = rel_set
         content_idx = 0
         with open(input_file) as f:
             for line in f.readlines():

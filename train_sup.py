@@ -32,7 +32,7 @@ if __name__ == "__main__":
     vocab = Vocab("processed/train_pro", "glove.6B.100d.txt", 1)
 
     print("loading French vocab...")
-    vocab_fr = Vocab("processed/train_pro_fr", "less.fr.300.vec", 1)
+    vocab_fr = Vocab("processed/train_pro_fr", "less.fr.300.vec", 1, vocab.rel_set)
 
     plain_data_loader_fr = PlainDataLoader("translate_fr", vocab_fr)
 
