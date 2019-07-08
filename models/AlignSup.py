@@ -442,8 +442,8 @@ class AlignSup(nn.Module):
             top_recur = self.hidden_dropout_fr(top_recur)
 
 
-            g_arg = top_recur
-            g_pred = top_recur
+        g_arg = top_recur
+        g_pred = top_recur
 
         # B T
         uniScores_arg = self.mlp_arg_uniScore(g_arg).view(batch_size, seq_len)
