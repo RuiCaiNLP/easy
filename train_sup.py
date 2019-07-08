@@ -54,9 +54,9 @@ if __name__ == "__main__":
             parser.zero_grad()
             trainer.zero_grad()
             parser.train()
-            print("*********************************")
-            print(vocab.id2word(list(words[1])))
-            print(vocab_fr.id2word(list(words_fr[1])))
+            #print("*********************************")
+            #print(vocab.id2word(list(words[1])))
+            #print(vocab_fr.id2word(list(words_fr[1])))
             accuracy, loss, a1, l1, a2, l2, a3, l3 = parser("labeled", (words, words_fr), tags, preds, rels,  isTrain=True)
             if global_step % 30 == 0:
                 print("epoch %d, global step#%d, accuracy:%.2f" %(epoch, global_step, accuracy))
