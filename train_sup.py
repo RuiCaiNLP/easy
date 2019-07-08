@@ -76,8 +76,8 @@ if __name__ == "__main__":
                     noNull_labels = 0.0
                     test_data_loader = DataLoader("processed/dev_pro", vocab)
                     for words, tags, preds, rels in \
-                            test_data_loader.get_batches(batch_size=5, shuffle=False):
-                        a, b, c = parser("English", words, tags, preds, rels, isTrain=False, clip=False)
+                            test_data_loader.get_batches(batch_size=5, shuffle=False, clip=False):
+                        a, b, c = parser("English", words, tags, preds, rels, isTrain=False)
                         correct_noNull_predicts += a
                         noNull_predicts += b
                         noNull_labels += c
