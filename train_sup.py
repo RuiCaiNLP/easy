@@ -60,7 +60,7 @@ if __name__ == "__main__":
                 print("epoch %d, global step#%d, accuracy:%.2f" %(epoch, global_step, accuracy))
                 print(loss)
                 print("epoch %d, global step#%d, accuracy:%.2f" % (epoch, global_step, a1))
-                print(l1)
+                print(l1, l2, l3)
             loss += l1 + l2 + l3
             loss.backward()
             trainer.step()
