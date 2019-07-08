@@ -87,6 +87,7 @@ class AlignSup(nn.Module):
 
         self.rel_W = nn.Parameter(torch.from_numpy(np.zeros((2*lstm_hiddens+1, vocab.rel_size * (2*lstm_hiddens+1))).astype("float32")).to(device))
         #self._pc = pc
+        self.atten_W = nn.Parameter(torch.from_numpy(np.zeros((2*lstm_hiddens, 2*lstm_hiddens)).astype("float32")).to(device))
         self.pair_weight = nn.Parameter(torch.Tensor([0.5, 0.5]))
 
         self._vocab_fr = vocab_fr
@@ -275,10 +276,10 @@ class AlignSup(nn.Module):
         del init_hidden
 
 
-
+        top_recur_W = torch.matmul(top_recur.detach(), self.atten_W)
         top_recur_fr_T = top_recur_fr.transpose(1, 2)
 
-        atten_matrix = torch.bmm(top_recur.detach(), top_recur_fr_T)
+        atten_matrix = torch.bmm(top_recur_W, top_recur_fr_T)
 
         mask_fr = torch.from_numpy(np.array(mask_fr).astype("float32")).to(device).view(batch_size, 1, -1)
         mask_fr_expand = mask_fr.expand(-1, seq_len_en, -1)
