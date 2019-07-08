@@ -281,13 +281,16 @@ class AlignSup(nn.Module):
 
         atten_matrix = torch.bmm(top_recur_W, top_recur_fr_T)
 
+        mask_fr = (mask_fr - 1) * 1000000
         mask_fr = torch.from_numpy(np.array(mask_fr).astype("float32")).to(device).view(batch_size, 1, -1)
         mask_fr_expand = mask_fr.expand(-1, seq_len_en, -1)
 
-        atten_e2f = F.softmax(atten_matrix, dim=2) * mask_fr_expand
+
+        atten_e2f = F.softmax(atten_matrix + mask_fr_expand, dim=2)
 
         weighted_fr = torch.bmm(atten_e2f, top_recur_fr)
-        print(atten_e2f[1][1])
+        #print(atten_e2f[1][1])
+        #print(atten_e2f[1][1].sum())
 
         uniScores_arg_cp = self.mlp_arg_uniScore(weighted_fr).view(batch_size, seq_len_en)
         uniScores_pred_cp = self.mlp_pred_uniScore(weighted_fr).view(batch_size, seq_len_en)
