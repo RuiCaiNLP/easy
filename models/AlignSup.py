@@ -441,6 +441,7 @@ class AlignSup(nn.Module):
             # hidden_states = hidden_states.transpose(0, 1)
             top_recur = hidden_states[unsort_idx]
             top_recur = self.hidden_dropout(top_recur)
+            top_recur = self.transfer_fr(torch.cat((top_recur, emb_inputs), 2))
         else:
             word_embs = self.word_embs_fr(torch.from_numpy(word_inputs.astype('int64')).to(device))
             pre_embs = self.pret_word_embs_fr(torch.from_numpy(word_inputs.astype('int64')).to(device))
@@ -459,6 +460,7 @@ class AlignSup(nn.Module):
             # hidden_states = hidden_states.transpose(0, 1)
             top_recur = hidden_states[unsort_idx]
             top_recur = self.hidden_dropout_fr(top_recur)
+            top_recur = self.transfer_fr(torch.cat((top_recur, emb_inputs), 2))
 
 
         g_arg = top_recur
