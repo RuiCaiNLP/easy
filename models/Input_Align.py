@@ -357,40 +357,29 @@ class Input_Align(nn.Module):
             word_embs = self.word_embs(torch.from_numpy(word_inputs.astype('int64')).to(device))
             pre_embs = self.pret_word_embs(torch.from_numpy(word_inputs.astype('int64')).to(device))
 
+
             emb_inputs = torch.cat((word_embs, pre_embs), dim=2)
             emb_inputs = self.emb_dropout(emb_inputs)
-
-            init_hidden = self.init_hidden(batch_size)
-            embeds_sort, lengths_sort, unsort_idx = self.sort_batch(emb_inputs, num_tokens)
-            embeds_sort = rnn.pack_padded_sequence(embeds_sort, lengths_sort, batch_first=True)
-            # hidden states [time_steps * batch_size * hidden_units]
-            hidden_states, last_hidden = self.BiLSTM(embeds_sort, init_hidden)
-            # it seems that hidden states is already batch first, we don't need swap the dims
-            # hidden_states = hidden_states.permute(1, 2, 0).contiguous().view(self.batch_size, -1, )
-            hidden_states, lens = rnn.pad_packed_sequence(hidden_states, batch_first=True)
-            # hidden_states = hidden_states.transpose(0, 1)
-            top_recur = hidden_states[unsort_idx]
-            top_recur = self.hidden_dropout(top_recur)
-            top_recur = self.transfer(torch.cat((top_recur, emb_inputs), 2))
         else:
             word_embs = self.word_embs_fr(torch.from_numpy(word_inputs.astype('int64')).to(device))
             pre_embs = self.pret_word_embs_fr(torch.from_numpy(word_inputs.astype('int64')).to(device))
 
             emb_inputs = torch.cat((word_embs, pre_embs), dim=2)
-            emb_inputs = self.emb_dropout_fr(emb_inputs)
+            emb_inputs = self.embs_convert(emb_inputs)
 
-            init_hidden = self.init_hidden(batch_size)
-            embeds_sort, lengths_sort, unsort_idx = self.sort_batch(emb_inputs, num_tokens)
-            embeds_sort = rnn.pack_padded_sequence(embeds_sort, lengths_sort, batch_first=True)
-            # hidden states [time_steps * batch_size * hidden_units]
-            hidden_states, last_hidden = self.BiLSTM_fr(embeds_sort, init_hidden)
-            # it seems that hidden states is already batch first, we don't need swap the dims
-            # hidden_states = hidden_states.permute(1, 2, 0).contiguous().view(self.batch_size, -1, )
-            hidden_states, lens = rnn.pad_packed_sequence(hidden_states, batch_first=True)
-            # hidden_states = hidden_states.transpose(0, 1)
-            top_recur = hidden_states[unsort_idx]
-            top_recur = self.hidden_dropout_fr(top_recur)
-            top_recur = self.transfer_fr(torch.cat((top_recur, emb_inputs), 2))
+
+        init_hidden = self.init_hidden(batch_size)
+        embeds_sort, lengths_sort, unsort_idx = self.sort_batch(emb_inputs, num_tokens)
+        embeds_sort = rnn.pack_padded_sequence(embeds_sort, lengths_sort, batch_first=True)
+        # hidden states [time_steps * batch_size * hidden_units]
+        hidden_states, last_hidden = self.BiLSTM(embeds_sort, init_hidden)
+        # it seems that hidden states is already batch first, we don't need swap the dims
+        # hidden_states = hidden_states.permute(1, 2, 0).contiguous().view(self.batch_size, -1, )
+        hidden_states, lens = rnn.pad_packed_sequence(hidden_states, batch_first=True)
+        # hidden_states = hidden_states.transpose(0, 1)
+        top_recur = hidden_states[unsort_idx]
+        top_recur = self.hidden_dropout(top_recur)
+
 
         g_arg = top_recur
         g_pred = top_recur
