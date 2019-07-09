@@ -296,8 +296,7 @@ class AlignSup(nn.Module):
         weighted_fr = torch.bmm(atten_e2f, top_recur_fr)
         #print(atten_e2f[1][1])
         #print(atten_e2f[1][1].sum())
-        print(max_weights)
-        print(max_indices)
+
 
         uniScores_arg_cp = self.mlp_arg_uniScore(weighted_fr).view(batch_size, seq_len_en)
         uniScores_pred_cp = self.mlp_pred_uniScore(weighted_fr).view(batch_size, seq_len_en)
@@ -400,7 +399,7 @@ class AlignSup(nn.Module):
         return rel_accuracy, rel_loss, \
                rel_accuracy_argcp_pred, rel_loss_argcp_pred, \
                rel_accuracy_arg_predcp, rel_loss_arg_predcp, \
-               rel_accuracy_argcp_predcp, rel_loss_argcp_predcp
+               rel_accuracy_argcp_predcp, rel_loss_argcp_predcp, max_weights, max_indices
 
 
 
