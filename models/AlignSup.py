@@ -105,9 +105,13 @@ class AlignSup(nn.Module):
         self.dropout_h_fr = dropout_lstm_hidden_fr
         input_dims_fr = word_dims_fr + pret_dims_fr
 
-        self.transfer =  nn.Sequential(nn.Linear(input_dims_fr + 2 * lstm_hiddens, 2*lstm_hiddens),
+        self.transfer = nn.Sequential(nn.Linear(input_dims + 2 * lstm_hiddens, 2*lstm_hiddens),
                                                nn.ReLU(),
                                                nn.Dropout(0.2))
+
+        self.transfer_fr = nn.Sequential(nn.Linear(input_dims_fr + 2 * lstm_hiddens, 2 * lstm_hiddens),
+                                      nn.ReLU(),
+                                      nn.Dropout(0.2))
 
         self.BiLSTM_fr = nn.LSTM(input_size=input_dims_fr, hidden_size=lstm_hiddens_fr, batch_first=True,
                               bidirectional=True, num_layers=3)
@@ -159,8 +163,8 @@ class AlignSup(nn.Module):
 
         #g_arg = F.relu(self.mlp_arg(top_recur))
         #g_pred = F.relu(self.mlp_pred(top_recur))
-        g_arg = top_recur
-        g_pred = top_recur
+        g_arg = self.transfer(torch.cat((top_recur, emb_inputs), 2))
+        g_pred = g_arg
 
         # B T
         uniScores_arg = self.mlp_arg_uniScore(g_arg).view(batch_size, seq_len)
@@ -279,20 +283,20 @@ class AlignSup(nn.Module):
         top_recur_fr = self.hidden_dropout_fr(top_recur_fr)
         del init_hidden
 
+        top_recur_fr = self.transfer_fr(torch.cat((top_recur_fr, emb_inputs_fr), 2))
 
-        top_recur_W = torch.matmul(top_recur.detach(), self.atten_W)
-        top_recur_fr_T = self.transfer(torch.cat((top_recur_fr, emb_inputs_fr), 2)).transpose(1, 2)
 
-        atten_matrix = torch.bmm(top_recur_W, top_recur_fr_T)
 
+        top_recur_W = torch.matmul(g_arg.detach(), self.atten_W)
+        top_recur_fr_T =top_recur_fr.transpose(1, 2)
+
+        atten_matrix = torch.bmm(top_recur_W, top_recur_fr_T.detach())
         mask_fr = (mask_fr - 1) * 1000000
         mask_fr = torch.from_numpy(np.array(mask_fr).astype("float32")).to(device).view(batch_size, 1, -1)
         mask_fr_expand = mask_fr.expand(-1, seq_len_en, -1)
-
-
         atten_e2f = F.softmax(atten_matrix + mask_fr_expand, dim=2)
-        max_weights, max_indices = torch.max(atten_e2f, 2)
 
+        max_weights, max_indices = torch.max(atten_e2f, 2)
         weighted_fr = torch.bmm(atten_e2f, top_recur_fr)
         #print(atten_e2f[1][1])
         #print(atten_e2f[1][1].sum())

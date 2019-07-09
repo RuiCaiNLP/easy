@@ -68,7 +68,7 @@ if __name__ == "__main__":
                 print(m2[0])
                 print(vocab.id2word(list(words[0])))
                 print(vocab_fr.id2word(list(words_fr[0])))
-            loss += l1 + l2 + l3
+            loss += l1 + l2
             loss.backward()
             trainer.step()
 
