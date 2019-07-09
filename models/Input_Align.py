@@ -381,6 +381,8 @@ class Input_Align(nn.Module):
         top_recur = self.hidden_dropout(top_recur)
 
 
+
+
         g_arg = top_recur
         g_pred = top_recur
 
