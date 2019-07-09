@@ -6,7 +6,7 @@ sys.path.append('..')
 #import dynet as dy
 import numpy as np
 from lib import Vocab, DataLoader, PlainDataLoader
-from models import AlignSup
+from models import Input_Align
 
 import argparse
 
@@ -38,7 +38,8 @@ if __name__ == "__main__":
 
     data_loader = DataLoader("processed/train_pro", vocab)
     global_step = 0
-    parser = AlignSup(vocab, vocab_fr)
+    parser = Input_Align(vocab, vocab_fr)
+
     trainer = optim.Adam(parser.parameters(), lr=0.001)
     epoch = 0
     best_F1 = 0.
@@ -57,18 +58,18 @@ if __name__ == "__main__":
             #print("*********************************")
             #print(vocab.id2word(list(words[1])))
             #print(vocab_fr.id2word(list(words_fr[1])))
-            accuracy, loss, a1, l1, a2, l2, a3, l3, m1, m2 = parser("labeled", (words, words_fr), tags, preds, rels,  isTrain=True)
+            accuracy, loss, a1, l1,  m1, m2 = parser("labeled", (words, words_fr), tags, preds, rels,  isTrain=True)
             if global_step % 30 == 0:
                 print("epoch %d, global step#%d, accuracy:%.2f" %(epoch, global_step, accuracy))
                 print(loss)
                 print("epoch %d, global step#%d, accuracy:%.2f" % (epoch, global_step, a1))
-                print(l1, l2, l3)
+                print(l1)
             if global_step% 500 == 0:
                 print(m1[0])
                 print(m2[0])
                 print(vocab.id2word(list(words[0])))
                 print(vocab_fr.id2word(list(words_fr[0])))
-            loss += l1 + l2
+            loss += l1
             loss.backward()
             trainer.step()
 
